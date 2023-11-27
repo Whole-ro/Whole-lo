@@ -19,21 +19,6 @@ public class CommentDAO {
         jdbcUtil = new JDBCUtil();  // JDBCUtil 객체 생성
     }
     
-
-//    public CommentEntity(Long postId, LocalDate regDate, Long commentId, Long userID, String content) {
-//        super();
-//        this.postId = postId;
-//        this.regDate = regDate;
-//        this.commentId = commentId;
-//        this.userID = userID;
-//        this.content = content;
-//    }
-//    POST_ID
-//    REG_DATE
-//    COMMENT_ID
-//    USER_ID
-//    COMMENT_CONTENT
-    
     public List<CommentEntity> printCommentList(Long postId) throws SQLException {
         String sql = "SELECT reg_date, comment_id, user_id, comment_content "
                 + "FROM comment_table "
@@ -48,10 +33,10 @@ public class CommentDAO {
          while (rs.next()) {
              CommentEntity comment = new CommentEntity(
                      null,
-                     rs.getDate("reg_date"),
+                     rs.getDate("reg_date").toLocalDate(),
                      rs.getLong("comment_id"),
                      rs.getLong("user_id"),
-                     rs.getString("comment_content"),
+                     rs.getString("comment_content")
                      );
              
              commentList.add(comment);
@@ -66,29 +51,23 @@ public class CommentDAO {
      return null;
  }
     
-//    registerComment(CommentEntity comment) : Boolean
    public Boolean registerComment(CommentEntity comment) throws SQLException {
        int rs = 0;
 
-        String title = message.getTitle();
-        String content = message.getContent();
-        String img = message.getImage();
-        LocalDate regDate = message.getRegDate();
-        BooleanEnum isRead = message.getIsRead();
-        MessageType messageType = message.getMsgType();
-        Long senderId = message.getSenderId();
-        Long receiverId = message.getReceiverId();
-        Long postId = message.getPostId();
+        Long postId = comment.getPostId();
+        LocalDate regDate = comment.getRegDate();
+        Long commentId = comment.getCommentId();
+        Long userId = comment.getUserID();
+        String content = comment.getContent();
         
-        String sql = "INSERT INTO message "
-                + "(TITLE, CONTENT, IMAGE, REG_DATE, IS_READ, MSG_TYPE, MSG_ID, SENDER_ID, RECEIVER_ID, POST_ID) "
-                + "VALUES (? ,?, ?, ?, ?, ?, SEQUENCE_MESSAGEID.nextval, ?, ?, ?) ";
+        String sql = "INSERT INTO comment_table "
+                + "(post_id, reg_date, comment_id, user_id, comment_content) "
+                + "VALUES (? ,?, SEQUENCE_COMMENTID.nextval, ?, ?) ";
                
-     jdbcUtil.setSqlAndParameters(sql, new Object[] {title, content, img, regDate, isRead.toString(), messageType.toString(), senderId, receiverId,  postId });        // JDBCUtil에 query문 설정
+     jdbcUtil.setSqlAndParameters(sql, new Object[] {postId, regDate,commentId, userId ,content});        // JDBCUtil에 query문 설정
                
      try {
          rs = jdbcUtil.executeUpdate();         // query 실행      
-        System.out.print(rs);
          return true;
      } catch (Exception ex) {
          jdbcUtil.rollback();
@@ -100,10 +79,12 @@ public class CommentDAO {
      return false;
  }
    
-   public Boolean deleteMessage(Long id) throws SQLException {
-       String sql = "DELETE FROM message WHERE msg_id=?";  
+//   deleteComment(Long commentId) : Boolean
+   
+   public Boolean deleteComment(Long commentId) throws SQLException {
+       String sql = "DELETE FROM comment_table WHERE comment_id=?";  
        
-       jdbcUtil.setSqlAndParameters(sql, new Object[] {id});   // JDBCUtil에 delete문과 매개 변수 설정
+       jdbcUtil.setSqlAndParameters(sql, new Object[] {commentId});   // JDBCUtil에 delete문과 매개 변수 설정
 
        try {               
            jdbcUtil.executeUpdate();  // delete 문 실행
@@ -119,6 +100,6 @@ public class CommentDAO {
        return false;
        
     
-    
+   }
 
 }
