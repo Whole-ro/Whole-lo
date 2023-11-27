@@ -14,6 +14,16 @@ public class CommentEntity {
     private Long commentId;
     private Long userID;
     private String content;
+      
+    public CommentEntity(Long postId, LocalDate regDate, Long commentId, Long userID, String content) {
+        super();
+        this.postId = postId;
+        this.regDate = regDate;
+        this.commentId = commentId;
+        this.userID = userID;
+        this.content = content;
+    }
+    
     public Long getPostId() {
         return postId;
     }
