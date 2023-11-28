@@ -39,7 +39,20 @@ public class UserEntity {
     
     public UserEntity(String email, String password, String nickname, GenderEnum gender, String introduction,
             String interest, String address, int reportCount) {
+        this.email = email;
+        this.password = password;
+        this.nickname = nickname;
+        this.gender = gender;
+        this.introduction = introduction;
+        this.interest = interest;
+        this.address = address;
+        this.reportCount = reportCount;
+    }
+
+    public UserEntity(long userId, String email, String password, String nickname, GenderEnum gender, String introduction,
+            String interest, String address, int reportCount) {
         super();
+        this.userId = userId;
         this.email = email;
         this.password = password;
         this.nickname = nickname;

@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import model.Food;
 import model.entity.MessageEntity;
 import model.enums.BooleanEnum;
 import model.enums.MessageType;
