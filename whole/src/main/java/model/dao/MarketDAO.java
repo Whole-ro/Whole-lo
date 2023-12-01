@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.dto.FoodDTO;
+import model.dto.MarketDTO;
 import model.entity.ItemEntity;
 import model.entity.PostEntity;
 
@@ -201,6 +203,41 @@ public class MarketDAO {
       }
       return item;
    }
+
    
+    public MarketDTO createMarket(MarketDTO marketDto) throws SQLException {
+	    /* post에 insert */
+	    String sql1 = "INSERT INTO POST VALUES (SEQUENCE_POSTID.nextval, ?, ?,"
+	    		+ " ?, ?, SYSDATE, ?)";
+	    Object[] param1 = new Object[]{marketDto.getTitle(), marketDto.getContent(),
+	    		marketDto.getImage(), marketDto.getWriterId()};
+	    jdbcUtil.setSqlAndParameters(sql1, param1);    // JDBCUtil 에 insert문과 매개 변수 설정
+
+	    String key[] = {"post_id"};    // PK 컬럼의 이름     
+	    
+	    try {
+	    	
+	        jdbcUtil.executeUpdate(key);  // insert 문 실행
+	        ResultSet rs = jdbcUtil.getGeneratedKeys();
+	        if (rs.next()) {
+	            Long generatedKey = rs.getLong(1);   // 생성된 PK 값
+	            marketDto.setPostId(generatedKey);  // id필드에 저장 
+	            String sql2 = "INSERT INTO ITEM VALUES (0,0,SEQUENCE_POSTID.currval, ?, ?, ?)";
+	            Object[] param2 = new Object[]{marketDto.getPrice(),marketDto.getDetail(), marketDto.getItemType()};
+	            jdbcUtil.setSqlAndParameters(sql2, param2);    // JDBCUtil 에 insert문과 매개 변수 설정
+	            jdbcUtil.executeUpdate();
+	        }
+	        
+	        return marketDto;
+	    } catch (Exception ex) {
+	        jdbcUtil.rollback();
+	        ex.printStackTrace();
+	    } finally {        
+	        jdbcUtil.commit();
+	        jdbcUtil.close();    // resource 반환
+	    }        
+	    
+        return null;            
+	}
 
 }
