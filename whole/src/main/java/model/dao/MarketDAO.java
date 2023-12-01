@@ -175,8 +175,8 @@ public class MarketDAO {
         }
         return null;
     }
-   //타입이 MY_REFRIGERATOR인 글의 타이틀을 제목으로 insert?
-    //아니면 그냥 단순하게 삽입..?
+
+   
     public MarketDTO createMarket(MarketDTO marketDto) throws SQLException {
 	    /* post에 insert */
 	    String sql1 = "INSERT INTO POST VALUES (SEQUENCE_POSTID.nextval, ?, ?,"
@@ -188,6 +188,7 @@ public class MarketDAO {
 	    String key[] = {"post_id"};    // PK 컬럼의 이름     
 	    
 	    try {
+	    	
 	        jdbcUtil.executeUpdate(key);  // insert 문 실행
 	        ResultSet rs = jdbcUtil.getGeneratedKeys();
 	        if (rs.next()) {
@@ -198,6 +199,7 @@ public class MarketDAO {
 	            jdbcUtil.setSqlAndParameters(sql2, param2);    // JDBCUtil 에 insert문과 매개 변수 설정
 	            jdbcUtil.executeUpdate();
 	        }
+	        
 	        return marketDto;
 	    } catch (Exception ex) {
 	        jdbcUtil.rollback();

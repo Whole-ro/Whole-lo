@@ -22,12 +22,15 @@ public class MarketDTO {
     public Long getPostId() {
         return postId;
     }
+    
     public void setPostId(Long postId) {
         this.postId = postId;
     }
+    
     public String getTitle() {
         return title;
     }
+    
     public void setTitle(String title) {
         this.title = title;
     }
@@ -35,24 +38,31 @@ public class MarketDTO {
     public String getContent() {
         return content;
     }
+    
     public void setContent(String content) {
         this.content = content;
     }
+    
     public String getImage() {
         return image;
     }
-    public void setImage(String image) {
-        this.image = image;
+    
+    public void setImage(String image) {  
+    	this.image = image;
     }
+    
     public LocalDate getRegDate() {
         return regDate;
     }
+    
     public void setRegDate(LocalDate regDate) {
         this.regDate = regDate;
     }
+    
     public Long getWriterId() {
         return writerId;
     }
+    
     public void setWriterId(Long writerId) {
         this.writerId = writerId;
     }
