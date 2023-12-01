@@ -88,6 +88,8 @@ public class MarketTest {
 //            System.out.println();
 //        }
 //        
+		
+		
         
         //타입 별 같은 성별에 해당하는 아이템 전체 리스트만 보여주기 user과 join >> 성별과 마켓인지 장터인지 사용자가 입력
         System.out.print("성별을 입력하시오: ");
