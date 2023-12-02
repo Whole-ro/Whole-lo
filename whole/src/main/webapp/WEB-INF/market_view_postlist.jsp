@@ -22,7 +22,7 @@
 						나누는 즐거움<br /> 소소한 용돈 벌이
 					</p>
 					<div class="search">
-						<img id="search_img" src="../../imagefile/Look.png" width="35px"
+						<img id="search_img" src="../../img/market/Look.png" width="35px"
 						   height="35px"> <select>
 							<option value="제목">제목</option>
 							<option value="내용">내용</option>
@@ -33,7 +33,7 @@
 				</div>
 
 				<div class="sub_logo">
-					<img src="../../imagefile/Logo.png" width="350px"  height="300px" />
+					<img src="../../img/market/Logo.png" width="350px"  height="300px" />
 				</div>
 
 			</div>
@@ -49,7 +49,7 @@
 						<div class="item">
 							<a href="./Item_detail.html">
 								<div class="item_img">
-									<img src="../../imagefile/spam.png" alt="이미지를 찾을 수 없음" />
+									<img src="../../img/market/spam.png" alt="이미지를 찾을 수 없음" />
 								</div>
 
 								<div class="item-detail">
