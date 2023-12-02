@@ -1,0 +1,22 @@
+
+input.userInfo{
+    width: 400px;
+    height: 54px;
+    border: 2px solid #ADADAD;
+    background:
+     #FFF;
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal; 
+}
+input::placeholder{
+    color: #ADADAD;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal; 
+}
