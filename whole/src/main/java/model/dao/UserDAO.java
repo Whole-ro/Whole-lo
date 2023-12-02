@@ -114,19 +114,26 @@ public class UserDAO {
      * 주어진 사용자 ID에 해당하는 사용자 정보를 데이터베이스에서 찾아 User 도메인 클래스에 
      * 저장하여 반환.
      */
-    public UserEntity findUser(String interest) throws SQLException {
-        String sql = "SELECT nickname, introduction, interest "
+    public UserEntity findUser(String email) throws SQLException {
+        String sql = "SELECT * "
                     + "FROM USER_TABLE "
-                    + "WHERE interest=? ";              
-        jdbcUtil.setSqlAndParameters(sql, new Object[] {interest}); // JDBCUtil에 query문과 매개 변수 설정
+                    + "WHERE email=? ";              
+        jdbcUtil.setSqlAndParameters(sql, new Object[] {email}); // JDBCUtil에 query문과 매개 변수 설정
 
         try {
             ResultSet rs = jdbcUtil.executeQuery();     // query 실행
             if (rs.next()) {                        // 학생 정보 발견
                 UserEntity user = new UserEntity(       // User 객체를 생성하여 학생 정보를 저장
+                    rs.getLong("user_id"),
+                    email,
+                    rs.getString("password"),
                     rs.getString("nickname"),
+                    GenderEnum.valueOf(rs.getString("gender")),
                     rs.getString("introdution"),
-                    "interest");
+                    rs.getString("interest"),
+                    rs.getString("address"),
+                    rs.getInt("report_count")
+                    );
                 return user;
             }
         } catch (Exception ex) {
