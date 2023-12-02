@@ -1,0 +1,126 @@
+div.login{
+    width: 400px;
+    display: inline-block;
+}
+
+img.logo1{
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    vertical-align: middle;
+}
+
+img.logo2{
+    width: 111px;
+    height: 105px;
+    flex-shrink: 0;
+}
+
+p{
+    font-family: Inter;
+}
+
+p.headText{
+    color: #005FED;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 0;
+    margin-left: 34px;
+    margin-top: 39px;
+}
+
+p.text1{
+    color: #005FED;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    margin-top: 9px;
+    margin-bottom: 0px;
+}
+
+p.text2{
+    color: #000;
+    margin-top: 16px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+input.userInfo{
+    width: 400px;
+    height: 54px;
+    border: 2px solid #ADADAD;
+    background:
+     #FFF;
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal; 
+}
+input::placeholder{
+    color: #ADADAD;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal; 
+}
+
+p.autoLogin{
+    color: #452C01;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: left;
+}
+
+input.loginButton{
+    width: 400px;
+    height: 54px;
+    border: 0px solid #000;
+    background: #508975;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+    color: #FFF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+span.find{
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor : pointer;
+}
+
+span.text1{
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+span.text2{
+    color: #5E666D;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration-line: underline;
+    cursor : pointer;
+}

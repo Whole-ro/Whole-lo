@@ -152,7 +152,7 @@ public class UserEntity {
     }
     
 
-    public boolean isSameUser(int userid) {
+    public boolean isSameUser(long userid) {
         return this.userId == userid;
     }
 
