@@ -1,0 +1,120 @@
+* {
+    font-family:'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.agreement_header {
+    font-family: inter;
+    width: 1577px;
+    height: 110px;
+    background-color: #005FED;
+    color: #fff;
+    font-size: 48px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+.agreement_header header {
+    display: flex;
+}
+header > h3 {
+    font-family: Inter, sans-serif;
+    width: 500px;
+    margin-right: 20px;
+    padding-top: 15px;
+    padding-left: 40px;
+}
+header > img {
+    padding-left: 850px;
+    width: 120px;
+    height: 120px;
+}
+
+.agreement_step_container{
+    margin-top: 63px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 500px 500px 500px;
+    grid-template-rows: 30px;
+    font-size: 32px;
+}
+
+.step_number {
+    font-family: 'Corinthia';
+    font-weight: bold;
+}
+
+.step_title {
+    font-family:'Inter', sans-serif;
+}
+
+.top_line {
+    width: 1489px;
+    color: #000000;
+    padding-top: 63px;
+    margin: auto;
+}
+
+.agreement_content {
+    margin: auto;
+    padding-top: 63px;
+}
+
+.content_title {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.content_text {
+    font-size: 20px;
+    text-align: center;
+}
+
+.agreement_check hr {
+    width: 669px;
+    margin: auto;
+}
+
+.agreement_table tr td {
+    border: 1px solid #000000;
+    border-style: solid;
+    vertical-align: top;
+    font-size: 20px;
+    border: #000;
+    border-bottom: 1px solid #000000 ;
+    padding-bottom: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.agreement_table tr:last-child td {
+    border-bottom: none;
+}
+
+.agreement_table {
+    padding-top: 63px;
+    margin: auto;
+    width: 600px;
+    vertical-align: top;
+}
+
+input[type="checkbox"] {
+    width: 46px;
+    height: 40px;
+    vertical-align: bottom;
+    
+}
+
+input[type="text"] {
+    width: 600px;
+    height: 174px;
+}
+
+.padding_set {
+    padding-left: 10px;
+}
+
+.red {
+    color: red;
+}

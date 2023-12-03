@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link type="text/css" rel="stylesheet" href="./sign_up.css">
+    <link type="text/css" rel="stylesheet" href="/sign_up.css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
