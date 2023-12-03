@@ -123,17 +123,16 @@ public class UserDAO {
         try {
             ResultSet rs = jdbcUtil.executeQuery();     // query 실행
             if (rs.next()) {                        // 학생 정보 발견
-                UserEntity user = new UserEntity(       // User 객체를 생성하여 학생 정보를 저장
-                    rs.getLong("user_id"),
-                    email,
-                    rs.getString("password"),
-                    rs.getString("nickname"),
-                    GenderEnum.valueOf(rs.getString("gender")),
-                    rs.getString("introdution"),
-                    rs.getString("interest"),
-                    rs.getString("address"),
-                    rs.getInt("report_count")
-                    );
+                UserEntity user = new UserEntity();       // User 객체를 생성하여 학생 정보를 저장
+                user.setUserId(rs.getLong("user_id"));
+                user.setEmail(email);
+                user.setPassword(rs.getString("password"));
+                user.setNickname(rs.getString("nickname"));
+                user.setGender(GenderEnum.valueOf(rs.getString("gender")));
+                user.setIntroduction(rs.getString("introduction"));
+                user.setInterest(rs.getString("interest"));
+                user.setAddress(rs.getString("address"));
+                user.setReportCount(rs.getInt("report_count"));
                 return user;
             }
         } catch (Exception ex) {
