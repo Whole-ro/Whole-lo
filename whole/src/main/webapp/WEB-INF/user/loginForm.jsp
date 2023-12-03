@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link type="text/css" rel="stylesheet" href="../../css/login.css">
+<link type="text/css" rel="stylesheet" href="/whole/css/login.css">
 <meta charset="UTF-8">
 	<p class="headText">
     	Whole·Î 
