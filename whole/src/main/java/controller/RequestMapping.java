@@ -20,6 +20,10 @@ public class RequestMapping {
 //        mappings.put("/", new ForwardController("index.jsp"));
         mappings.put("/user/login/form", new ForwardController("/user/loginForm.jsp"));
         mappings.put("/user/login", new LoginController());
+
+       
+//        mappings.put("/user/login/form", new ForwardController("/user/loginForm.jsp"));
+//        mappings.put("/user/login", new LoginController());
 //        mappings.put("/user/logout", new LogoutController());
         mappings.put("/market", new ListMarketController());
 //        mappings.put("/user/list", new ListUserController());
