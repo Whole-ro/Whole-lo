@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 <script>
 </script>
-
+		
 <!-- <script src = "./sign_up.js"></script> -->
 </head>
 <body>
@@ -17,20 +17,20 @@
 		이메일 
         <p> <input class="userInfo" type="email" name="email" placeholder="이메일" required></p>
         비밀번호 
-        <p><input class="userInfo" type="password" name="pw" placeholder="비밀번호" required></p>
+        <p><input class="userInfo" type="password" name="password" placeholder="비밀번호" required></p>
         비밀번호 재확인 
         <p><input class="userInfo" type="password" name="pw_re" placeholder="비밀번호 재확인 " required></p>
         성별 
         <p>
       
-        <select name="성별" id="gender">
-    		<option value="0">남자 </option>
-    		<option value="1">여자 </option>
+        <select name="gender" id="gender">
+    		<option value=MALE >남자 </option>
+    		<option value=FEMALE>여자 </option>
     	</select>
     	</p>
     	관심
     	<p>
-    	<select name="관심사 " id="interest">
+    	<select name="interest " id="interest">
     		<option value="0">수영 </option>
     		<option value="1">헬스 </option>
     		<option value="2">등산 </option>
@@ -50,13 +50,13 @@
     	</p>
 		
 		주소 
-        <p><input class="userInfo" type="text" name="email" placeholder="주소  " required></p>
+        <p><input class="userInfo" type="text" name="addresss" placeholder="주소  " required></p>
 		
     	닉네임 
-        <p><input class="userInfo" type="text" name="text" placeholder="사용자 닉네임 " required></p>
+        <p><input class="userInfo" type="text" name="nickname" placeholder="사용자 닉네임 " required></p>
         
         한줄 소개 
-        <p><input class="userInfo" type="text" name="email" placeholder="한줄소개" height="30" required></p>
+        <p><input class="userInfo" type="text" name="introduction" placeholder="한줄소개" height="30" required></p>
         
         <input class="signUpButton"type="submit" value="회원가입 ">
     </form>  

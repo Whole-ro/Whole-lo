@@ -31,6 +31,8 @@ public class RegisterUserController implements Controller {
 			return "/sign_up_2.jsp";   // 검색한 커뮤니티 리스트를 registerForm으로 전송     	
 	    }	
 
+       	
+       
        	UserEntity user = new UserEntity(
                 request.getParameter("email"),
                 request.getParameter("password"),
@@ -39,7 +41,7 @@ public class RegisterUserController implements Controller {
                 request.getParameter("introduction"),
                 request.getParameter("interest"),
                 request.getParameter("addresss"),
-                Integer.parseInt(request.getParameter("reportCount"))
+                0
             );
 		
        	
