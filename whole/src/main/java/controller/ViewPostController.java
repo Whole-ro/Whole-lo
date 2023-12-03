@@ -20,10 +20,10 @@ public class ViewPostController implements Controller{
       try {
          item = manager.findItem(postId);
       } catch (FindException e) {
-         return "redirect:/market/postlist";
+         return "/itemDetailTest.jsp";
       }
       
       request.setAttribute("item", item);
-      return "/market/post/view.jsp";
+      return "/itemDetail.jsp";
    }
 }
