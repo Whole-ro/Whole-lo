@@ -23,14 +23,14 @@
         성별 
         <p>
       
-        <select name="gender" id="gender">
+        <select name="gender" id="gender" class="userInfo" >
     		<option value=MALE >남자 </option>
     		<option value=FEMALE>여자 </option>
     	</select>
     	</p>
     	관심
     	<p>
-    	<select name="interest" id="interest">
+    	<select name="interest" id="interest" class="userInfo">
     		<option value="0">수영 </option>
     		<option value="1">헬스 </option>
     		<option value="2">등산 </option>
