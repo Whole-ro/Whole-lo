@@ -8,13 +8,32 @@
 <html>
 <link rel="stylesheet" href="/whole/css/Sharing.css">
 <link rel="stylesheet" href="/whole/css/item_detail.css">
+<link rel="stylesheet" href="/whole/css/header.css">
+
 <head>
 <meta charset="UTF-8" />
 <title>나눔 장터</title>
 </head>
 
 <body>
-	<div class="header">헤더</div>
+ 
+<!-- 헤더 
+ -->	<div class="header">
+            <nav class="navbar">
+                <div class="navbar_logo1"><img class="logo1" onClick="location.href='findPw.html'" src="./img/ic_logo.png"></div>
+                <ul class="navbar_text">
+                    <li><span onClick="location.href='findPw.html'">나만의 냉장고</span></li>
+                    <li><span class="text2" onClick="location.href='findPw.html'">나눔, 장터</li>
+                    <li><span class="text2" onClick="location.href='findPw.html'">같이 가치</li>
+                </ul>
+                <ul class="navbar_img">
+                    <li><img class="logo_left" src="./img/ic_message.png" onClick="location.href='findPw.html'"></li>
+                    <li><img class="logo_left" src="./img/ic_bell.png" onClick="location.href='findPw.html'"></li>
+                    <li><p class="logo_left">MY</p></li>
+                </ul>
+            </nav>
+    </div>
+	
 	<div class="wrap">
 		<div class="wrap_content">
 			<div class="sub_wrap">
