@@ -3,7 +3,7 @@ div.login{
     display: inline-block;
 }
 
-img.logo1{
+img.logo1{	
     width: 34px;
     height: 34px;
     flex-shrink: 0;
