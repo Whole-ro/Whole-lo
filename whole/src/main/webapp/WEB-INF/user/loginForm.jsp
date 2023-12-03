@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link type="text/css" rel="stylesheet" href="../../css/login.css">
+	<link type="text/css" rel="stylesheet" href="/whole/css/login.css">
 <meta charset="UTF-8">
 	<p class="headText">
     	Whole로 
@@ -34,7 +34,7 @@ function userCreate(targetUri) {
 </head>
 <body>
     <div style="text-align: center; margin-top: 118px;">
-    <img class="logo2" src="../../img/ic_logo.png">
+    <img class="logo2" src="/whole/img/ic_logo.png">
     <p class="text1">홀로,</p>
     <p class="text2">당신의 홀로서기를 응원합니다.</p>
     <div class="login">
