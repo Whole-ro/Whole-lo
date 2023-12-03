@@ -12,6 +12,8 @@ public class LoginController implements Controller {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
     	String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		System.out.println("Email: " + email);
+		System.out.println("Password: " + password);
 		
 		try {
 			// 모델에 로그인 처리를 위임
@@ -22,14 +24,16 @@ public class LoginController implements Controller {
 			HttpSession session = request.getSession();
             session.setAttribute(UserSessionUtils.USER_SESSION_KEY, email);
             
-            return "redirect:/user/list";			
+            System.out.println("안녕하세요");
+            return "redirect:/user/list";	//사용자 목록으로...		
 		} catch (Exception e) {
 //			/* UserNotFoundException이나 PasswordMismatchException 발생 시
 //			 * 다시 login form을 사용자에게 전송하고 오류 메세지도 출력
 //			 */
             request.setAttribute("loginFailed", true);
 			request.setAttribute("exception", e);
-            return "/user/login.jsp";			
+			System.out.println("로그인 실패: " + e.getMessage());
+            return "/user/loginForm.jsp";			
 		}	
     }
 }

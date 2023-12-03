@@ -1,28 +1,51 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-	<link type="text/css" rel="stylesheet" href="./login.css">
+	<link type="text/css" rel="stylesheet" href="/css/login.css">
 <meta charset="UTF-8">
 	<p class="headText">
     	Whole로 
-    <img class="logo1" src="./ic_logo.png"></p>
+    <img class="logo1" src="/img/ic_logo.png"></p>
+    
+<script language="JavaScript">
+function login() {
+	if (form.userId.value == "") {
+		alert("사용자 ID를 입력하십시오.");
+		form.userId.focus();
+		return false;
+	} 
+	if (form.password.value == "") {
+		alert("비밀번호를 입력하십시오.");
+		form.password.focus();
+		return false;
+	}		
+	form.submit();
+}
+
+function userCreate(targetUri) {
+	form.action = targetUri;
+	form.method="GET";		// register form 요청
+	form.submit();
+}
+</script>
 </head>
 <body>
     <div style="text-align: center; margin-top: 118px;">
-    <img class="logo2" src="./img/ic_logo.png">
+    <img class="logo2" src="/img/ic_logo.png">
     <p class="text1">홀로,</p>
     <p class="text2">당신의 홀로서기를 응원합니다.</p>
     <div class="login">
-    <form>
+    <form name="form" method="POST" action="<c:url value='/user/login' />">
         <p><input class="userInfo" type="email" name="email" placeholder="이메일" required></p>
-        <p><input class="userInfo" type="password" name="pw" placeholder="비밀번호" required></p>
+        <p><input class="userInfo" type="password" name="password" placeholder="비밀번호" required></p>
         <p class="autoLogin">
             <input  type="checkbox" name="autoLogin" value="autoLogin">로그인 유지
             <br>
         </p>
-        <input class="loginButton"type="submit" value="로그인">
+        <input class="loginButton"type="submit" value="로그인" onClick="login()">
     </form>  
     </div>
     <hr style="margin-top: 72px; margin-bottom: 32px; width: 400px;"> 
@@ -33,7 +56,7 @@
     </div> 
     <p>
         <span class="text1">홀로가 처음이신가요?</span>
-        <span class="text2" onClick="location.href='findPw.html'">  회원가입하러가기</span>
+        <span class="text2" onClick="userCreate('<c:url value='/user/register'/>')">  회원가입하러가기</span>
     </p>   
     </div>
 </body>
