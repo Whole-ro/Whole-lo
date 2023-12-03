@@ -14,7 +14,7 @@
 	<div class="header">
 	</div>
 	<div class="wrap">
-		<div class="wrap_content">
+		<div class="wrap_content_detail">
 			<div class="wrap_content_image">
 				<div style="overflow: hidden">
 					<div class="carousel_main">

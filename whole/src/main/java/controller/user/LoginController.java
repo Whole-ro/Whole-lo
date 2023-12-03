@@ -26,7 +26,7 @@ public class LoginController implements Controller {
             session.setAttribute(UserSessionUtils.USER_SESSION_KEY, email);
             
             System.out.println("안녕하세요");
-            return "redirect:/user/list";	//사용자 목록으로...		
+            return "redirect:/market";	//사용자 목록으로...		
 		} catch (Exception e) {
 //			/* UserNotFoundException이나 PasswordMismatchException 발생 시
 //			 * 다시 login form을 사용자에게 전송하고 오류 메세지도 출력
