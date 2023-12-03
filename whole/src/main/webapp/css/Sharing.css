@@ -50,10 +50,13 @@ p,body{
     color: #fff;
     font-size: 50px;
     font-weight: bold;
-    margin-left: 380px;
     text-align: center;
 }
+.sub_logo img{
+	 display: none;
+}
 #search_img{
+	display: none;
     position: relative;
     bottom: 3px;
 }
@@ -130,6 +133,9 @@ p,body{
  }
  .item-detail{
     padding: 5px;
+    border: 1px solid gray;
+    padding: 10px;
+    margin: 10px;
  }
  #item-title{
     font-weight: bold;
