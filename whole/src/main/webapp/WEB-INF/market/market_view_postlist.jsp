@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
-<%@page import="model.service.*" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="model.service.*"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!-- 자동정렬 shift +alt + F -->
 <!DOCTYPE html>
@@ -23,8 +23,8 @@
 						나누는 즐거움<br /> 소소한 용돈 벌이
 					</p>
 					<div class="search">
-						<img id="search_img" src="../../img/market/Look.png" width="35px"
-						   height="35px"> <select>
+						<img id="search_img" src="../../img/market/Look.png" alt=" " width="35px"
+							height="35px"> <select>
 							<option value="제목">제목</option>
 							<option value="내용">내용</option>
 							<option value="작성자">작성자</option>
@@ -34,7 +34,7 @@
 				</div>
 
 				<div class="sub_logo">
-					<img src="../../img/market/Logo.png" width="350px"  height="300px" />
+					<img src="../../img/market/Logo.png" alt=" " width="350px" height="300px" />
 				</div>
 
 			</div>
@@ -47,16 +47,24 @@
 						<button id="btn-04">#음식속보</button>
 					</div>
 					<div class="item_list">
-				
-						<div class="item-detail">
 							<c:forEach var="item" items="${marketList}">
-								<div id="item-title">
-									<a href="<c:url value='/market/post/detail'>
+								<div class="item-detail">
+							
+								<a
+									href="<c:url value='/market/post/detail'>
 												<c:param name='postId' value='${item.postId}'/> 
-											</c:url>">${item.title}</a>
-								</div>
-							</c:forEach> 
-							<!-- a href="./Item_detail.html">
+											</c:url>">
+									<div id="item-title">${item.title}</div>
+									<div id="item-price">
+										<p>${item.price}</p>
+									</div>
+									<div id="item-uploadtime">
+										<p>${item.regDate}</p>
+									</div>
+								</a>
+						</div>
+						</c:forEach>
+						<!-- a href="./Item_detail.html">
 								<div class="item_img">
 									<img src="../../img/market/spam.png" alt="이미지를 찾을 수 없음" />
 								</div>
@@ -164,14 +172,14 @@
 									<p>2000-11-01 17:09</p>
 								</div>
 								-->
-							</div>
-						</div>
-
-
 					</div>
 				</div>
+
+
 			</div>
 		</div>
+	</div>
+	</div>
 	</div>
 	<script src="../../js/share.js"></script>
 </body>
