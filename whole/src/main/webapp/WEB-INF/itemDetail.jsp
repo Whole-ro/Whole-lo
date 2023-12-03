@@ -11,7 +11,8 @@
 <title>나눔 장터</title>
 </head>
 <body>
-	<div class="header">헤더</div>
+	<div class="header">
+	</div>
 	<div class="wrap">
 		<div class="wrap_content">
 			<div class="wrap_content_image">
@@ -27,7 +28,7 @@
 									height=" 350px" alt="이미지를 찾을 수 없음" />
 							</div>
 							<div class="carousel_slide">
-								<img src="../../img/market/blue-galaxy-wallpaper.jpg"
+								<img src="/img/market/blue-galaxy-wallpaper.jpg"
 									width="300px" height=" 350px" alt="이미지를 찾을 수 없음" />
 							</div>
 						</div>
@@ -56,7 +57,7 @@
 				</div>
 				<div class="upload_day">
 					<p>
-					<fmt:parseDate value="${item.getRegDate()}" pattern="yyyy/MM/dd" var="parsedRegDate" type="date"/>
+					<fmt:parseDate value="${item.regDate}" pattern="yyyy-MM-dd" var="parsedRegDate" type="date"/>
 					<fmt:formatDate value="${parsedRegDate}" pattern="yyyy/MM/dd" /> 
 					</p>
 				</div>
@@ -78,7 +79,7 @@
 						<img src="../../img/market/message.png" alt="이미지를 찾을 수 없음" />
 					</div>
 					<div class="icon">
-						<img src="../../img/market/bookmark.png" alt="이미지를 찾을 수 없음" />
+						<img src="../../img/ic_logo.png" alt="이미지를 찾을 수 없음" />
 						<div class="scrap_count">
 							<p>3</p>
 						</div>
@@ -86,7 +87,7 @@
 				</div>
 			</div>
 		</div>
-		<script src="/js/Share.js"></script>
+		<script src="../../js/Share.js"></script>
 </body>
 
 </html>
