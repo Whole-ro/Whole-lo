@@ -29,7 +29,7 @@ public class RegisterUserController implements Controller {
 //    		List<Community> commList = UserManager.getInstance().findCommunityList();	// 커뮤니티 리스트 검색
 //			request.setAttribute("commList", commList);	
 		
-			return "/sign_up_2.jsp";   // 검색한 커뮤니티 리스트를 registerForm으로 전송     	
+			return "/user/sign_up_2.jsp";   // 검색한 커뮤니티 리스트를 registerForm으로 전송     	
 	    }	
 
        	UserEntity user = new UserEntity(
