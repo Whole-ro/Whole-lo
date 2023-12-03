@@ -78,7 +78,8 @@
                         </tr>
                     </table>
                 </div>
-                <input type="submit" value="다음 " >
+                <button type="button" class="nextBtn" onClick="location.href='<c:url value='/user/register'/>'"/>
+               
             </form>
         </div>
     </body>

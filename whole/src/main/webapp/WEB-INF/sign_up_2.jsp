@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +13,7 @@
 <!-- <script src = "./sign_up.js"></script> -->
 </head>
 <body>
-	<form>
+	<form name="form" method="POST" action="<c:url value='/user/register' />">
 		이메일 
         <p> <input class="userInfo" type="email" name="email" placeholder="이메일" required></p>
         비밀번호 
