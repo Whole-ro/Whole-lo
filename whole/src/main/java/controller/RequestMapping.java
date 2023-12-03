@@ -43,7 +43,7 @@ public class RequestMapping {
 //        mappings.put("/community/create/form", new ForwardController("/community/creationForm.jsp"));
 //        mappings.put("/community/create", new CreateCommunityController());
 //        mappings.put("/community/update", new UpdateCommunityController());
-        
+        mappings.put("/market/post/detail", new ViewPostController());
         logger.info("Initialized Request Mapping!");
     }
 
