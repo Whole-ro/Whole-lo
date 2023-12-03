@@ -1,20 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="java.util.*, model.entity.*, model.manager.*"%>
-
-<!-- jsp:useBean id = "item"  class="model.entity.ItemEntity" scope="page"/-->
-<!--jsp:getProperty name="postId" property="*" /-->
-
-<!-- 자동정렬 shift +alt + F -->
-<%-- PostManager manager = PostManager.getInstance();
-	ItemEntity item = manager.findItem("7");
-	// List<ItemEntity> itemList = manager.findItem(postId);
-	if(item==null){
-		System.out.print("item이 null");
-	} 
---%>
-<% ItemEntity item = (ItemEntity)request.getAttribute("item"); %>
-
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<% ItemEntity item = (ItemEntity)request.getAttribute("item");%>
 <html>
 <link rel="stylesheet" href="../../css/Sharing.css">
 <link rel="stylesheet" href="../../css/item_detail.css">
@@ -31,7 +19,7 @@
 					<div class="carousel_main">
 						<div class="carousel_wrapper">
 							<div class="carousel_slide">
-								<img src="../../img/market/spam.png" width="300px"
+								<img src="<%=item.getImage() %>" width="300px"
 									height=" 350px" alt="이미지를 찾을 수 없음" />
 							</div>
 							<div class="carousel_slide">
@@ -61,23 +49,22 @@
 			</div>
 			<div class="wrap_content_item">
 				<div class="item_title">
-					<p>
-						<%= item.getTitle() %></p>
+					<p><%= item.getTitle() %></p>
 				</div>
 				<div class="item_price">
-					<p>30,000원</p>
+					<p><%= item.getPrice() %>원</p>
 				</div>
 				<div class="upload_day">
-					<p>2000-11-01 17:09</p>
+					<p>
+					<fmt:parseDate value="${item.getRegDate()}" pattern="yyyy/MM/dd" var="parsedRegDate" type="date"/>
+					<fmt:formatDate value="${parsedRegDate}" pattern="yyyy/MM/dd" /> 
+					</p>
 				</div>
 				<hr class="item_hr" />
 				<div class="item_detail">
 					<p>
-						가정에서 요리해드실분이면 저렴하게 가져가셔요<br /> 유통기한26년5월 입니다.
+						<%=item.getContent() %><br />
 					</p>
-				</div>
-				<div class="report">
-					<p>신고하기</p>
 				</div>
 				<hr class="item_hr" />
 				<div class="content_icons">
