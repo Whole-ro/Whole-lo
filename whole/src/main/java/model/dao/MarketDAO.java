@@ -181,12 +181,13 @@ public class MarketDAO {
     * 저장하여 반환.
     */
    public ItemEntity findItem(Long postId) throws SQLException {
-      String sql = "SELECT title, exp_date, content, image "
+      String sql = "SELECT title, price, content, image "
             + "FROM ITEM JOIN POST USING (post_id) "
             + "WHERE post_id=? "
             + "ORDER BY reg_date"; 
       jdbcUtil.setSqlAndParameters(sql, new Object[] {postId});   // JDBCUtil에 query문과 매개 변수 설정
       ItemEntity item = null;
+      System.out.println(postId);
       try {
          ResultSet rs = jdbcUtil.executeQuery();      // query 실행
          if (rs.next()) {                  // 학생 정보 발견
