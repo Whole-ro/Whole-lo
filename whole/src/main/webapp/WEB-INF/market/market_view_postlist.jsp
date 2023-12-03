@@ -6,8 +6,8 @@
 <!-- 자동정렬 shift +alt + F -->
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="../../css/item_detail.css">
-<link rel="stylesheet" href="../../css/sharing.css">
+<link rel="stylesheet" href="/whole/css/Sharing.css">
+<link rel="stylesheet" href="/whole/css/item_detail.css">
 <head>
 <meta charset="UTF-8" />
 <title>나눔 장터</title>
@@ -47,13 +47,14 @@
 						<button id="btn-04">#음식속보</button>
 					</div>
 					<div class="item_list">
-						<div class="item">
+				
+						<div class="item-detail">
 							<c:forEach var="item" items="${marketList}">
-								<td>
+								<div id="item-title">
 									<a href="<c:url value='/market/post/detail'>
 												<c:param name='postId' value='${item.postId}'/> 
 											</c:url>">${item.title}</a>
-								</td>
+								</div>
 							</c:forEach> 
 							<!-- a href="./Item_detail.html">
 								<div class="item_img">
