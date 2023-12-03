@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <%@page import="model.service.*" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!-- 자동정렬 shift +alt + F -->
 <!DOCTYPE html>
@@ -47,7 +48,14 @@
 					</div>
 					<div class="item_list">
 						<div class="item">
-							<a href="./Item_detail.html">
+							<c:forEach var="item" items="${marketList}">
+								<td>
+									<a href="<c:url value='/market/post/detail'>
+												<c:param name='postId' value='${item.postId}'/> 
+											</c:url>">${item.title}</a>
+								</td>
+							</c:forEach> 
+							<!-- a href="./Item_detail.html">
 								<div class="item_img">
 									<img src="../../img/market/spam.png" alt="이미지를 찾을 수 없음" />
 								</div>
@@ -154,6 +162,7 @@
 								<div id="item-uploadtime">
 									<p>2000-11-01 17:09</p>
 								</div>
+								-->
 							</div>
 						</div>
 
