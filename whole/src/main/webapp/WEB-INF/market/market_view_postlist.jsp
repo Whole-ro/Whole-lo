@@ -54,9 +54,12 @@
 									href="<c:url value='/market/post/detail'>
 												<c:param name='postId' value='${item.postId}'/> 
 											</c:url>">
+									<div class="item_img">
+									<img src="${item.image}" alt="이미지를 찾을 수 없음" />
+									</div>
 									<div id="item-title">${item.title}</div>
 									<div id="item-price">
-										<p>${item.price}</p>
+										<p>${item.price}원</p>
 									</div>
 									<div id="item-uploadtime">
 										<p>${item.regDate}</p>
@@ -65,9 +68,7 @@
 						</div>
 						</c:forEach>
 						<!-- a href="./Item_detail.html">
-								<div class="item_img">
-									<img src="../../img/market/spam.png" alt="이미지를 찾을 수 없음" />
-								</div>
+								\
 
 								<div class="item-detail">
 									<div id="item-title">
