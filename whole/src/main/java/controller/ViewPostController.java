@@ -1,5 +1,6 @@
 package controller;
 
+
 import java.lang.module.FindException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +19,7 @@ public class ViewPostController implements Controller{
       PostManager manager = PostManager.getInstance();
       
       try {
-         item = manager.findItem(postId);
+    	  item = manager.findItem(postId);
       } catch (FindException e) {
          return "/itemDetailTest.jsp";
       }
