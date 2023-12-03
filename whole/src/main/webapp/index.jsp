@@ -1,1 +1,1 @@
-<% response.sendRedirect(request.getContextPath() + "/market/postlist"); %>
+<% response.sendRedirect(request.getContextPath() + "/market"); %>

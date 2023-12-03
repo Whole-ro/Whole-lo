@@ -16,6 +16,6 @@ public class ListMarketController implements Controller {
 		
 		// commList 객체를 request에 저장하여 커뮤니티 리스트 화면으로 이동(forwarding)
 		request.setAttribute("marketList", marketList);				
-		return "/market/postlist/market_view_postlist/list.jsp";        
+		return "/market/market_view_postlist.jsp";        
     }
 }

@@ -17,11 +17,11 @@ public class RequestMapping {
 
     public void initMapping() {
     	// 각 uri에 대응되는 controller 객체를 생성 및 저장
-        mappings.put("/", new ForwardController("testmarket.jsp"));
+//        mappings.put("/", new ForwardController("index.jsp"));
         mappings.put("/user/login/form", new ForwardController("/user/loginForm.jsp"));
         mappings.put("/user/login", new LoginController());
-        mappings.put("/user/logout", new LogoutController());
-        mappings.put("/market/postlist", new ListMarketController());
+//        mappings.put("/user/logout", new LogoutController());
+        mappings.put("/market", new ListMarketController());
 //        mappings.put("/user/list", new ListUserController());
 //        mappings.put("/user/view", new ViewUserController());
 //        

@@ -7,7 +7,6 @@
 <html>
 <link rel="stylesheet" href="../../css/item_detail.css">
 <link rel="stylesheet" href="../../css/sharing.css">
-
 <head>
 <meta charset="UTF-8" />
 <title>ณชดฎ ภๅลอ</title>
