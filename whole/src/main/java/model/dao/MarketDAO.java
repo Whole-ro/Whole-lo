@@ -175,6 +175,34 @@ public class MarketDAO {
         }
         return null;
     }
+    
+    /**
+    * 주어진  ID에 해당하는 Item 정보를 데이터베이스에서 찾아 item 도메인 클래스에 
+    * 저장하여 반환.
+    */
+   public ItemEntity findItem(Long postId) throws SQLException {
+      String sql = "SELECT title, exp_date, content, image "
+            + "FROM ITEM JOIN POST USING (post_id) "
+            + "WHERE post_id=? "
+            + "ORDER BY reg_date"; 
+      jdbcUtil.setSqlAndParameters(sql, new Object[] {postId});   // JDBCUtil에 query문과 매개 변수 설정
+      ItemEntity item = null;
+      try {
+         ResultSet rs = jdbcUtil.executeQuery();      // query 실행
+         if (rs.next()) {                  // 학생 정보 발견
+            item = new ItemEntity();
+            item.setTitle(rs.getString("title"));
+            item.setPrice(rs.getLong("price"));
+            item.setContent(rs.getString("content"));
+            item.setImage(rs.getString("image"));
+         }
+      } catch (Exception ex) {
+         ex.printStackTrace();
+      } finally {
+         jdbcUtil.close();      // resource 반환
+      }
+      return item;
+   }
 
    
     public MarketDTO createMarket(MarketDTO marketDto) throws SQLException {
@@ -213,4 +241,3 @@ public class MarketDAO {
 	}
 
 }
-
