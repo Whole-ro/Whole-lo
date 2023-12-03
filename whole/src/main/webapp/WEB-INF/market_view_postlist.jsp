@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
+<%@page import="model.service.*" %>
 
 <!-- 자동정렬 shift +alt + F -->
 <!DOCTYPE html>
