@@ -15,6 +15,7 @@ import model.entity.UserEntity;
 import model.enums.GenderEnum;
 import model.service.ExistingUserException;
 import model.service.UserManager;
+import util.InterestUtil;
 
 public class RegisterUserController implements Controller {
     private static final Logger log = LoggerFactory.getLogger(RegisterUserController.class);
@@ -31,15 +32,13 @@ public class RegisterUserController implements Controller {
 			return "/sign_up_2.jsp";   // 검색한 커뮤니티 리스트를 registerForm으로 전송     	
 	    }	
 
-       	
-       
        	UserEntity user = new UserEntity(
                 request.getParameter("email"),
                 request.getParameter("password"),
                 request.getParameter("nickname"),
                 GenderEnum.valueOf(request.getParameter("gender")),
                 request.getParameter("introduction"),
-                request.getParameter("interest"),
+                InterestUtil.INTEREST_ARRAY[Integer.parseInt(request.getParameter("interest"))],
                 request.getParameter("addresss"),
                 0
             );

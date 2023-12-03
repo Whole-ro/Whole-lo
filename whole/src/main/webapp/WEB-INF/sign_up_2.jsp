@@ -30,7 +30,7 @@
     	</p>
     	관심
     	<p>
-    	<select name="interest " id="interest">
+    	<select name="interest" id="interest">
     		<option value="0">수영 </option>
     		<option value="1">헬스 </option>
     		<option value="2">등산 </option>
