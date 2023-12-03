@@ -17,9 +17,10 @@ public class LoginController implements Controller {
 		
 		try {
 			// 모델에 로그인 처리를 위임
-			UserManager manager = UserManager.getInstance();
+
+			UserManager manager = UserManager.getInstance();			
 			manager.login(email, password);
-	
+			System.out.println("안녕하세요");
 			// 세션에 사용자 이이디 저장
 			HttpSession session = request.getSession();
             session.setAttribute(UserSessionUtils.USER_SESSION_KEY, email);
