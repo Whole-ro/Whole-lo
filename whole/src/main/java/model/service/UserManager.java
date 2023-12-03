@@ -89,6 +89,7 @@ public class UserManager {
 	public boolean login(String email, String password)
 		throws SQLException, UserNotFoundException, PasswordMismatchException {
 		UserEntity user = findUser(email);
+		System.out.println(user.toString());
 //
 		if (!user.matchPassword(password)) {
 			throw new PasswordMismatchException("비밀번호가 일치하지 않습니다.");

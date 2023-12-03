@@ -55,7 +55,10 @@ private static UserDAO userDao = new UserDAO();
         //}
         //System.out.println();
         
-        
+        System.out.print("이메일를 입력하시오: ");
+        String email = scanner.next();
+        UserEntity us = userDao.findUser(email);
+        System.out.println(us.toString());
         
         System.out.print("관심사를 입력하시오: ");
         String interest = scanner.next();
