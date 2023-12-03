@@ -181,7 +181,7 @@ public class MarketDAO {
     * 저장하여 반환.
     */
    public ItemEntity findItem(Long postId) throws SQLException {
-      String sql = "SELECT title, price, content, image "
+      String sql = "SELECT title, price, content, image, reg_date "
             + "FROM ITEM JOIN POST USING (post_id) "
             + "WHERE post_id=? "
             + "ORDER BY reg_date"; 
@@ -196,6 +196,7 @@ public class MarketDAO {
             item.setPrice(rs.getLong("price"));
             item.setContent(rs.getString("content"));
             item.setImage(rs.getString("image"));
+            item.setRegDate(rs.getDate("reg_Date").toLocalDate());
          }
       } catch (Exception ex) {
          ex.printStackTrace();
