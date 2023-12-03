@@ -1,24 +1,24 @@
-//package controller.user;
-//
-//import java.util.List;
-//
-//import javax.servlet.http.HttpServletRequest;
-//import javax.servlet.http.HttpServletResponse;
-//
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
-//
-//import controller.Controller;
-//import model.Community;
-//import model.User;
-//import model.service.ExistingUserException;
-//import model.service.UserManager;
-//
-//public class RegisterUserController implements Controller {
-//    private static final Logger log = LoggerFactory.getLogger(RegisterUserController.class);
-//
-//    @Override
-//    public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+package controller.user;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import controller.Controller;
+import model.Community;
+import model.User;
+import model.service.ExistingUserException;
+import model.service.UserManager;
+
+public class RegisterUserController implements Controller {
+    private static final Logger log = LoggerFactory.getLogger(RegisterUserController.class);
+
+    @Override
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 //       	if (request.getMethod().equals("GET")) {	
 //    		// GET request: 회원정보 등록 form 요청	
 //    		log.debug("RegisterForm Request");
@@ -54,6 +54,7 @@
 //			request.setAttribute("user", user);
 //			return "/user/registerForm.jsp";
 //		}
-//    }
-//}
-//
+        return null;
+    }
+}
+

@@ -23,11 +23,11 @@ public class RequestMapping {
 //        mappings.put("/user/list", new ListUserController());
 //        mappings.put("/user/view", new ViewUserController());
 //        
-//        // 회원 가입 폼 요청과 가입 요청 처리 병합 (폼에 커뮤니티 선택 메뉴 추가를 위함)
-////      mappings.put("/user/register/form", new ForwardController("/user/registerForm.jsp"));
-////      mappings.put("/user/register", new RegisterUserController());
-//        mappings.put("/user/register", new RegisterUserController());
-//
+        
+        // 회원 가입 폼 요청과 가입 요청 처리 병합 (폼에 커뮤니티 선택 메뉴 추가를 위함)
+        mappings.put("/user/register/agreeTerms", new ForwardController("sign_up_1.jsp"));
+        mappings.put("/user/register/registerForm", new RegisterUserController());
+
 //        // 사용자 정보 수정 폼 요청과 수정 요청 처리 병합
 ////      mappings.put("/user/update/form", new UpdateUserFormController());
 ////      mappings.put("/user/update", new UpdateUserController());        
@@ -41,6 +41,7 @@ public class RequestMapping {
 //        mappings.put("/community/create/form", new ForwardController("/community/creationForm.jsp"));
 //        mappings.put("/community/create", new CreateCommunityController());
 //        mappings.put("/community/update", new UpdateCommunityController());
+        
         mappings.put("/market/post/detail", new ViewPostController());
         logger.info("Initialized Request Mapping!");
     }
