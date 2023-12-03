@@ -1,7 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+
+<%@page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@page import="java.util.*, model.entity.*, model.manager.*"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<link rel="stylesheet" href="/whole/css/agreement.css"> 
 <!DOCTYPE html>
 <html>
+
     <head>
         <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -9,6 +14,21 @@
         <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@700&display=swap" rel="stylesheet">
         <link href="./css/agreement.css" rel="stylesheet"/>
         <title>약관동의</title>
+          <style>
+				input.nextButton {
+					width: 400px;
+					height: 54px;
+					border: 0px solid #000;
+					background: #508975;
+					box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+					color: #FFF;
+					font-size: 20px;
+					font-style: normal;
+					font-weight: 600;
+					line-height: normal;
+					 display: inline-block;
+}
+</style>
     </head>
     <body>
         <div class="agreement_header">
@@ -26,7 +46,7 @@
             <span class="step_title">회원정보입력</span>
         </div>
         <div class="top_line"><hr></div>
-        <div class="agreement_content">
+        <div style=" text-align: center"; class="agreement_content">
             <div class="content_title">Whole로 회원 약관동의</div>
             <div class="content_text"> Whole로 서비스 이용을 위해 아래 이용약관 및 정보 이용에 동의해 주세요. </div>
             <form>
@@ -74,7 +94,11 @@
                             <td><input type="text" id="agree03" value="이용 약관3" readonly="true"></td>
                         </tr>
                     </table>
+ 
+                    <input type="button" value="다음" class="nextButton" onClick="location.href='<c:url value='/user/register'/>'"/>
+                    
                 </div>
+               
             </form>
         </div>
     </body>

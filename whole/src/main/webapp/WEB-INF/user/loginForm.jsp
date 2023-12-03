@@ -58,7 +58,7 @@ function userCreate(targetUri) {
     </div> 
     <p>
         <span class="text1">홀로가 처음이신가요?</span>
-        <span class="text2" onClick="userCreate('<c:url value='/user/register'/>')">  회원가입하러가기</span>
+        <span class="text2" onClick="userCreate('<c:url value='/user/register/agreeTerms'/>')">  회원가입하러가기</span>
     </p>   
     </div>
 </body>
