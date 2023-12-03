@@ -12,9 +12,9 @@
     
 <script language="JavaScript">
 function login() {
-	if (form.userId.value == "") {
+	if (form.email.value == "") {
 		alert("사용자 ID를 입력하십시오.");
-		form.userId.focus();
+		form.email.focus();
 		return false;
 	} 
 	if (form.password.value == "") {
@@ -39,8 +39,10 @@ function userCreate(targetUri) {
     <p class="text2">당신의 홀로서기를 응원합니다.</p>
     <div class="login">
     <form name="form" method="POST" action="<c:url value='/user/login' />">
-        <p><input class="userInfo" type="email" name="email" placeholder="이메일" required></p>
-        <p><input class="userInfo" type="password" name="password" placeholder="비밀번호" required></p>
+    	<input type="text" style="width:240" name="email">
+    	<input type="password" style="width:240" name="password">
+        <!--<p><input class="userInfo" type="email" name="email" placeholder="이메일" required></p>
+        <p><input class="userInfo" type="password" name="password" placeholder="비밀번호" required></p>  -->
         <p class="autoLogin">
             <input  type="checkbox" name="autoLogin" value="autoLogin">로그인 유지
             <br>
