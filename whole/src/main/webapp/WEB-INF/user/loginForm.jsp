@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 	<p class="headText">
     	Whole·Î 
-    <img class="logo1" src="../../img/ic_logo.png"></p>
+    <img class="logo1" src="/whole/img/ic_logo.png"></p>
     
 <script language="JavaScript">
 function login() {
