@@ -27,8 +27,8 @@
                     <li><span class="text2" onClick="location.href='findPw.html'">같이 가치</li>
                 </ul>
                 <ul class="navbar_img">
-                    <li><img class="logo_left" src="./img/ic_message.png" onClick="location.href='findPw.html'"></li>
-                    <li><img class="logo_left" src="./img/ic_bell.png" onClick="location.href='findPw.html'"></li>
+                    <li><img class="logo_left" src="/whole/img/market/ic_message.png" onClick="location.href='findPw.html'"></li>
+                    <li><img class="logo_left" src="/whole/img/market/ic_bell.png" onClick="location.href='findPw.html'"></li>
                     <li><p class="logo_left">MY</p></li>
                 </ul>
             </nav>
