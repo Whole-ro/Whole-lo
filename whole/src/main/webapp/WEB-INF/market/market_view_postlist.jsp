@@ -20,7 +20,7 @@
 <!-- Çì´õ 
  -->	<div class="header">
             <nav class="navbar">
-                <div class="navbar_logo1"><img class="logo1" onClick="location.href='findPw.html'" src="./img/ic_logo.png"></div>
+                <div class="navbar_logo1"><img class="logo1" onClick="location.href='findPw.html'" src="/whole/img/ic_logo.png"></div>
                 <ul class="navbar_text">
                     <li><span onClick="location.href='findPw.html'">³ª¸¸ÀÇ ³ÃÀå°í</span></li>
                     <li><span class="text2" onClick="location.href='findPw.html'">³ª´®, ÀåÅÍ</li>
@@ -42,7 +42,7 @@
 						³ª´©´Â Áñ°Å¿ò<br /> ¼Ò¼ÒÇÑ ¿ëµ· ¹úÀÌ
 					</p>
 					<div class="search">
-						<img id="search_img" src="../../img/market/Look.png" alt=" " width="35px"
+						<img id="search_img" src="/whole/img/market/Look.png" alt=" " width="35px"
 							height="35px"> <select>
 							<option value="Á¦¸ñ">Á¦¸ñ</option>
 							<option value="³»¿ë">³»¿ë</option>
@@ -53,7 +53,7 @@
 				</div>
 
 				<div class="sub_logo">
-					<img src="../../img/market/Logo.png" alt=" " width="350px" height="300px" />
+					<img src="/whole/img/market/Logo.png" alt=" " width="350px" height="300px" />
 				</div>
 
 			</div>
@@ -68,7 +68,6 @@
 					<div class="item_list">
 							<c:forEach var="item" items="${marketList}">
 								<div class="item-detail">
-							
 								<a
 									href="<c:url value='/market/post/detail'>
 												<c:param name='postId' value='${item.postId}'/> 
@@ -86,112 +85,7 @@
 								</a>
 						</div>
 						</c:forEach>
-						<!-- a href="./Item_detail.html">
-								\
-
-								<div class="item-detail">
-									<div id="item-title">
-										<p>[ÀåÅÍ]½ºÆÔ ÆÈ¾Æ¿ä</p>
-									</div>
-									<div id="item-price">
-										<p>30,000¿ø</p>
-									</div>
-									<div id="item-estate">
-										<p>¼ººÏ±¸</p>
-									</div>
-									<div id="item-uploadtime">
-										<p>2000-11-01 17:09</p>
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<div class="item">
-							<div class="item_img"></div>
-							<div class="item-detail">
-								<div id="item-title">
-									<p>[ÀåÅÍ]½ºÆÔ ÆÈ¾Æ¿ä</p>
-								</div>
-								<div id="item-price">
-									<p>30,000¿ø</p>
-								</div>
-								<div id="item-estate">
-									<p>¼ººÏ±¸</p>
-								</div>
-								<div id="item-uploadtime">
-									<p>2000-11-01 17:09</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="item">
-							<div class="item_img"></div>
-							<div class="item-detail">
-								<div id="item-title">
-									<p>[ÀåÅÍ]½ºÆÔ ÆÈ¾Æ¿ä</p>
-								</div>
-								<div id="item-price">
-									<p>30,000¿ø</p>
-								</div>
-								<div id="item-estate">
-									<p>¼ººÏ±¸</p>
-								</div>
-								<div id="item-uploadtime">
-									<p>2000-11-01 17:09</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="item">
-							<div class="item_img"></div>
-							<div class="item-detail">
-								<div id="item-title">
-									<p>[ÀåÅÍ]½ºÆÔ ÆÈ¾Æ¿ä</p>
-								</div>
-								<div id="item-price">
-									<p>30,000¿ø</p>
-								</div>
-								<div id="item-estate">
-									<p>¼ººÏ±¸</p>
-								</div>
-								<div id="item-uploadtime">
-									<p>2000-11-01 17:09</p>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="item_img"></div>
-							<div class="item-detail">
-								<div id="item-title">
-									<p>[ÀåÅÍ]½ºÆÔ ÆÈ¾Æ¿ä</p>
-								</div>
-								<div id="item-price">
-									<p>30,000¿ø</p>
-								</div>
-								<div id="item-estate">
-									<p>¼ººÏ±¸</p>
-								</div>
-								<div id="item-uploadtime">
-									<p>2000-11-01 17:09</p>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="item_img"></div>
-							<div class="item-detail">
-								<div id="item-title">
-									<p>[ÀåÅÍ]½ºÆÔ ÆÈ¾Æ¿ä</p>
-								</div>
-								<div id="item-price">
-									<p>30,000¿ø</p>
-								</div>
-								<div id="item-estate">
-									<p>¼ººÏ±¸</p>
-								</div>
-								<div id="item-uploadtime">
-									<p>2000-11-01 17:09</p>
-								</div>
-								-->
+						
 					</div>
 				</div>
 
@@ -201,7 +95,7 @@
 	</div>
 	</div>
 	</div>
-	<script src="../../js/share.js"></script>
+	<script src="/whole/js/share.js"></script>
 </body>
 
 </html>

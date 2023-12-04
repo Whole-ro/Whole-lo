@@ -8,8 +8,8 @@
 ItemEntity item = (ItemEntity) request.getAttribute("item");
 %>
 <html>
-<link rel="stylesheet" href="../../css/Sharing.css">
-<link rel="stylesheet" href="../../css/item_detail.css">
+<link rel="stylesheet" href="/whole/css/Sharing.css">
+<link rel="stylesheet" href="/whole/css/item_detail.css">
 <head>
 <meta charset="UTF-8" />
 <title>나눔 장터</title>
@@ -27,11 +27,11 @@ ItemEntity item = (ItemEntity) request.getAttribute("item");
 									alt="이미지를 찾을 수 없음" />
 							</div>
 							<div class="carousel_slide">
-								<img src="../../img/market/background_n1.jpg" width="300px"
+								<img src="/whole/img/market/background_n1.jpg" width="300px"
 									height=" 350px" alt="이미지를 찾을 수 없음" />
 							</div>
 							<div class="carousel_slide">
-								<img src="/img/market/blue-galaxy-wallpaper.jpg" width="300px"
+								<img src="/whole/img/market/blue-galaxy-wallpaper.jpg" width="300px"
 									height=" 350px" alt="이미지를 찾을 수 없음" />
 							</div>
 						</div>
