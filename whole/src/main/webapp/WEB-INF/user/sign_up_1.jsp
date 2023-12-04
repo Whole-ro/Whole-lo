@@ -34,7 +34,7 @@
         <div class="agreement_header">
             <header>
                 <h3>Whole로 가입하기</h3>
-                <img src="./img/ic_linelogo.png">
+                <img src="/whole/img/ic_linelogo.png">
             </header>
         </div>
         <div class="agreement_step_container">

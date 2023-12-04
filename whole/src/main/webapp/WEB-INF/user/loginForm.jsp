@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 	<p class="headText">
     	Whole로 
-    <img class="logo1" src="../../img/ic_logo.png"></p>
+    <img class="logo1" src="/whole/img/ic_logo.png"></p>
     
 <script language="JavaScript">
 function login() {
@@ -34,7 +34,7 @@ function userCreate(targetUri) {
 </head>
 <body>
     <div style="text-align: center; margin-top: 118px;">
-    <img class="logo2" src="../../img/ic_logo.png">
+    <img class="logo2" src="/whole/img/ic_logo.png">
     <p class="text1">홀로,</p>
     <p class="text2">당신의 홀로서기를 응원합니다.</p>
     <div class="login">
