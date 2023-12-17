@@ -34,7 +34,7 @@ public class FoodCreateController implements Controller {
               request.getParameter("foodType"), 
               LocalDate.parse(request.getParameter("expDate")), 
               Enum.valueOf(IsHealthy.class, request.getParameter("isHealthy"))
-              );
+      );
       
     try {
         
