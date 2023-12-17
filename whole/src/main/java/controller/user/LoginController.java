@@ -24,6 +24,8 @@ public class LoginController implements Controller {
 			// 세션에 사용자 이이디 저장
 			HttpSession session = request.getSession();
             session.setAttribute(UserSessionUtils.USER_SESSION_KEY, email);
+//            session.setAttribute(UserSessionUtils.USER_SESSION_KEY_ID, id);
+            
             System.out.println(UserSessionUtils.getLoginUserId(session));
             
             System.out.println("안녕하세요");
