@@ -33,40 +33,22 @@ public class FoodCreateController implements Controller {
               Long.parseLong(request.getParameter("writerId")), 
               request.getParameter("foodType"), 
               LocalDate.parse(request.getParameter("expDate")), 
-              (IsHealthy)request.getParameter("isHealthy")
+              Enum.valueOf(IsHealthy.class, request.getParameter("isHealthy"))
               );
-      
-//      String sql1 = "INSERT INTO POST VALUES (SEQUENCE_POSTID.nextval, ?, 'MY_REFRIGERATOR',"
-//              + " ?, ?, SYSDATE, ?)";
-//      Object[] param1 = new Object[]{foodDto.getTitle(), foodDto.getContent(),
-//              foodDto.getImage(), foodDto.getWriterId()};
-      
-      
-//      Community comm = new Community(
-//        0, request.getParameter("name"),
-//        request.getParameter("desc"),
-//        null, null, null);      
       
     try {
         
         FoodManager foodMan = FoodManager.getInstance();
-        foodMan.createFood(foodDTO);
+        foodMan.createFood(newFood);
         
-        log.debug("Create Community : {}", comm);
-        return "redirect:/community/list";  // 성공 시 커뮤니티 리스트 화면으로 redirect
+        log.debug("Post new Food : {}", newFood);
+        return "redirect:/myRefg/list";  // 성공 시 커뮤니티 리스트 화면으로 redirect
         
     } catch (Exception e) {     // 예외 발생 시 입력 form으로 forwarding
           request.setAttribute("creationFailed", true);
         request.setAttribute("exception", e);
-        request.setAttribute("comm", comm);
-        return "/community/creationForm.jsp";
+        request.setAttribute("myRefg", newFood);
+        return "/myRefg/postForm.jsp";
     }
   }
-
-@Override
-public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-    // TODO Auto-generated method stub
-    return null;
-}
-
 }
