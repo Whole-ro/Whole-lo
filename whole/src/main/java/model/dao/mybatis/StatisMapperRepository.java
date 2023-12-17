@@ -34,6 +34,14 @@ public class StatisMapperRepository {
 		} finally {
 			sqlSession.close();
 		}
-		
+	}
+	
+	public List<FoodDTO> selectBlueByUserId(Long userId) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		try {
+			return sqlSession.getMapper(StatisticsMapper.class).selectBlueByUserId(userId);
+		} finally {
+			sqlSession.close();
+		}
 	}
 }
