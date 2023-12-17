@@ -1,6 +1,7 @@
 package model.dto;
 
 import java.time.LocalDate;
+import java.util.Iterator;
 
 import model.enums.IsHealthy;
 
@@ -86,6 +87,8 @@ public class FoodDTO {
     public void setIsHealthy(IsHealthy isHealthy) {
         this.isHealthy = isHealthy;
     }
+
+
 
 
 }
