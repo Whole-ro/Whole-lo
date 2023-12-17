@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page import="model.service.*"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 	
 <link rel="stylesheet" href="/whole/css/Sharing.css">
@@ -47,7 +48,7 @@
 					<button id="btn-04">#음식속보</button>
 				</div>
 				<div class="item_list">
-						<c:forEach var="item" items="${marketList}">
+						<c:forEach var="item" items="${foodList}">
 							<div class="item-detail">
 							<a
 								href="<c:url value='/market/post/detail'>
@@ -57,8 +58,8 @@
 								<img src="${item.image}" alt="이미지를 찾을 수 없음" />
 								</div>
 								<div id="item-title">${item.title}</div>
-								<div id="item-price">
-									<p>${item.price}원</p>
+								<div id="item-expDate">
+									<p>${item.expDate}까지</p>
 								</div>
 								<div id="item-uploadtime">
 									<p>${item.regDate}</p>
