@@ -44,4 +44,13 @@ public class StatisMapperRepository {
 			sqlSession.close();
 		}
 	}
+	
+	public int countRedByUserId(Long userId) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		try {
+			return sqlSession.getMapper(StatisticsMapper.class).countRedByUserId(userId);
+		} finally {
+			sqlSession.close();
+		}
+	}
 }
