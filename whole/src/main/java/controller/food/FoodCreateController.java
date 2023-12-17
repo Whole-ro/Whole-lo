@@ -17,23 +17,31 @@ public class FoodCreateController implements Controller {
 
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-    
-//      private Long postId;
-//      private String title;
-//      private String content;
-//      private String image;
-//      private LocalDate regDate;
-//      private Long writerId;
-//      private String foodType;
-//      private LocalDate expDate;
-//      private IsHealthy isHealthy;
+   
+//      this.title = title;
+//      this.content = content;
+//      this.image = image;
+//      this.writerId = writerId;
+//      this.foodType = foodType;
+//      this.expDate = expDate;
+//      this.isHealthy = isHealthy; 
+//  }
+      FoodDTO newFood = new FoodDTO(
+              request.getParameter("title"), 
+              request.getParameter("content"),
+              request.getParameter("image"),
+              Long.parseLong(request.getParameter("writerId")), 
+              request.getParameter("foodType"), 
+              LocalDate.parse(request.getParameter("expDate")), 
+              (IsHealthy)request.getParameter("isHealthy")
+              );
+      
+//      String sql1 = "INSERT INTO POST VALUES (SEQUENCE_POSTID.nextval, ?, 'MY_REFRIGERATOR',"
+//              + " ?, ?, SYSDATE, ?)";
+//      Object[] param1 = new Object[]{foodDto.getTitle(), foodDto.getContent(),
+//              foodDto.getImage(), foodDto.getWriterId()};
       
       
-//      FoodDTO newFood = new FoodDTO(
-//              0, request.getP
-//              
-//              );
-              
 //      Community comm = new Community(
 //        0, request.getParameter("name"),
 //        request.getParameter("desc"),
