@@ -24,6 +24,6 @@
 		</environment>
 	</environments>
 	<mappers>
-		<mapper resource="repository/mybatis/mapper/CommentMapper.xml" />
+		<mapper class="model.dao.mybatis.mapper.StatisticsMapper" />
 	</mappers>
 </configuration>
