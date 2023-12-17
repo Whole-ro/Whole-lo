@@ -10,9 +10,8 @@
 <script>
 </script>
 		
-<!-- <script src = "./sign_up.js"></script> -->
-</head>
 <body>
+        
 	<form name="form" method="POST" action="<c:url value='/user/register' />">
 		이메일 
         <p> <input class="userInfo" type="email" name="email" placeholder="이메일" required></p>
