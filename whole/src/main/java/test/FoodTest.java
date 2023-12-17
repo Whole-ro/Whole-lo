@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 import model.dao.*;
+import model.dao.mybatis.StatisMapperRepository;
 import model.dto.FoodDTO;
 import model.entity.FoodEntity;
 
@@ -64,22 +65,31 @@ private static FoodDAO foodDao = new FoodDAO();
 
         	FoodDTO food = iter.next();
 
-            System.out.println(food.getTitle());
+            System.out.println(food.getTitle() + "\n" + food.getWriterId());
 
         }
 
         System.out.println();
         
-        FoodDTO food = new FoodDTO();
-        food.setTitle("도라지");
-        food.setContent("도라지입니다");
-        food.setFoodType("채소");
-        LocalDate expDate = LocalDate.parse("2023-12-20", DateTimeFormatter.ISO_DATE);
-        food.setExpDate(expDate);
-        food.setWriterId((long) 6);
+    	StatisMapperRepository statisDao = new StatisMapperRepository();
+    	foodList = statisDao.selectRedByUserId((long) 6);
+    	
+    	iter = foodList.iterator();
+
         
-        foodDao.createFood(food);
-        foodList = foodDao.findFoodList();
+
+        System.out.println("post_id        title           image          exp_date         reg_date");
+
+        System.out.println("-----------------------------------------------------------------------");
+
+        while(iter.hasNext()) {
+
+        	FoodDTO food = iter.next();
+
+            System.out.println(food.getTitle() + "," + food.getWriterId());
+
+        }
+    	
  
 
         
