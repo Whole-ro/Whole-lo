@@ -15,7 +15,22 @@ public class FoodDTO {
     private LocalDate expDate;
     private IsHealthy isHealthy;
 
-
+    public FoodDTO() { //빈 생성자 
+        
+    }
+    
+    public FoodDTO(String title, String content, String image, Long writerId, String foodType,
+            LocalDate expDate, IsHealthy isHealthy) {
+       
+        this.title = title;
+        this.content = content;
+        this.image = image;
+        this.writerId = writerId;
+        this.foodType = foodType;
+        this.expDate = expDate;
+        this.isHealthy = isHealthy; 
+    }
+    
     public Long getPostId() {
         return postId;
     }
