@@ -48,7 +48,10 @@ public class RequestMapping {
 //        mappings.put("/community/create", new CreateCommunityController());
 //        mappings.put("/community/update", new UpdateCommunityController());
         
-        mappings.put("/market/post/detail", new ViewPostController());
+    
+        // 나만의 냉장rh
+        mappings.put("/myRefg/list", new ForwardController("/myRefg/myRefgList.jsp"));
+        
         logger.info("Initialized Request Mapping!");
     }
 

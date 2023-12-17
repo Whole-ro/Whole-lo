@@ -1,91 +1,74 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@page import="model.service.*"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<!-- ÀÚµ¿Á¤·Ä shift +alt + F -->
 <!DOCTYPE html>
 <html>
+<head>
 <link rel="stylesheet" href="/whole/css/Sharing.css">
 <link rel="stylesheet" href="/whole/css/item_detail.css">
 <link rel="stylesheet" href="/whole/css/header.css">
-
-<head>
 <meta charset="UTF-8" />
-<title>³ª´® ÀåÅÍ</title>
+<title>ë‚˜ëˆ” ìž¥í„°</title>
 </head>
 
 <body>
- 
-<!-- Çì´õ 
- -->	<div class="header">
-            <nav class="navbar">
-                <div class="navbar_logo1"><img class="logo1" onClick="location.href='findPw.html'" src="/whole/img/ic_logo.png"></div>
-                <ul class="navbar_text">
-                    <li><span onClick="location.href='findPw.html'">³ª¸¸ÀÇ ³ÃÀå°í</span></li>
-                    <li><span class="text2" onClick="location.href='findPw.html'">³ª´®, ÀåÅÍ</li>
-                    <li><span class="text2" onClick="location.href='findPw.html'">°°ÀÌ °¡Ä¡</li>
-                </ul>
-                <ul class="navbar_img">
-                    <li><img class="logo_left" src="/whole/img/market/ic_message.png" onClick="location.href='findPw.html'"></li>
-                    <li><img class="logo_left" src="/whole/img/market/ic_bell.png" onClick="location.href='findPw.html'"></li>
-                    <li><p class="logo_left">MY</p></li>
-                </ul>
-            </nav>
-    </div>
-	
+   <%@ include file="../fragments/header.jsp"%>
+
 	<div class="wrap">
 		<div class="wrap_content">
 			<div class="sub_wrap">
 				<div class="sub_title">
 					<p>
-						³ª´©´Â Áñ°Å¿ò<br /> ¼Ò¼ÒÇÑ ¿ëµ· ¹úÀÌ
+						ë‚˜ëˆ„ëŠ” ì¦ê±°ì›€<br /> ì†Œì†Œí•œ ìš©ëˆ ë²Œì´
 					</p>
 					<div class="search">
-						<img id="search_img" src="/whole/img/market/Look.png" alt=" " width="35px"
-							height="35px"> <select>
-							<option value="Á¦¸ñ">Á¦¸ñ</option>
-							<option value="³»¿ë">³»¿ë</option>
-							<option value="ÀÛ¼ºÀÚ">ÀÛ¼ºÀÚ</option>
-						</select> <input id="search_keyword" value="¿øÇÏ´Â Å°¿öµå¸¦ °Ë»öÇÏ¼¼¿ä"></input>
-						<button id="search_btn" type="button" value="°Ë»ö">°Ë»ö</button>
+						<img id="search_img" src="/whole/img/market/Look.png" alt=" "
+							width="35px" height="35px"> <select>
+							<option value="ì œëª©">ì œëª©</option>
+							<option value="ë‚´ìš©">ë‚´ìš©</option>
+							<option value="ìž‘ì„±ìž">ìž‘ì„±ìž</option>
+						</select> <input id="search_keyword" value="ì›í•˜ëŠ” í‚¤ì›Œë“œë¥¼ ê²€ìƒ‰í•˜ì„¸ìš”"></input>
+						<button id="search_btn" type="button" value="ê²€ìƒ‰">ê²€ìƒ‰</button>
 					</div>
 				</div>
 
 				<div class="sub_logo">
-					<img src="/whole/img/market/Logo.png" alt=" " width="350px" height="300px" />
+					<img src="/whole/img/market/Logo.png" alt=" " width="350px"
+						height="300px" />
 				</div>
 
 			</div>
 			<div class="main_content">
 				<div class="main_content_detail">
 					<div class="tag_btns">
-						<button id="btn-01">#ÀüÃ¼</button>
-						<button id="btn-02">#»ýÈ°²ÜÆÁ</button>
-						<button id="btn-03">#Àâ´ã</button>
-						<button id="btn-04">#À½½Ä¼Óº¸</button>
+						<button id="btn-01">#ì „ì²´</button>
+						<button id="btn-02">#ìƒí™œê¿€íŒ</button>
+						<button id="btn-03">#ìž¡ë‹´</button>
+						<button id="btn-04">#ìŒì‹ì†ë³´</button>
 					</div>
 					<div class="item_list">
-							<c:forEach var="item" items="${marketList}">
-								<div class="item-detail">
+						<c:forEach var="item" items="${marketList}">
+							<div class="item-detail">
 								<a
 									href="<c:url value='/market/post/detail'>
 												<c:param name='postId' value='${item.postId}'/> 
 											</c:url>">
 									<div class="item_img">
-									<img src="${item.image}" alt="ÀÌ¹ÌÁö¸¦ Ã£À» ¼ö ¾øÀ½" />
+										<img src="${item.image}" alt="ì´ë¯¸ì§€ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŒ" />
 									</div>
 									<div id="item-title">${item.title}</div>
 									<div id="item-price">
-										<p>${item.price}¿ø</p>
+										<p>${item.price}ì›</p>
 									</div>
 									<div id="item-uploadtime">
 										<p>${item.regDate}</p>
 									</div>
 								</a>
-						</div>
+							</div>
 						</c:forEach>
-						
+
 					</div>
 				</div>
 
@@ -93,8 +76,8 @@
 			</div>
 		</div>
 	</div>
-	</div>
-	</div>
+	
+	
 	<script src="/whole/js/share.js"></script>
 </body>
 
