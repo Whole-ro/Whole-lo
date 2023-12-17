@@ -47,18 +47,18 @@ public class FoodManager {
     }
     
 //        public List<FoodEntity> findFoodByTitle(String title) throws SQLException {
-    public List<FoodEntity> searchByTitle(String title) throws SQLException{
+    public List<FoodDTO> searchByTitle(String title) throws SQLException{
         return foodDAO.findFoodByTitle(title);
     }
     
 //            public List<FoodEntity> findFoodByFoodType(String foodType) throws SQLException {
 //                
-    public List<FoodEntity> searchByType(String title) throws SQLException{
+    public List<FoodDTO> searchByType(String title) throws SQLException{
         return foodDAO.findFoodByFoodType(title);
     }
     
 //    public List<FoodEntity> findFoodListByExpDate() throws SQLException {
-    public List<FoodEntity> clickExpDate() throws SQLException{
+    public List<FoodDTO> clickExpDate() throws SQLException{
         return foodDAO.findFoodListByExpDate();
     }
 
