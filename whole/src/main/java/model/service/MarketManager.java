@@ -40,6 +40,9 @@ public class MarketManager {
 			throws SQLException {
 			return marketDAO.findItemListAllType();
 		}
+		
+		
+//		컨트롤러에서 매니저를 호출하고 매니저에서 dao를 호출함
 	
 //	public int create(UserEntity user) throws SQLException, ExistingUserException {
 //		if (userDAO.existingUser(user.getEmail()) == true) {
