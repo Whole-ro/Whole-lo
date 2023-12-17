@@ -8,4 +8,7 @@ public interface StatisticsMapper {
 	
 	@Select({"SELECT title FROM FOOD JOIN POST USING (post_id) WHERE is_healthy = 'RED'"})
 	List<FoodDTO> selectRedByUserId(Long userId);
+	
+	@Select({"SELECT title FROM FOOD JOIN POST USING (post_id) WHERE is_healthy = 'BLUE'"})
+	List<FoodDTO> selectBlueByUserId(Long userId);
 }
