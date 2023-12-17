@@ -1,6 +1,8 @@
 package test;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
@@ -67,7 +69,17 @@ private static FoodDAO foodDao = new FoodDAO();
         }
 
         System.out.println();
-
+        
+        FoodDTO food = new FoodDTO();
+        food.setTitle("도라지");
+        food.setContent("도라지입니다");
+        food.setFoodType("채소");
+        LocalDate expDate = LocalDate.parse("2023-12-20", DateTimeFormatter.ISO_DATE);
+        food.setExpDate(expDate);
+        food.setWriterId((long) 6);
+        
+        foodDao.createFood(food);
+        foodList = foodDao.findFoodList();
  
 
         
