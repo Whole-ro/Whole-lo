@@ -131,7 +131,7 @@ public class FoodDAO {
 
 	//***************음식명으로 검색*********************
 	public List<FoodDTO> findFoodByTitle(String title) throws SQLException {
-		String sql = "SELECT post_id, title, image, exp_date, reg_date "
+		String sql = "SELECT post_id, title, image, exp_date, reg_date, food_type "
 				+ "FROM FOOD JOIN POST USING (post_id) "
 				+ "WHERE title=? "
 				+ "ORDER BY reg_date"; 
@@ -146,6 +146,7 @@ public class FoodDAO {
 				food.setImage(rs.getString("image"));
 				food.setExpDate(rs.getDate("exp_date").toLocalDate());
 				food.setRegDate(rs.getDate("reg_date").toLocalDate());
+				food.setFoodType(rs.getString("food_type"));
 				foodList.add(food);				// List에 Food 객체 저장
 			}		
 			return foodList;					
@@ -192,7 +193,7 @@ public class FoodDAO {
 	 * 저장하여 반환.
 	 */
 	public FoodDTO findFood(long postId) throws SQLException {
-		String sql = "SELECT title, exp_date, content, image "
+		String sql = "SELECT title, exp_date, content, image, food_type "
 				+ "FROM FOOD JOIN POST USING (post_id) "
 				+ "WHERE post_id=? "
 				+ "ORDER BY reg_date"; 
@@ -206,6 +207,7 @@ public class FoodDAO {
 				food.setExpDate(rs.getDate("exp_date").toLocalDate());
 				food.setContent(rs.getString("content"));
 				food.setImage(rs.getString("image"));
+				food.setFoodType(rs.getString("food_type"));
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -217,7 +219,7 @@ public class FoodDAO {
 
 	public List<FoodDTO> findFoodList() throws SQLException {
 		//나의 냉장고 확인 화면
-		String sql = "SELECT post_id, title, image, exp_date, reg_date "
+		String sql = "SELECT post_id, title, image, exp_date, reg_date, food_type "
 				+ "FROM FOOD JOIN POST USING (post_id) "
 				+ "ORDER BY reg_date";        
 		jdbcUtil.setSqlAndParameters(sql, null);		// JDBCUtil에 query문 설정
@@ -232,6 +234,7 @@ public class FoodDAO {
 				food.setImage(rs.getString("image"));
 				food.setExpDate(rs.getDate("exp_date").toLocalDate());
 				food.setRegDate(rs.getDate("reg_date").toLocalDate());
+				food.setFoodType(rs.getString("food_type"));
 				foodList.add(food);				// List에 Food 객체 저장
 			}		
 			return foodList;					
@@ -247,7 +250,7 @@ public class FoodDAO {
 	/* 유통기한 3일 남은 음식 List 반환*/
 	public List<FoodDTO> findFoodListByExpDate() throws SQLException {
 		//나의 냉장고 확인 화면
-		String sql = "SELECT post_id, title, image, exp_date, reg_date "
+		String sql = "SELECT post_id, title, image, exp_date, reg_date, food_type "
 				+ "FROM FOOD JOIN POST USING (post_id) "
 				+ "WHERE (exp_date - SYSDATE) < 3 "
 				+ "ORDER BY reg_date";        
@@ -263,6 +266,7 @@ public class FoodDAO {
 				food.setImage(rs.getString("image"));
 				food.setExpDate(rs.getDate("exp_date").toLocalDate());
 				food.setRegDate(rs.getDate("reg_date").toLocalDate());
+				food.setFoodType(rs.getString("food_type"));
 				foodList.add(food);				// List에 Food 객체 저장
 			}		
 			return foodList;					
