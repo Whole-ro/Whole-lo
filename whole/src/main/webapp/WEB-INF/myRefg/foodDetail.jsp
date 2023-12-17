@@ -49,6 +49,9 @@ FoodDTO food = (FoodDTO) request.getAttribute("item");
 						</div>
 					</div>
 				</div>
+				<div class="carousel_tag">
+					<span>#<%=food.getFoodType()%> </span>
+				</div>
 		
 			</div>
 			<div class="wrap_content_item">
