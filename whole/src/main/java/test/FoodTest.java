@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 import model.dao.*;
+import model.dto.FoodDTO;
 import model.entity.FoodEntity;
 
 
@@ -44,12 +45,12 @@ private static FoodDAO foodDao = new FoodDAO();
 
         
 
-        List<FoodEntity> foodList = foodDao.findFoodList();
+        List<FoodDTO> foodList = foodDao.findFoodList();
         // empList에 포함된 모든 emp 객체들의 필드 값을 출력 
 
         // emp 객체들을 하나씩 접근하기 위해 empList로부터 Iterator<Employee>를 구해서 활용
 
-        Iterator<FoodEntity> iter = foodList.iterator();
+        Iterator<FoodDTO> iter = foodList.iterator();
 
         
 
@@ -59,9 +60,9 @@ private static FoodDAO foodDao = new FoodDAO();
 
         while(iter.hasNext()) {
 
-            FoodEntity food = iter.next();
+        	FoodDTO food = iter.next();
 
-            System.out.println(food);
+            System.out.println(food.getTitle());
 
         }
 
