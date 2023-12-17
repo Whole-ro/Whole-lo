@@ -55,7 +55,7 @@ public class FoodDAO {
 	}
 
 	/*음식 삭제*/
-	public int removeFoodByPostId(int postId) throws SQLException {
+	public int removeFoodByPostId(long postId) throws SQLException {
 		String sql = "DELETE FROM POST WHERE post_id=?";		
 		jdbcUtil.setSqlAndParameters(sql, new Object[] {postId});	// JDBCUtil에 delete문과 매개 변수 설정
 
