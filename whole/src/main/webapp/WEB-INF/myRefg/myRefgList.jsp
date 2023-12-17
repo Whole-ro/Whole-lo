@@ -14,6 +14,9 @@
 <body>
 
   <%@ include file="../fragments/header.jsp"%>
+  	
+  <button onclick="location.href='<c:url value='/myRefg/postForm'/>'" >text</button >
+
 
 <div class="wrap">
 	<div class="wrap_content">
