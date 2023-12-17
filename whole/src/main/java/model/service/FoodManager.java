@@ -7,6 +7,7 @@ import model.dao.FoodDAO;
 import model.dao.UserDAO;
 import model.dto.FoodDTO;
 import model.entity.FoodEntity;
+import model.entity.ItemEntity;
 import model.entity.UserEntity;
 import model.enums.IsHealthy;
 
@@ -65,6 +66,11 @@ public class FoodManager {
 //    public List<FoodEntity> findFoodListByExpDate() throws SQLException {
     public List<FoodDTO> clickExpDate() throws SQLException{
         return foodDAO.findFoodListByExpDate();
+    }
+
+    public FoodDTO findFood(long postId) throws SQLException{
+        // TODO Auto-generated method stub
+        return foodDAO.findFood(postId);
     }
 
 }

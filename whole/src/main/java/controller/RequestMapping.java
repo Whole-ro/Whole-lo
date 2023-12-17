@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import controller.user.*;
 import controller.comm.*;
 import controller.food.ListFoodController;
+import controller.food.ViewFoodController;
 import controller.market.*;
 
 public class RequestMapping {
@@ -52,6 +53,7 @@ public class RequestMapping {
     
         // 나만의 냉장rh
         mappings.put("/myRefg/list", new ListFoodController());
+        mappings.put("/myRefg/list/detail", new ViewFoodController());
         
         logger.info("Initialized Request Mapping!");
     }
