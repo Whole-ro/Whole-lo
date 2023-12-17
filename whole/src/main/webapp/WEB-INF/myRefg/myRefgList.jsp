@@ -30,9 +30,7 @@
 					<img id="search_img" src="/whole/img/market/Look.png" alt=" " width="35px"
 						height="35px"> <select>
 						<option value="제목">제목</option>
-						<option value="내용">내용</option>
-						<option value="작성자">작성자</option>
-					</select> <input id="search_keyword" value="원하는 키워드를 검색하세요"></input>
+					</select> <input id="search_keyword" value="원하는 제목으로 검색하세요"></input>
 					<button id="search_btn" type="button" value="검색">검색</button>
 				</div>
 			</div>
@@ -46,15 +44,13 @@
 			<div class="main_content_detail">
 				<div class="tag_btns">
 					<button id="btn-01">#전체</button>
-					<button id="btn-02">#생활꿀팁</button>
-					<button id="btn-03">#잡담</button>
-					<button id="btn-04">#음식속보</button>
+					<button id="btn-02">#유통기한 3일전</button>
 				</div>
 				<div class="item_list">
 						<c:forEach var="item" items="${foodList}">
 							<div class="item-detail">
 							<a
-								href="<c:url value='/market/post/detail'>
+								href="<c:url value='/myRefg/list/detail'>
 											<c:param name='postId' value='${item.postId}'/>
 										</c:url>">
 								<div class="item_img">

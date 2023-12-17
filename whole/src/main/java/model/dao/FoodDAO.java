@@ -191,7 +191,7 @@ public class FoodDAO {
 	 * 주어진  ID에 해당하는 음식 정보를 데이터베이스에서 찾아 Food 도메인 클래스에 
 	 * 저장하여 반환.
 	 */
-	public FoodDTO findFood(int postId) throws SQLException {
+	public FoodDTO findFood(long postId) throws SQLException {
 		String sql = "SELECT title, exp_date, content, image "
 				+ "FROM FOOD JOIN POST USING (post_id) "
 				+ "WHERE post_id=? "
