@@ -62,7 +62,10 @@ public class FoodTest {
 			System.out.println(food.getTitle()+food.getFoodType()+food.getContent()+food.getImage()+food.getPostId()+food.getWriterId());
 
 		}
-
+		int red_count = statisDao.countRedByUserId((long)6);
+		System.out.println("RedFood : " + red_count);
+		
+		
 		foodList = statisDao.selectBlueByUserId((long) 6);
 
 		iter = foodList.iterator();
