@@ -15,6 +15,10 @@ public class FoodDTO {
     private LocalDate expDate;
     private IsHealthy isHealthy;
 
+    public FoodDTO() { //빈 생성자 
+        
+    }
+    
     public FoodDTO(String title, String content, String image, Long writerId, String foodType,
             LocalDate expDate, IsHealthy isHealthy) {
        
