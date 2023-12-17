@@ -83,6 +83,8 @@ public class FoodTest {
 			System.out.println(food.getTitle()+food.getFoodType()+food.getContent()+food.getImage()+food.getPostId());
 
 		}    
+		int blue_count = statisDao.countBlueByUserId((long)6);
+		System.out.println("RedFood : " + blue_count);
 		//
 		//        // newMgr의 필드 값 출력 
 		//
