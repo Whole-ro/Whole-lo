@@ -15,4 +15,7 @@ public interface StatisticsMapper {
 	@Select({"SELECT COUNT(*) as cnt FROM FOOD JOIN POST USING (post_id) WHERE is_healthy = 'RED'"})
 	int countRedByUserId(Long userId);
 	
+	@Select({"SELECT COUNT(*) as cnt FROM FOOD JOIN POST USING (post_id) WHERE is_healthy = 'BLUE'"})
+	int countBlueByUserId(Long userId);
+	
 }
