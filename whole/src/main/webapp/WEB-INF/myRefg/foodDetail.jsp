@@ -80,20 +80,18 @@ function delOk(){
 				<hr class="item_hr" />
 				<div class="item_detail">
 					<p>
+					<%food.setPostId(Long.parseLong(request.getParameter("postId"))); %>
+					<%=food.getPostId() %>
 						<%=food.getContent()%><br />
 					</p>
 				</div>
-				<a
-					href="<c:url value='/myRefg/delete'>
-					<c:param name='postId' value='${food.postId}'/> 
-					</c:url>">
-				
+				<form>
 				<div class="Group29" style="width: 116px; height: 55px; left: 984px; top: 490px; position: absolute">
 					<button type="button" style="width: 100px; height: 45px; position: absolute; background: #508975; text-align: center; color: white; font-size: 18px;" 
-					>
+					onClick="location.href='<c:url value='/myRefg/delete'><c:param name="postId" value="${food.postId}"></c:param></c:url>'">
 					삭제</button>
 				</div>
-				</a>
+				</form>
 				<div class="Group30" style="width: 116px; height: 55px; left: 864px; top: 490px; position: absolute">
 					<button type="button" style="width: 100px; height: 45px; position: absolute; background: #508975; text-align: center; color: white; font-size: 18px; font-family: Inter;">
 					수정</button>
