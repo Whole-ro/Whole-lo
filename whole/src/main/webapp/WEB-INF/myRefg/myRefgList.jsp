@@ -42,6 +42,16 @@
 		</div>
 		<div class="main_content">
 			<div class="main_content_detail">
+			<div>
+				빨간 음식 :
+				<c:forEach var="redFood" items="${redList}">
+					${redFood.title}
+				</c:forEach>
+				초록 음식 :
+				<c:forEach var="blueFood" items="${blueList}">
+					${blueFood.title}
+				</c:forEach>
+			</div>
 				<div class="tag_btns">
 					<button id="btn-01">#전체</button>
 					<button id="btn-02">#유통기한 3일전</button>
