@@ -62,4 +62,13 @@ public class StatisMapperRepository {
 			sqlSession.close();
 		}
 	}
+	
+	public String findMostFoodType(Long userId) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		try {
+			return sqlSession.getMapper(StatisticsMapper.class).findMostFoodType(userId);
+		} finally {
+			sqlSession.close();
+		}
+	}
 }
