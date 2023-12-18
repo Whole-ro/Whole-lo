@@ -83,10 +83,17 @@ function delOk(){
 						<%=food.getContent()%><br />
 					</p>
 				</div>
+				<a
+					href="<c:url value='/myRefg/delete'>
+					<c:param name='postId' value='${food.postId}'/> 
+					</c:url>">
+				
 				<div class="Group29" style="width: 116px; height: 55px; left: 984px; top: 490px; position: absolute">
-					<button type="button" style="width: 100px; height: 45px; position: absolute; background: #508975; text-align: center; color: white; font-size: 18px;" onclick="delOk()">
+					<button type="button" style="width: 100px; height: 45px; position: absolute; background: #508975; text-align: center; color: white; font-size: 18px;" 
+					>
 					삭제</button>
 				</div>
+				</a>
 				<div class="Group30" style="width: 116px; height: 55px; left: 864px; top: 490px; position: absolute">
 					<button type="button" style="width: 100px; height: 45px; position: absolute; background: #508975; text-align: center; color: white; font-size: 18px; font-family: Inter;">
 					수정</button>

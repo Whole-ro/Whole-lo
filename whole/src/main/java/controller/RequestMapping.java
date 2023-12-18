@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import controller.user.*;
 import controller.comm.*;
 import controller.food.FoodCreateController;
+import controller.food.FoodDeleteController;
 import controller.food.ListFoodController;
 import controller.food.ViewFoodController;
 import controller.market.*;
@@ -58,6 +59,7 @@ public class RequestMapping {
         mappings.put("/myRefg/postForm", new ForwardController("/myRefg/postForm.jsp"));
         mappings.put("/myRefg/list/detail", new ViewFoodController());
         mappings.put("/myRefg/post", new FoodCreateController());
+        mappings.put("/myRefg/delete", new FoodDeleteController());
         
         logger.info("Initialized Request Mapping!");
     }

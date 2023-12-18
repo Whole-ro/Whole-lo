@@ -15,13 +15,15 @@ public class FoodDeleteController implements Controller {
     
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response)   throws Exception {
-        String deleteId = request.getParameter("userId");
-        String deleteFood = request.getParameter("foodId");
+        //String deleteId = request.getParameter("userId");
+        String deleteFood = request.getParameter("postId");
         //log.debug("Delete User : {}", deleteId);
 
         FoodManager fManager = FoodManager.getInstance();
-        UserManager manager = UserManager.getInstance();        
-        HttpSession session = request.getSession(); 
+        //UserManager manager = UserManager.getInstance();        
+        //HttpSession session = request.getSession(); 
+        
+        System.out.println("postid: " + deleteFood);
     
         fManager.removeFood(Long.parseLong(deleteFood));
         return "/myRefg/myRefgList.jsp";
