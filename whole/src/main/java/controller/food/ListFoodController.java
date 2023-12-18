@@ -13,6 +13,7 @@ import model.entity.ItemEntity;
 import model.service.FoodManager;
 import model.service.MarketManager;
 import model.service.StatisticsManager;
+import model.service.UserManager;
 
 public class ListFoodController implements Controller {
     @Override
@@ -20,12 +21,14 @@ public class ListFoodController implements Controller {
     	HttpSession session = request.getSession();
     	long userId = Long.parseLong(UserSessionUtils.getLoginUserId(session));
     	
+    	UserManager userMan = UserManager.getInstance();
         FoodManager foodMan = FoodManager.getInstance();
         StatisticsManager statisticsMan = StatisticsManager.getInstance();
         
         List<FoodDTO> foodList = foodMan.findFoodListByUserId(userId);
         List<FoodDTO> redList = statisticsMan.selectRedByUserId(userId);
         List<FoodDTO> blueList = statisticsMan.selectBlueByUserId(userId);
+        String nickname = userMan.findUserNickNameById(userId);
         
         System.out.println("foodlist : " + foodList);
         System.out.println("redList : "+redList);
@@ -34,6 +37,7 @@ public class ListFoodController implements Controller {
         request.setAttribute("redList", redList);
         request.setAttribute("blueList", blueList);
         request.setAttribute("userId", userId);
+        request.setAttribute("nickname", nickname);
         return "/myRefg/myRefgList.jsp";        
     }
 }
