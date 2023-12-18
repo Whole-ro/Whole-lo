@@ -16,9 +16,6 @@
 
   <%@ include file="../fragments/header.jsp"%>
   	
-  <button onclick="location.href='<c:url value='/myRefg/postForm'/>'" >text</button >
-
-
 <div class="wrap">
 	<div class="wrap_content">
 		<div class="sub_wrap">
@@ -40,8 +37,13 @@
 			</div>
 
 		</div>
+		
 		<div class="main_content">
+		
 			<div class="main_content_detail">
+			  	<button style=" width: 100px; height: 45px; background:#508975; color: white; font-size: 18px;"
+			   	onclick="location.href='<c:url value='/myRefg/postForm'/>'">글작성 </button >
+		
 				<div class="tag_btns">
 					<button id="btn-01">#전체</button>
 					<button id="btn-02">#유통기한 3일전</button>
