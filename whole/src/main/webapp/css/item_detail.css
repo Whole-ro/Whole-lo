@@ -183,3 +183,10 @@ p{
 .heart_count ,.scrap_count{
     margin-left: 5px;
 }
+
+.btn_cancel_modify{
+	width: 116px; 
+	height: 55px; 
+	top: 490px; 
+	position: absolute
+}

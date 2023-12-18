@@ -23,11 +23,15 @@ public class LoginController implements Controller {
 			System.out.println("안녕하세요");
 			// 세션에 사용자 이이디 저장
 			HttpSession session = request.getSession();
+     
+            Long userId = manager.findIdByEmail(email);
+
             session.setAttribute(UserSessionUtils.USER_SESSION_KEY, email);
-//            session.setAttribute(UserSessionUtils.USER_SESSION_KEY_ID, id);
+            session.setAttribute(UserSessionUtils.USER_SESSION_KEY_ID, userId.toString());
             
-            System.out.println(UserSessionUtils.getLoginUserId(session));
-            
+            System.out.println("session 확인 : " +UserSessionUtils.getLoginUserId(session));
+            System.out.println("session 확인 : " +UserSessionUtils.getLoginUserEmail(session));
+
             System.out.println("안녕하세요");
             return "redirect:/market";	//사용자 목록으로...		
 		} catch (Exception e) {

@@ -247,6 +247,37 @@ public class FoodDAO {
 		return null;
 	}
 	
+	/*userId 별 음식 출력 */
+	public List<FoodDTO> findFoodListByUserId(long userId) throws SQLException {
+		//나의 냉장고 확인 화면
+		String sql = "SELECT post_id, title, image, exp_date, reg_date, food_type "
+				+ "FROM FOOD JOIN POST USING (post_id) WHERE writer_id =?"
+				+ "ORDER BY reg_date";
+		jdbcUtil.setSqlAndParameters(sql, new Object[] {userId});// JDBCUtil에 query문 설정
+
+		try {
+			ResultSet rs = jdbcUtil.executeQuery();			// query 실행			
+			List<FoodDTO> foodList = new ArrayList<FoodDTO>();	// foodList들의 리스트 생성
+			while (rs.next()) {
+				FoodDTO food = new FoodDTO();
+				food.setPostId(rs.getLong("post_id"));// Food 객체를 생성하여 현재 행의 정보를 저장
+				food.setTitle(rs.getString("title"));
+				food.setImage(rs.getString("image"));
+				food.setExpDate(rs.getDate("exp_date").toLocalDate());
+				food.setRegDate(rs.getDate("reg_date").toLocalDate());
+				food.setFoodType(rs.getString("food_type"));
+				foodList.add(food);				// List에 Food 객체 저장
+			}		
+			return foodList;					
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			jdbcUtil.close();		// resource 반환
+		}
+		return null;
+	}
+	
 	/* 유통기한 3일 남은 음식 List 반환*/
 	public List<FoodDTO> findFoodListByExpDate() throws SQLException {
 		//나의 냉장고 확인 화면

@@ -3,11 +3,15 @@ package test;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+<<<<<<< HEAD
 import java.util.ArrayList;
+=======
+>>>>>>> 4a60ce7093d43bd8f5123fc8fcb4c11c7c1e65bd
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 import model.dao.*;
+import model.dao.mybatis.StatisMapperRepository;
 import model.dto.FoodDTO;
 import model.entity.FoodEntity;
 import util.FoodTypeUtil;
@@ -15,51 +19,36 @@ import model.dao.mybatis.StatisMapperRepository;
 
 
 public class FoodTest {
-	
-private static FoodDAO foodDao = new FoodDAO();
+
+	private static FoodDAO foodDao = new FoodDAO();
 
 	@SuppressWarnings("null")
 	public static void main(String[] args) throws SQLException {
 		// TODO Auto-generated method stub
-        Scanner scanner = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 
-        
 
-//        System.out.print("부서명을 입력하시오: ");
-//
-//        String deptName = scanner.next();
-//
-//        System.out.println();
-//
-//        
-//
-//         dept = compDao.findDeptByName(deptName);         
-//
-//        // dept 객체의 필드 값 출력 ...
-//
-//        System.out.println("<부서정보>");
-//
-//        System.out.println("부서번호: " + dept.getDeptNo());
-//
-//        System.out.println("부서명: " + deptName);
-//
-//        System.out.println("관리자사번: " + dept.getMgrNo());
-//
-//        System.out.println("사원 수: " + dept.getNumOfEmps());
-//
-//        System.out.println();
+		List<FoodDTO> foodList = foodDao.findFoodList();
+		// empList에 포함된 모든 emp 객체들의 필드 값을 출력 
 
-        
+		// emp 객체들을 하나씩 접근하기 위해 empList로부터 Iterator<Employee>를 구해서 활용
 
+<<<<<<< HEAD
 //        List<FoodDTO> foodList = foodDao.findFoodList();
         // empList에 포함된 모든 emp 객체들의 필드 값을 출력 
+=======
+		Iterator<FoodDTO> iter = foodList.iterator();
+>>>>>>> 4a60ce7093d43bd8f5123fc8fcb4c11c7c1e65bd
 
-        // emp 객체들을 하나씩 접근하기 위해 empList로부터 Iterator<Employee>를 구해서 활용
 
+<<<<<<< HEAD
 //        Iterator<FoodDTO> iter = foodList.iterator();
+=======
+>>>>>>> 4a60ce7093d43bd8f5123fc8fcb4c11c7c1e65bd
 
-        
+		System.out.println("post_id        title           image          exp_date         reg_date");
 
+<<<<<<< HEAD
 //        System.out.println("post_id        title           image          exp_date         reg_date");
 //
 //        System.out.println("-----------------------------------------------------------------------");
@@ -154,6 +143,78 @@ private static FoodDAO foodDao = new FoodDAO();
 
 //        System.out.println(foods);
         scanner.close();
+=======
+		System.out.println("-----------------------------------------------------------------------");
+
+		while(iter.hasNext()) {
+
+			FoodDTO food = iter.next();
+
+			System.out.println(food.getTitle()+food.getFoodType()+food.getContent()+food.getImage()+food.getPostId());
+
+		}
+
+		System.out.println("Red음식");
+
+		StatisMapperRepository statisDao = new StatisMapperRepository();
+		foodList = statisDao.selectRedByUserId((long) 6);
+
+		iter = foodList.iterator();
+
+
+
+		System.out.println("post_id        title           image          exp_date         reg_date");
+
+		System.out.println("-----------------------------------------------------------------------");
+
+		while(iter.hasNext()) {
+
+			FoodDTO food = iter.next();
+
+			System.out.println(food.getTitle()+food.getFoodType()+food.getContent()+food.getImage()+food.getPostId()+food.getWriterId());
+
+		}
+		int red_count = statisDao.countRedByUserId((long)6);
+		System.out.println("RedFood : " + red_count);
+		
+		
+		foodList = statisDao.selectBlueByUserId((long) 6);
+
+		iter = foodList.iterator();
+
+		System.out.println("Blue음식");
+
+		System.out.println("post_id        title           image          exp_date         reg_date");
+
+		System.out.println("-----------------------------------------------------------------------");
+
+		while(iter.hasNext()) {
+
+			FoodDTO food = iter.next();
+
+			System.out.println(food.getTitle()+food.getFoodType()+food.getContent()+food.getImage()+food.getPostId());
+
+		}    
+		int blue_count = statisDao.countBlueByUserId((long)6);
+		System.out.println("RedFood : " + blue_count);
+		//
+		//        // newMgr의 필드 값 출력 
+		//
+		//        System.out.printf("%d %s %s %s %.2f %.2f %d\n", 
+		//
+		//                newMgr.getEmpno(), newMgr.getEname(), newMgr.getJob(),
+		//
+		//                newMgr.getHiredate(), newMgr.getSal(), newMgr.getComm(), newMgr.getDeptNo());
+		//
+		// 
+		
+		String most = statisDao.findMostFoodType((long)6);
+		System.out.println("MostFood : " + most);
+
+		scanner.close();
+		
+		
+>>>>>>> 4a60ce7093d43bd8f5123fc8fcb4c11c7c1e65bd
 	}
 
 }

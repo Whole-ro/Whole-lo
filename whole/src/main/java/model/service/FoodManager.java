@@ -57,6 +57,10 @@ public class FoodManager {
         return foodDAO.findFoodList();
     }
     
+    public List<FoodDTO> findFoodListByUserId(long userId) throws SQLException {
+    	return foodDAO.findFoodListByUserId(userId);
+    }
+    
 //            public List<FoodEntity> findFoodByFoodType(String foodType) throws SQLException {
 //                
     public List<FoodDTO> searchByType(String title) throws SQLException{

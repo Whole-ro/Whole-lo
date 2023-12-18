@@ -322,30 +322,49 @@ public class UserDAO {
         }
         return false;
     }
+	
+	public String findUserNickNameById(long userId) throws SQLException {
+		String sql = "SELECT nickname FROM USER_TABLE WHERE user_id =?";
+		Object[] param = new Object[] {userId};
+		jdbcUtil.setSqlAndParameters(sql, param);
+		String nickName="";
+		try {
+			ResultSet rs = jdbcUtil.executeQuery();
+			if (rs.next()) {
+				nickName = rs.getString("nickname");
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			jdbcUtil.close();		// resource 반환
+		}
+		return nickName;
+	}
 
-//	public int findUserId(String email) throws SQLException {
-//        String sql = "SELECT USER_ID FROM USER_TABLE WHERE EMAIL=?";       
-//        Object[] param = new Object[] { user.getEmail(), 
-//                user.getPassword(), user.getNickname(), user.getGender().toString(),
-//                user.getIntroduction(), user.getInterest(), user.getAddress(),
-//                user.getReportCount()};             
-//        jdbcUtil.setSqlAndParameters(sql, param);   // JDBCUtil 에 insert문과 매개 변수 설정
-//                        
-//        try {               
-//            int result = jdbcUtil.executeUpdate();  // insert 문 실행
-//            System.out.println(result);
-//            System.out.println("삽입에 성공했습니다.");
-//            return result;
-//            
-//            // insert 문 실행
-//        } catch (Exception ex) {
-//            jdbcUtil.rollback();// resource 반환// resource 반환
-//            ex.printStackTrace();// resource 반환
-//        } finally {     
-//            jdbcUtil.commit();// resource 반환
-//            jdbcUtil.close();   // resource 반환
-//        }       
-//        return 0;           
-//    }
+	public Long findUserId(String email) throws SQLException {
+        String sql = "SELECT USER_ID FROM USER_TABLE WHERE EMAIL=?";     
+        Object[] param = new Object[] { email };
+        
+        jdbcUtil.setSqlAndParameters(sql, param);   // JDBCUtil 에 insert문과 매개 변수 설정
+                        
+        try {               
+            ResultSet rs = jdbcUtil.executeQuery();  // insert 문 실행
+            
+            if (rs.next()) {
+                System.out.println("찾기성공");
+                return rs.getLong("user_id");
+            }
+           
+            
+            // insert 문 실행
+        } catch (Exception ex) {
+            jdbcUtil.rollback();// resource 반환// resource 반환
+            ex.printStackTrace();// resource 반환
+        } finally {     
+            jdbcUtil.commit();// resource 반환
+            jdbcUtil.close();   // resource 반환
+        }       
+        return 0L;           
+    }
 
 }
