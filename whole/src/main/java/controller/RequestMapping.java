@@ -28,6 +28,7 @@ public class RequestMapping {
 //        mappings.put("/user/login", new LoginController());
 //        mappings.put("/user/logout", new LogoutController());
          mappings.put("/market", new ListMarketController());
+         mappings.put("/market/post/detail", new ViewPostController());
 //        mappings.put("/user/list", new ListUserController());
 //        mappings.put("/user/view", new ViewUserController());
 //        
