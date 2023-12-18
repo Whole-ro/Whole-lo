@@ -24,8 +24,8 @@ public class FoodstaticsManager {
 		return fstaticsMan;
 	}
 
-	public List<FoodDTO> viewstaticlist() throws SQLException {
-		return statismapperDAO.findMyBLUETypeFood();
+	public List<FoodDTO> viewstaticlist(Long userId) throws SQLException {
+		return statismapperDAO.findMyBLUETypeFood(userId);
 	}
 
 }
