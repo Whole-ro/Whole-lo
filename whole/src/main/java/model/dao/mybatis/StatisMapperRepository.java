@@ -10,11 +10,14 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import model.dao.mybatis.mapper.StatisticsMapper;
 import model.dto.FoodDTO;
+import util.FoodTypeUtil;
 
 
 public class StatisMapperRepository {
 
    private SqlSessionFactory sqlSessionFactory;
+   private FoodTypeUtil foodtypeutil = new FoodTypeUtil();
+   
    
    public StatisMapperRepository() {
       String resource = "mybatis-config.xml";
@@ -27,6 +30,7 @@ public class StatisMapperRepository {
       sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
          	
    }
+   
    public List<FoodDTO> findBluetypeFood() {
 	   SqlSession sqlSession = sqlSessionFactory.openSession();
 	   try {
