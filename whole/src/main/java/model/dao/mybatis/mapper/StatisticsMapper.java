@@ -19,7 +19,7 @@ public interface StatisticsMapper {
 	int countBlueByUserId(Long userId);
 	
 	@Select({"SELECT food_type\r\n"
-			+ "FROM (SELECT food_type FROM FOOD JOIN POST USING (post_id) GROUP BY food_type ORDER BY COUNT(food_type) DESC)\r\n"
-			+ "WHERE ROWNUM = 1 AND writer_id = #{userId}"})
+			+ "FROM (SELECT food_type FROM FOOD JOIN POST USING (post_id) WHERE writer_id = #{userId} GROUP BY food_type ORDER BY COUNT(food_type) DESC)\r\n"
+			+ "WHERE ROWNUM = 1"})
 	String findMostFoodType(Long userId);
 }
