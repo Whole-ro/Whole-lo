@@ -19,6 +19,7 @@ public class ViewFoodController implements Controller{
        FoodDTO item = null;
        String postId = request.getParameter("postId");
        FoodManager manager = FoodManager.getInstance();
+       System.out.println("viewFoodPostId:" + postId);
        
        try {
            item = manager.findFood(Long.parseLong(postId));
