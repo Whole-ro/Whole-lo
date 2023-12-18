@@ -1,7 +1,6 @@
 package model.dto;
 
 import java.time.LocalDate;
-import java.util.Iterator;
 
 import model.enums.IsHealthy;
 
@@ -88,7 +87,11 @@ public class FoodDTO {
         this.isHealthy = isHealthy;
     }
 
-
-
-
+    @Override
+    public String toString() {
+        return "FoodDTO [postId=" + postId + ", title=" + title + ", content=" + content + ", image=" + image
+                + ", regDate=" + regDate + ", writerId=" + writerId + ", foodType=" + foodType + ", expDate=" + expDate
+                + ", isHealthy=" + isHealthy + "]";
+    }
+    
 }

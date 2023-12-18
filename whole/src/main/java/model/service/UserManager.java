@@ -26,6 +26,7 @@ public class UserManager {
 			userDAO = new UserDAO();
 //			commDAO = new CommunityDAO();
 //			userAanlysis = new UserAnalysis(userDAO);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}			

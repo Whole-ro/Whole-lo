@@ -16,16 +16,27 @@
 
   <%@ include file="../fragments/header.jsp"%>
   	
-  <button onclick="location.href='<c:url value='/myRefg/postForm'/>'" >text</button >
-
-
 <div class="wrap">
 	<div class="wrap_content">
 		<div class="sub_wrap">
 			<div class="sub_title">
 				<p>
-				 신호등
+					${mostFood} 종류를 많이 드셨네요.<p>
+				"${nickname}" 님의 냉장고 신호등은 ${light} 입니다.<p>
+				빨간 음식 :
+				<c:forEach var="redFood" items="${redList}">
+					${redFood.title}
+				</c:forEach>
+				<p>
+				초록 음식 :
+				<c:forEach var="blueFood" items="${blueList}">
+					${blueFood.title}
+				</c:forEach>
 				</p>
+				<p>대신 이런 음식은 어떠신가요?
+				<c:forEach var="recommendGreenFood" items="${recommendgreenFood}">
+					${recommendGreenFood}
+				</c:forEach></p>
 				<div class="search">
 					<img id="search_img" src="/whole/img/market/Look.png" alt=" " width="35px"
 						height="35px"> <select>
@@ -40,8 +51,12 @@
 			</div>
 
 		</div>
+		
 		<div class="main_content">
 			<div class="main_content_detail">
+			  	<button style=" width: 100px; height: 45px; background:#508975; color: white; font-size: 18px;"
+			   	onclick="location.href='<c:url value='/myRefg/postForm'/>'">글작성 </button >
+		
 				<div class="tag_btns">
 					<button id="btn-01">#전체</button>
 					<button id="btn-02">#유통기한 3일전</button>
