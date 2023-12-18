@@ -1,5 +1,7 @@
 package controller.food;
 
+import java.util.Enumeration;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -15,8 +17,22 @@ public class FoodDeleteController implements Controller {
     
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response)   throws Exception {
+        
+        
+        Enumeration<String> parameterNames = request.getParameterNames();
+
+        while (parameterNames.hasMoreElements()) {
+            String paramName = parameterNames.nextElement();
+            String paramValue = request.getParameter(paramName);
+            
+            // paramName과 paramValue를 사용하여 필요한 작업 수행
+            System.out.println("Parameter Name: " + paramName + ", Value: " + paramValue + "<br>");
+        }
+        
+        
+        
         //String deleteId = request.getParameter("userId");
-        String deleteFood = request.getParameter("postId");
+        String deleteFood = request.getParameter("myPostId");
         //log.debug("Delete User : {}", deleteId);
 
         FoodManager fManager = FoodManager.getInstance();
@@ -26,7 +42,7 @@ public class FoodDeleteController implements Controller {
         System.out.println("postid: " + deleteFood);
     
         fManager.removeFood(Long.parseLong(deleteFood));
-        return "/myRefg/myRefgList.jsp";
+        return "redirect:/myRefg/list";
  
     }
   
