@@ -24,7 +24,7 @@
 		<div class="sub_wrap">
 			<div class="sub_title">
 				<p>
-					나누는 즐거움<br /> 소소한 용돈 벌이
+				 신호등
 				</p>
 				<div class="search">
 					<img id="search_img" src="/whole/img/market/Look.png" alt=" " width="35px"

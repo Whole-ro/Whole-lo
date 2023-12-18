@@ -23,9 +23,11 @@ public interface StatisticsMapper {
 			+ "WHERE ROWNUM = 1"})
 	String findMostFoodType(Long userId);
 	
-//	@Select({"SELECT u.user_id , p.title , f.is_healthy\r\n"
-//			+ "FROM POST p \r\n"
-//			+ "    JOIN user_table u ON u.user_id = p.writer_id AND u.user_id = 6\r\n"
-//			+ "    JOIN FOOD f ON f.post_id = p.post_id AND f.is_healthy = 'BLUE'"})
+	@Select({"SELECT u.user_id , p.title , f.is_healthy\r\n"
+			+ "FROM POST p \r\n"
+			+ "    JOIN user_table u ON u.user_id = p.writer_id AND u.user_id = 6\r\n"
+			+ "    JOIN FOOD f ON f.post_id = p.post_id AND f.is_healthy = 'BLUE'"})
+	String findMyBLUETypeFood(Long userId);
+	
 	
 }
