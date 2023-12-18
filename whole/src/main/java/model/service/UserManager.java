@@ -96,6 +96,10 @@ public class UserManager {
 		}
 		return true;
 	}
+	
+	public String findUserNickNameById(long userId) throws SQLException {
+		return userDAO.findUserNickNameById(userId);
+	}
 //
 //	//public List<User> makeFriends(String userId) throws Exception {
 //	//	return userAanlysis.recommendFriends(userId);
