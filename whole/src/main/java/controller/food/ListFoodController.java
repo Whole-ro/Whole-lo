@@ -12,6 +12,8 @@ import model.dto.FoodDTO;
 import model.entity.ItemEntity;
 import model.service.FoodManager;
 import model.service.MarketManager;
+import model.service.StatisticsManager;
+import model.service.UserManager;
 
 public class ListFoodController implements Controller {
     @Override
@@ -19,12 +21,32 @@ public class ListFoodController implements Controller {
     	HttpSession session = request.getSession();
     	long userId = Long.parseLong(UserSessionUtils.getLoginUserId(session));
     	
+    	UserManager userMan = UserManager.getInstance();
         FoodManager foodMan = FoodManager.getInstance();
-        List<FoodDTO> foodList = foodMan.findFoodListByUserId(userId);
-        System.out.println("foodlist : " + foodList);
+        StatisticsManager statisticsMan = StatisticsManager.getInstance();
         
+        List<FoodDTO> foodList = foodMan.findFoodListByUserId(userId);
+        List<FoodDTO> redList = statisticsMan.selectRedByUserId(userId);
+        List<FoodDTO> blueList = statisticsMan.selectBlueByUserId(userId);
+        String nickname = userMan.findUserNickNameById(userId);
+        String mostFood = statisticsMan.findMostFoodType(userId);
+        int redCnt = statisticsMan.countRedByUserId(userId);
+        int blueCnt = statisticsMan.countBlueByUserId(userId);
+        String light="";
+        if (redCnt > blueCnt) { light="빨간색"; }
+        else if (redCnt == blueCnt) { light = "노란색"; }
+        else { light = "파란색"; }
+        
+        System.out.println("foodlist : " + foodList);
+        System.out.println("redList : "+redList);
         // commList 객체를 request에 저장하여 커뮤니티 리스트 화면으로 이동(forwarding)
-        request.setAttribute("foodList", foodList);             
+        request.setAttribute("foodList", foodList);
+        request.setAttribute("redList", redList);
+        request.setAttribute("blueList", blueList);
+        request.setAttribute("userId", userId);
+        request.setAttribute("nickname", nickname);
+        request.setAttribute("mostFood", mostFood);
+        request.setAttribute("light", light);
         return "/myRefg/myRefgList.jsp";        
     }
 }
