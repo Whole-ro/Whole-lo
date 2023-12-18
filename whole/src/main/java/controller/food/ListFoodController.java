@@ -12,6 +12,7 @@ import model.dto.FoodDTO;
 import model.entity.ItemEntity;
 import model.service.FoodManager;
 import model.service.MarketManager;
+import model.service.StatisticsManager;
 
 public class ListFoodController implements Controller {
     @Override
@@ -20,11 +21,19 @@ public class ListFoodController implements Controller {
     	long userId = Long.parseLong(UserSessionUtils.getLoginUserId(session));
     	
         FoodManager foodMan = FoodManager.getInstance();
-        List<FoodDTO> foodList = foodMan.findFoodListByUserId(userId);
-        System.out.println("foodlist : " + foodList);
+        StatisticsManager statisticsMan = StatisticsManager.getInstance();
         
+        List<FoodDTO> foodList = foodMan.findFoodListByUserId(userId);
+        List<FoodDTO> redList = statisticsMan.selectRedByUserId(userId);
+        List<FoodDTO> blueList = statisticsMan.selectBlueByUserId(userId);
+        
+        System.out.println("foodlist : " + foodList);
+        System.out.println("redList : "+redList);
         // commList 객체를 request에 저장하여 커뮤니티 리스트 화면으로 이동(forwarding)
-        request.setAttribute("foodList", foodList);             
+        request.setAttribute("foodList", foodList);
+        request.setAttribute("redList", redList);
+        request.setAttribute("blueList", blueList);
+        request.setAttribute("userId", userId);
         return "/myRefg/myRefgList.jsp";        
     }
 }
