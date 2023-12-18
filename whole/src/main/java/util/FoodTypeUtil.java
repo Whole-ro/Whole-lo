@@ -9,6 +9,6 @@ public final class FoodTypeUtil {
             "기타"
    };
     static public final String[] greenFood = {"두부","도라지", "김치볶음", "호박", "아보카도", 
-    										  "노른자", "브로콜리", "요거트","닭가슴살","채소 샐러드"};
+    										  "노른자", "브로콜리", "요거트","닭가슴살","채소","샐러드"};
 
 }

@@ -3,12 +3,14 @@ package test;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 import model.dao.*;
 import model.dto.FoodDTO;
 import model.entity.FoodEntity;
+import util.FoodTypeUtil;
 import model.dao.mybatis.StatisMapperRepository;
 
 
@@ -16,6 +18,7 @@ public class FoodTest {
 	
 private static FoodDAO foodDao = new FoodDAO();
 
+	@SuppressWarnings("null")
 	public static void main(String[] args) throws SQLException {
 		// TODO Auto-generated method stub
         Scanner scanner = new Scanner(System.in);
@@ -130,23 +133,26 @@ private static FoodDAO foodDao = new FoodDAO();
 //                newMgr.getHiredate(), newMgr.getSal(), newMgr.getComm(), newMgr.getDeptNo());
 //
 // 
+        FoodTypeUtil foodtypeUtil = new FoodTypeUtil();
+        String []greenfoodarr = foodtypeUtil.greenFood;
+        List<String> foods = new ArrayList<>();
+        List<String> mygreenfood = new ArrayList<>();;
+
         StatisMapperRepository statisDao = new StatisMapperRepository();
         List<FoodDTO>foodList =statisDao.findBluetypeFood();
         Iterator<FoodDTO> iters = foodList.iterator();
         //food 유형이 BLUE인 음식만 가져옴
-        while(iters.hasNext()) {
+        	while(iters.hasNext()) {
+        		FoodDTO food = iters.next();
+        		mygreenfood.add(food.getTitle());
+        		System.out.println(food.getTitle());
+        	}
+ 	
+       	System.out.println(mygreenfood);
+//            System.out.println();
 
-        	FoodDTO food = iters.next();
-        	 
-        	System.out.println(food.getPostId());
-        	System.out.println(food.getTitle());
-            System.out.println(food.getFoodType());
-            System.out.println(food.getExpDate());
-            System.out.println(food.getIsHealthy());
-            System.out.println();
 
-        }
-       
+//        System.out.println(foods);
         scanner.close();
 	}
 
