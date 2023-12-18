@@ -166,7 +166,7 @@ div.button{
     margin-top: 53px;
 }
 
-div.button > input{
+input.button {
     width: 104px;
     height: 47px;
     flex-shrink: 0;
@@ -180,6 +180,23 @@ div.button > input{
     line-height: normal;
     margin-left: 28px;
 }
+
+/* div.button > input{
+    width: 104px;
+    height: 47px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #508975;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 28px;
+} */
+
+
 
 /*장터*/
 input.money{
