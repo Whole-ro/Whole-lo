@@ -75,9 +75,16 @@ FoodDTO food = (FoodDTO) request.getAttribute("item");
 						<%=food.getContent()%><br />
 					</p>
 				</div>
+				<div class="Group29" style="width: 116px; height: 55px; left: 984px; top: 515px; position: absolute">
+					<button type="button" style="width: 100px; height: 45px; position: absolute; background: #508975; text-align: center; color: white; font-size: 20px;">삭제</button>
+				</div>
+				<div class="Group30" style="width: 116px; height: 55px; left: 864px; top: 515px; position: absolute">
+					<button type="button" style="width: 100px; height: 45px; position: absolute; background: #508975; text-align: center; color: white; font-size: 20px; font-family: Inter;">수정</button>
+				</div>
+				<div class="Group32" style="width: 253px; height: 55px; left: 867px; top: 450px; position: absolute">
+					<button type="button" style="width: 220px; height: 45px; position: absolute; background: #508975; text-align: center; color: white; font-size: 20px; font-family: Inter; font-weight: 500;">이 음식 나눔/판매하기</button>
+				</div>
 				
-				
-
 			</div>
 		</div>
 		<script src="../../js/Share.js"></script>
