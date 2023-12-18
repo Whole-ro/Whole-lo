@@ -43,10 +43,12 @@
 		<div class="main_content">
 			<div class="main_content_detail">
 			<div>
+				"${nickname}" 님의 신호등색은? <p>
 				빨간 음식 :
 				<c:forEach var="redFood" items="${redList}">
 					${redFood.title}
 				</c:forEach>
+				<p>
 				초록 음식 :
 				<c:forEach var="blueFood" items="${blueList}">
 					${blueFood.title}
