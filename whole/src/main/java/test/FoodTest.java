@@ -95,8 +95,13 @@ public class FoodTest {
 		//                newMgr.getHiredate(), newMgr.getSal(), newMgr.getComm(), newMgr.getDeptNo());
 		//
 		// 
+		
+		String most = statisDao.findMostFoodType((long)6);
+		System.out.println("MostFood : " + most);
 
 		scanner.close();
+		
+		
 	}
 
 }
