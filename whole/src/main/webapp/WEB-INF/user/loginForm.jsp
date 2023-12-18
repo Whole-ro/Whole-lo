@@ -9,7 +9,6 @@
 	<p class="headText">
     	Whole·Î 
     <img class="logo1" src="/whole/img/ic_logo.png"></p>
-    
 <script language="JavaScript">
 function login() {
 	if (form.email.value == "") {

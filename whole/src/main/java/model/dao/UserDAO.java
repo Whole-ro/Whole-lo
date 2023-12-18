@@ -322,6 +322,24 @@ public class UserDAO {
         }
         return false;
     }
+	
+	public String findUserNickNameById(long userId) throws SQLException {
+		String sql = "SELECT nickname FROM USER_TABLE WHERE user_id =?";
+		Object[] param = new Object[] {userId};
+		jdbcUtil.setSqlAndParameters(sql, param);
+		String nickName="";
+		try {
+			ResultSet rs = jdbcUtil.executeQuery();
+			if (rs.next()) {
+				nickName = rs.getString("nickname");
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			jdbcUtil.close();		// resource 반환
+		}
+		return nickName;
+	}
 
 	public Long findUserId(String email) throws SQLException {
         String sql = "SELECT USER_ID FROM USER_TABLE WHERE EMAIL=?";     
