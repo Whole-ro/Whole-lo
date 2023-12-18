@@ -29,6 +29,13 @@ public class ListFoodController implements Controller {
         List<FoodDTO> redList = statisticsMan.selectRedByUserId(userId);
         List<FoodDTO> blueList = statisticsMan.selectBlueByUserId(userId);
         String nickname = userMan.findUserNickNameById(userId);
+        String mostFood = statisticsMan.findMostFoodType(userId);
+        int redCnt = statisticsMan.countRedByUserId(userId);
+        int blueCnt = statisticsMan.countBlueByUserId(userId);
+        String light="";
+        if (redCnt > blueCnt) { light="빨간색"; }
+        else if (redCnt == blueCnt) { light = "노란색"; }
+        else { light = "파란색"; }
         
         System.out.println("foodlist : " + foodList);
         System.out.println("redList : "+redList);
@@ -38,6 +45,8 @@ public class ListFoodController implements Controller {
         request.setAttribute("blueList", blueList);
         request.setAttribute("userId", userId);
         request.setAttribute("nickname", nickname);
+        request.setAttribute("mostFood", mostFood);
+        request.setAttribute("light", light);
         return "/myRefg/myRefgList.jsp";        
     }
 }
