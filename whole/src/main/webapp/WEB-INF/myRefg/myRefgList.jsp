@@ -33,6 +33,10 @@
 					${blueFood.title}
 				</c:forEach>
 				</p>
+				<p>대신 이런 음식은 어떠신가요?
+				<c:forEach var="recommendGreenFood" items="${recommendgreenFood}">
+					${recommendGreenFood}
+				</c:forEach></p>
 				<div class="search">
 					<img id="search_img" src="/whole/img/market/Look.png" alt=" " width="35px"
 						height="35px"> <select>

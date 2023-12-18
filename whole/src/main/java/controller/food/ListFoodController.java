@@ -1,5 +1,6 @@
 package controller.food;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,11 +12,14 @@ import controller.user.UserSessionUtils;
 import model.dto.FoodDTO;
 import model.entity.ItemEntity;
 import model.service.FoodManager;
+import model.service.FoodstaticsManager;
 import model.service.MarketManager;
 import model.service.StatisticsManager;
 import model.service.UserManager;
+import util.FoodTypeUtil;
 
 public class ListFoodController implements Controller {
+	
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
     	HttpSession session = request.getSession();
@@ -47,6 +51,26 @@ public class ListFoodController implements Controller {
         request.setAttribute("nickname", nickname);
         request.setAttribute("mostFood", mostFood);
         request.setAttribute("light", light);
-        return "/myRefg/myRefgList.jsp";        
+        
+        FoodstaticsManager fstaticsman = FoodstaticsManager.getInstance();
+        FoodTypeUtil greenfoods = new FoodTypeUtil();
+        List<String> myGreenFood = fstaticsman.viewstaticlist(userId);
+        List<String> recommendgreenFood = new ArrayList<>();
+
+        for (String food : greenfoods.greenFood) {
+
+        	    if (!myGreenFood.contains(food)) {
+        	        recommendgreenFood.add(food);
+        	    }
+        }
+        System.out.println("myGreenFood : "+recommendgreenFood);
+        request.setAttribute("recommendgreenFood", recommendgreenFood);
+        
+        return "/myRefg/myRefgList.jsp";  
+        
+        
+        
+        
+        
     }
 }

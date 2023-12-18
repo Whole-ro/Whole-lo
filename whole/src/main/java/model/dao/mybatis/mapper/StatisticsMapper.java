@@ -22,4 +22,12 @@ public interface StatisticsMapper {
 			+ "FROM (SELECT food_type FROM FOOD JOIN POST USING (post_id) WHERE writer_id = #{userId} GROUP BY food_type ORDER BY COUNT(food_type) DESC)\r\n"
 			+ "WHERE ROWNUM = 1"})
 	String findMostFoodType(Long userId);
+	
+	@Select({"SELECT  p.title \r\n"
+			+ "FROM POST p \r\n"
+			+ "    JOIN user_table u ON u.user_id = p.writer_id AND u.user_id = #{userId}\r\n"
+			+ "    JOIN FOOD f ON f.post_id = p.post_id AND f.is_healthy = 'BLUE'"})
+	List<String> findMyBLUETypeFood(Long userId);
+	
+	
 }

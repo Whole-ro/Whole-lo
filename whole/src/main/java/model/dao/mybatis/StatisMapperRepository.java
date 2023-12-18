@@ -27,6 +27,7 @@ public class StatisMapperRepository {
 		sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 	}
 	
+	//USERID로 빨간유형의 음식수 검색
 	public List<FoodDTO> selectRedByUserId(Long userId) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		try {
@@ -36,6 +37,7 @@ public class StatisMapperRepository {
 		}
 	}
 	
+	//USERID로 파란유형의 음식수 검색
 	public List<FoodDTO> selectBlueByUserId(Long userId) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		try {
@@ -44,7 +46,7 @@ public class StatisMapperRepository {
 			sqlSession.close();
 		}
 	}
-	
+	//USERID로 빨간유형의 음식수 세기
 	public int countRedByUserId(Long userId) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		try {
@@ -54,6 +56,7 @@ public class StatisMapperRepository {
 		}
 	}
 	
+	//USERID로 파란유형의 음식수 세기
 	public int countBlueByUserId(Long userId) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		try {
@@ -62,7 +65,7 @@ public class StatisMapperRepository {
 			sqlSession.close();
 		}
 	}
-	
+	//USERID로 가장 많이 먹은 음식유형
 	public String findMostFoodType(Long userId) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		try {
@@ -70,5 +73,15 @@ public class StatisMapperRepository {
 		} finally {
 			sqlSession.close();
 		}
+	}
+	//유저가 먹었던 음식들 중 BLUE유형의 음식 검색
+	public List<String> findMyBLUETypeFood(Long userId){
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		try {
+			return sqlSession.getMapper(StatisticsMapper.class).findMyBLUETypeFood(userId);
+		} finally {
+			sqlSession.close();
+		}
+		
 	}
 }
