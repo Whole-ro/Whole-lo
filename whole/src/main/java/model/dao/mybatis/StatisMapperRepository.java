@@ -75,10 +75,10 @@ public class StatisMapperRepository {
 		}
 	}
 	//유저가 먹었던 음식들 중 BLUE유형의 음식 검색
-	public String findMyBLUETypeFood(Long userId){
+	public List<FoodDTO> findMyBLUETypeFood(){
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		try {
-			return sqlSession.getMapper(StatisticsMapper.class).findMyBLUETypeFood(userId);
+			return sqlSession.getMapper(StatisticsMapper.class).findMyBLUETypeFood();
 		} finally {
 			sqlSession.close();
 		}

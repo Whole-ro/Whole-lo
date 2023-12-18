@@ -27,7 +27,7 @@ public interface StatisticsMapper {
 			+ "FROM POST p \r\n"
 			+ "    JOIN user_table u ON u.user_id = p.writer_id AND u.user_id = 6\r\n"
 			+ "    JOIN FOOD f ON f.post_id = p.post_id AND f.is_healthy = 'BLUE'"})
-	String findMyBLUETypeFood(Long userId);
+	List<FoodDTO> findMyBLUETypeFood();
 	
 	
 }
