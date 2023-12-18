@@ -11,6 +11,7 @@ import controller.user.UserSessionUtils;
 import model.dto.FoodDTO;
 import model.entity.ItemEntity;
 import model.service.FoodManager;
+import model.service.FoodstaticsManager;
 import model.service.MarketManager;
 
 public class ListFoodController implements Controller {
@@ -25,6 +26,6 @@ public class ListFoodController implements Controller {
         
         // commList 객체를 request에 저장하여 커뮤니티 리스트 화면으로 이동(forwarding)
         request.setAttribute("foodList", foodList);             
-        return "/myRefg/myRefgList.jsp";        
+        return "/myRefg/myRefgList.jsp";
     }
 }
