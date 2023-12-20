@@ -61,6 +61,8 @@ public class RequestMapping {
         mappings.put("/myRefg/post", new FoodCreateController());
         mappings.put("/myRefg/delete", new FoodDeleteController());
         
+        //같이가치
+        mappings.put("/withwith", new ForwardController("/withWith/withWith.jsp"));
         logger.info("Initialized Request Mapping!");
     }
 
