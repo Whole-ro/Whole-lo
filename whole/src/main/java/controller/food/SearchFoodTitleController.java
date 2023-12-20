@@ -17,9 +17,10 @@ public class SearchFoodTitleController implements Controller {
         FoodManager foodMan = FoodManager.getInstance();
         List<FoodDTO> foodList2 = foodMan.searchByTitle(title);
         System.out.println("title" + title);
+        System.out.println(foodList2);
         
         // commList 객체를 request에 저장하여 커뮤니티 리스트 화면으로 이동(forwarding)
         request.setAttribute("foodList", foodList2);             
-        return "redirect:/myRefg/list";        
+        return "/myRefg/myRefgList.jsp";        
     }
 }
