@@ -30,4 +30,9 @@ public interface StatisticsMapper {
 	List<String> findMyBLUETypeFood(Long userId);
 	
 	
+	@Select({"SELECT  p.title \r\n"
+			+ "FROM POST p \r\n"
+			+ "    JOIN user_table u ON u.user_id = p.writer_id AND u.user_id = #{userId}\r\n"
+			+ "    JOIN FOOD f ON f.post_id = p.post_id AND f.is_healthy = 'RED'"})
+	List<String> findMyREDTypeFood(Long userId);
 }
