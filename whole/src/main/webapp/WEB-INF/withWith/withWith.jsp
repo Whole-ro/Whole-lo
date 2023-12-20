@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
+<%@page import="model.service.*"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,17 +51,18 @@
         </div>
       </div>
       <div class="commentArea">
+     	 <c:forEach var="user" items="${userList}">
           <table class="comment_table">
               <thead>
                 <tr>
                   <td class="userImg" rowspan="3"><img src="./img/ic_profile.png" width="100px"></td>
-                  <td class="userName" colspan="3">월곡러</td>
+                  <td class="userName" colspan="3">${user.nickname}</td>
                 </tr>
                 <tr>
-                  <td class="userContent" colspan="3">#21세 #oo동 #수영</td>
+                  <td class="userContent" colspan="3">#${user.address}</td>
                 </tr>
                 <tr>
-                  <td class="userContent">같이놀아요와아아아아아ㅏㅇ아ㅏㅇ</td>
+                  <td class="userContent">${user.introduction}</td>
                   <td class="icons">
                       <button class="msgBTN" onclick="alert('쪽지 클릭')">쪽지</button>
                   </td>
@@ -73,6 +76,7 @@
                 </tr>
               </thead>
             </table>
+          </c:forEach>
       </div>
 </body>
 
