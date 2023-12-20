@@ -46,9 +46,9 @@
 				</c:forEach></p>
 				</c:if>
 					<c:if test="${light eq '노란색'}">
-				<p>대신 이런 음식은 어떠신가요?
-				<c:forEach var="recommendGreenFood" items="${recommendgreenFood}">
-					${recommendGreenFood}
+				<p>이런 음식은 기피하세요!
+				<c:forEach var="notrecommendredFood" items="${notrecommendredFood}">
+					${notrecommendredFood}
 				</c:forEach></p>
 				</c:if>
 				<div class="search">
