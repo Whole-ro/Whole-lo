@@ -84,4 +84,14 @@ public class StatisMapperRepository {
 		}
 		
 	}
+	//유저가 먹었던 음식들 중 RED유형의 음식 검색
+		public List<String> findMyREDTypeFood(Long userId){
+			SqlSession sqlSession = sqlSessionFactory.openSession();
+			try {
+				return sqlSession.getMapper(StatisticsMapper.class).findMyREDTypeFood(userId);
+			} finally {
+				sqlSession.close();
+			}
+			
+		}
 }
