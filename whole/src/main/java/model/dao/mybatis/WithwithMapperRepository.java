@@ -29,11 +29,10 @@ public class WithwithMapperRepository {
 		sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 	}
 	
-	//USERID로 빨간유형의 음식수 검색
-	public List<UserEntity> selectUserByInterest(String interest) {
+	public List<UserEntity> selectUserByInterest(String interest, long userId) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		try {
-			return sqlSession.getMapper(WithwithMapper.class).selectUserByInterest(interest);
+			return sqlSession.getMapper(WithwithMapper.class).selectUserByInterest(interest, userId);
 		} finally {
 			sqlSession.close();
 		}
