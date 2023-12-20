@@ -106,6 +106,10 @@ public class UserManager {
         return userDAO.findUserId(email);
         
     }
+    
+    public String findInterestById(long userId) throws SQLException {
+    	return userDAO.findInterestById(userId);
+    }
 //
 //	//public List<User> makeFriends(String userId) throws Exception {
 //	//	return userAanlysis.recommendFriends(userId);
