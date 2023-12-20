@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import controller.user.*;
+import controller.withWith.ListSameInterestUserController;
 import controller.comm.*;
 import controller.food.FoodCreateController;
 import controller.food.FoodDeleteController;
@@ -62,7 +63,7 @@ public class RequestMapping {
         mappings.put("/myRefg/delete", new FoodDeleteController());
         
         //같이가치
-        mappings.put("/withwith", new ForwardController("/withWith/withWith.jsp"));
+        mappings.put("/withwith", new ListSameInterestUserController());
         logger.info("Initialized Request Mapping!");
     }
 
