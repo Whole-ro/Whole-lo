@@ -27,5 +27,10 @@ public class FoodstaticsManager {
 	public List<String> viewstaticlist(Long userId) throws SQLException {
 		return statismapperDAO.findMyBLUETypeFood(userId);
 	}
+	
+	//유저가 먹은 빨간색음식리스트 DAO의 메서드 추출
+	public List<String> viewstaticRedlist(Long userId) throws SQLException {
+		return statismapperDAO.findMyREDTypeFood(userId);
+	}
 
 }
