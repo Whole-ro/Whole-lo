@@ -33,10 +33,24 @@
 					${blueFood.title}
 				</c:forEach>
 				</p>
+				<c:if test="${light eq '빨간색'}">
 				<p>대신 이런 음식은 어떠신가요?
 				<c:forEach var="recommendGreenFood" items="${recommendgreenFood}">
 					${recommendGreenFood}
 				</c:forEach></p>
+				</c:if>
+					<c:if test="${light eq '파란색'}">
+				<p>아주 좋아요!<br/>이런 음식도 있어요!
+				<c:forEach var="recommendGreenFood" items="${recommendgreenFood}">
+					${recommendGreenFood}
+				</c:forEach></p>
+				</c:if>
+					<c:if test="${light eq '노란색'}">
+				<p>대신 이런 음식은 어떠신가요?
+				<c:forEach var="recommendGreenFood" items="${recommendgreenFood}">
+					${recommendGreenFood}
+				</c:forEach></p>
+				</c:if>
 				<div class="search">
 					<img id="search_img" src="/whole/img/market/Look.png" alt=" " width="35px"
 						height="35px"> <select>
