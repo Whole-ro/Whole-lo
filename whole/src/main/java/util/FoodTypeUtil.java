@@ -11,8 +11,13 @@ public final class FoodTypeUtil {
             "기타"
    };
 
+  //파란색 음식 라스트
    static public final String[] greenFood = {"두부","도라지", "김치볶음", "호박", "아보카도", 
     										  "노른자", "브로콜리", "요거트","닭가슴살","채소","샐러드"};
+
+   //빨간색 음식 라스트
+   static public final String[] redFood = {"햄버거", "피자", "감자칩", "사이다", "초콜릿",
+	        "라면", "치킨", "케이크", "과자", "소시지", "인스턴트 음식"};
 
    static public final IsHealthy getFoodColor(String foodType) {
         String[] red = {"간편식", "분식", "과자", "초콜릿", "아이스크림", "소스", "커피",
