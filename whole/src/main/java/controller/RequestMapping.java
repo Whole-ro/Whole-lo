@@ -10,6 +10,7 @@ import controller.comm.*;
 import controller.food.FoodCreateController;
 import controller.food.FoodDeleteController;
 import controller.food.ListFoodController;
+import controller.food.SearchFoodTitleController;
 import controller.food.ViewFoodController;
 import controller.market.*;
 
@@ -60,6 +61,7 @@ public class RequestMapping {
         mappings.put("/myRefg/list/detail", new ViewFoodController());
         mappings.put("/myRefg/post", new FoodCreateController());
         mappings.put("/myRefg/delete", new FoodDeleteController());
+        mappings.put("/myRefg/search/title", new SearchFoodTitleController());
         
         logger.info("Initialized Request Mapping!");
     }

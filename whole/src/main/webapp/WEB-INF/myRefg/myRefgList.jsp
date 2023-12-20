@@ -42,7 +42,10 @@
 						height="35px"> <select>
 						<option value="제목">제목</option>
 					</select> <input id="search_keyword" value="원하는 제목으로 검색하세요"></input>
-					<button id="search_btn" type="button" value="검색">검색</button>
+					<a style="width: 100px; height: 45px; position: absolute; background: #508975; text-align: center; color: white; font-size: 18px;" 
+					href="<c:url value='/myRefg/delete'>
+						<c:param name='myPostId' value='${search_keyword}'/>
+					</c:url>">검색</a>
 				</div>
 			</div>
 
