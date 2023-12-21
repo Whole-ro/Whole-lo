@@ -6,7 +6,6 @@
 <link rel="stylesheet" href="/whole/css/Sharing.css">
 <link rel="stylesheet" href="/whole/css/item_detail.css">
 <link rel="stylesheet" href="/whole/css/header.css">
-
 <head>
 <meta charset="UTF-8" />
 <title>나눔 장터</title>
