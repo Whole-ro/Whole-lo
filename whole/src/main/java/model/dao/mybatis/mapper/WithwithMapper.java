@@ -12,4 +12,11 @@ public interface WithwithMapper {
 	List<UserEntity> selectUserByInterest(
 			@Param("interest")String interest, 
 			@Param("userId") long userId);
+	
+	@Select({"SELECT nickname, address, introduction FROM USER_TABLE WHERE interest = #{interest} AND gender = #{gender} AND user_id != #{userId}"})
+	List<UserEntity> selectUserByGender(
+			@Param("gender") String gender,
+			@Param("interest") String interest,
+			@Param("userId") long userId);
+
 }
