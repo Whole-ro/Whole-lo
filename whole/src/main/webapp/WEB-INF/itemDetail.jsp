@@ -114,8 +114,9 @@ Long a = Long.parseLong(userSessionID);
 			</form>
 				<div class="Group30" style="width: 116px; height: 55px; left: 1164px; top: 520px; position: absolute">
 				<a style="width: 100px; height: 45px; position: absolute; background: #508975; text-align: center; color: white; font-size: 18px;" 
-					href="<c:url value='/myRefg/post/update'>
-						<c:param name='myPostId' value='${param.postId}'/>
+					href="<c:url value='/market/post/update'>
+						<c:param name='postId' value='${param.postId}'/>
+						<c:param name='writerId' value='${param.writerId}'/>
 					</c:url>">
 					수정 </a>
 				</div>
