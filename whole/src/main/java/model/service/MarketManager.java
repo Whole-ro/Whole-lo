@@ -37,27 +37,21 @@ public class MarketManager {
 	}
 
 	// 타입 상관없이 모든 글을 보여주기
-	public List<ItemEntity> viewMarketList()
-			throws SQLException {
-<<<<<<< HEAD
-			return marketDAO.findItemListAllType();
-		}
-	    //public int removeMarketByPostId(long postId) throws SQLException
-		public int removeFood(long postId) throws SQLException {
-	        return marketDAO.removeMarketByPostId(postId);
-	    }
-		
-//		컨트롤러에서 매니저를 호출하고 매니저에서 dao를 호출함
-=======
-		return marketDAO.findItemListAllType();
-	}
->>>>>>> c085a935acbe9562fa78dc5107c4ad6c1e4ecfb5
+    public List<ItemEntity> viewMarketList()
+            throws SQLException {
+        return marketDAO.findItemListAllType();
+    }
+    
+    public List<ItemEntity> findItemListType(String itemType)
+            throws SQLException {
+        return marketDAO.findItemListType(itemType);
+    }
+
 	
-	public List<ItemEntity> findItemListType(String itemType)
-			throws SQLException {
-		return marketDAO.findItemListType(itemType);
-	}
-	
+    //public int removeMarketByPostId(long postId) throws SQLException
+    public int removeFood(long postId) throws SQLException {
+        return marketDAO.removeMarketByPostId(postId);
+    }
 	
 //	public List<ItemEntity> viewFoodItemList() throws SQLException {
 //		return marketDAO.findFoodItemList();

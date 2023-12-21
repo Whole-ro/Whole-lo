@@ -21,7 +21,8 @@
 </head>
 
 <body>
-  <link rel="stylesheet" type="text/css" href="/whole/css/withWith/withwith.css">
+  <link rel=stylesheet href="<c:url value='/css/withwith/withwith.css' />"
+	type="text/css">
   <%@ include file="../fragments/header.jsp"%>
   	
 <div class="wrap">
