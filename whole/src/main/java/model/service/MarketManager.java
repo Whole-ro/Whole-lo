@@ -48,7 +48,6 @@ public class MarketManager {
     }
 
 	
-
     public MarketDTO createItem(MarketDTO item) throws SQLException, ExistingUserException {
         return marketDAO.createMarket(item);
     }
@@ -58,13 +57,12 @@ public class MarketManager {
         return marketDAO.removeMarketByPostId(postId);
     }
 	
-//	public List<ItemEntity> viewFoodItemList() throws SQLException {
-//		return marketDAO.findFoodItemList();
-//	}
-//	
-//	public List<ItemEntity> viewHomeAppliancesItemList() throws SQLException {
-//		return marketDAO.findHomeAppliancesItemList();
-//	}
-
+    public int updateItem(MarketDTO marketDTO) throws SQLException {
+        return marketDAO.updateMarket(marketDTO);
+    }
+    
+    public MarketDTO findItem(Long postId) throws SQLException, ExistingUserException {
+        return marketDAO.findItem2(postId);
+    }
 
 }
