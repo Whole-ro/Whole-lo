@@ -35,9 +35,13 @@ public class RequestMapping {
 //        mappings.put("/user/logout", new LogoutController());
          mappings.put("/market", new ListMarketController());
          mappings.put("/market/post/detail", new ViewPostController());
-//         mappings.put("/market/post/create", new CreateMarketController());
+         mappings.put("/market/post/form", new ViewPostController());
+         mappings.put("/market/post/create", new CreateMarketController());
 
+
+         mappings.put("/market/post/form", new ForwardController("/market/market_post_form.jsp"));
 //        mappings.put("/user/list", new ListUserController());
+         
         mappings.put("/user/view", new ViewUserController());
 //        
         
