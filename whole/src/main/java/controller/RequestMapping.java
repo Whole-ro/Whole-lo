@@ -41,6 +41,7 @@ public class RequestMapping {
 
 		mappings.put("/market/post/create", new CreateMarketController());
         mappings.put("/market/post/food", new SellFoodController());
+        mappings.put("/market/post/update", new UpdateMarketController());
 
         mappings.put("/market/post/form", new ForwardController("/market/market_post_form.jsp"));
 		
