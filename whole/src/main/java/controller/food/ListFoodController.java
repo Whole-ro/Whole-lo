@@ -23,6 +23,8 @@ public class ListFoodController implements Controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		HttpSession session = request.getSession();
+        request.setCharacterEncoding("UTF-8");
+
 		long userId = Long.parseLong(UserSessionUtils.getLoginUserId(session));
 
 		UserManager userMan = UserManager.getInstance();

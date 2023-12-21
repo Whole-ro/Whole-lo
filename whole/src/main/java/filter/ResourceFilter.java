@@ -24,6 +24,7 @@ public class ResourceFilter implements Filter {
         resourcePrefixs.add("/fonts");
         resourcePrefixs.add("/img");
         resourcePrefixs.add("/whole/css");
+        
     }
 
     private RequestDispatcher defaultRequestDispatcher;

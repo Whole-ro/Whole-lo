@@ -21,7 +21,8 @@ public class FoodCreateController implements Controller {
 
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-   
+      request.setCharacterEncoding("UTF-8");
+
       HttpSession session = request.getSession();
      
       IsHealthy isHealtyh = FoodTypeUtil.getFoodColor(request.getParameter("foodType"));
