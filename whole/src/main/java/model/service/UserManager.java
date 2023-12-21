@@ -67,13 +67,14 @@ public class UserManager {
 //		}
 		return userDAO.remove(email);
 	}
-//
+
+	//이메일로 회원 정보 찾기 >> 로그인할 때 필요
 	public UserEntity findUser(String email)
 		throws SQLException, UserNotFoundException {
 		UserEntity user = userDAO.findUser(email);
 		
 		if (user == null) {
-			throw new UserNotFoundException(email + "는 존재하지 않는 아이디입니다.");
+			throw new UserNotFoundException(email + "는 존재하지 않는 이메일입니다.");
 		}		
 		return user;
 	}
