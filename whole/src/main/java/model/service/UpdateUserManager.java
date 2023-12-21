@@ -6,11 +6,11 @@ import model.entity.UserEntity;
 public class UpdateUserManager {
 	
 	private static UpdateUserManager updateuserMan = new UpdateUserManager();
-	private UpdatePwRepository updatepwRepository;
+	private UpdatePwRepository updatepwDAO;
 	
 	private UpdateUserManager() {
 		try {
-			updatepwRepository = new UpdatePwRepository();
+			updatepwDAO = new UpdatePwRepository();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -20,6 +20,6 @@ public class UpdateUserManager {
 	}
 	
 	public int updatePw(String newpw, Long userId) {
-		return updatepwRepository.updatePw(newpw, userId);
+		return updatepwDAO.updatePw(newpw, userId);
 	}
 }
