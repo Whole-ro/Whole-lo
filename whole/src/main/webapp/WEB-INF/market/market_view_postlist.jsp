@@ -9,29 +9,24 @@
 <link rel="stylesheet" href="/whole/css/Sharing.css">
 <link rel="stylesheet" href="/whole/css/item_detail.css">
 <link rel="stylesheet" href="/whole/css/header.css">
+<link rel=stylesheet href="<c:url value='/css/withwith/withwith.css' />"
+	type="text/css">
+
 <meta charset="UTF-8" />
+
 <title>나눔 장터</title>
 </head>
 
 <body>
-   <%@ include file="../fragments/header.jsp"%>
+	<%@ include file="../fragments/header.jsp"%>
 
 	<div class="wrap">
 		<div class="wrap_content">
 			<div class="sub_wrap">
-				<div class="sub_title">
+				<div class="together_title">
 					<p>
 						나누는 즐거움<br /> 소소한 용돈 벌이
 					</p>
-					<div class="search">
-						<img id="search_img" src="/whole/img/market/Look.png" alt=" "
-							width="35px" height="35px"> <select>
-							<option value="제목">제목</option>
-							<option value="내용">내용</option>
-							<option value="작성자">작성자</option>
-						</select> <input id="search_keyword" value="원하는 키워드를 검색하세요"></input>
-						<button id="search_btn" type="button" value="검색">검색</button>
-					</div>
 				</div>
 
 				<div class="sub_logo">
@@ -42,11 +37,10 @@
 			</div>
 			<div class="main_content">
 				<div class="main_content_detail">
-					<div class="tag_btns">
-						<button id="btn-01">#전체</button>
-						<button id="btn-02">#생활꿀팁</button>
-						<button id="btn-03">#잡담</button>
-						<button id="btn-04">#음식속보</button>
+					<div class="hashBtn" align=center>
+						<button class="hashTagbtn_style id="btn-01" onclick="location.href='<c:url value='/market'/>'">#전체</button>
+						<button class="hashTagbtn_style id="btn-02" onclick="location.href='<c:url value='/market/type'><c:param name='itemType' value='food' /></c:url>'">#음식</button>
+						<button class="hashTagbtn_style id="btn-03" onclick="location.href='<c:url value='/market/type'><c:param name='itemType' value='appliances' /></c:url>'">#가전제품</button>
 					</div>
 					<div class="item_list">
 						<c:forEach var="item" items="${marketList}">
@@ -76,8 +70,8 @@
 			</div>
 		</div>
 	</div>
-	
-	
+
+
 	<script src="/whole/js/share.js"></script>
 </body>
 
