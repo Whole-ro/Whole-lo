@@ -24,5 +24,6 @@
 	</environments>
 	<mappers>
 		<mapper class="model.dao.mybatis.mapper.StatisticsMapper" />
+		<mapper class="model.dao.mybatis.mapper.WithwithMapper" />
 	</mappers>
 </configuration>
