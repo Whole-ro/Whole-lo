@@ -52,6 +52,11 @@ p,body{
     font-weight: bold;
     text-align: center;
 }
+.my_info{
+	border:1px solid gray;
+	width: 100px;
+	height: 200px;
+}
 
 .sub_logo img{
 	 display: none;

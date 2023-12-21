@@ -6,7 +6,9 @@
 
 <!DOCTYPE html>
 
-<%UserEntity user = (UserEntity) request.getAttribute("user");%>
+<%
+UserEntity user = (UserEntity) request.getAttribute("user");
+%>
 <html>
 <link rel="stylesheet" href="/whole/css/Sharing.css">
 <link rel="stylesheet" href="/whole/css/item_detail.css">
@@ -22,11 +24,10 @@
 		<div class="wrap_content">
 			<div class="sub_wrap">
 				<div class="sub_title">
-					<p>
+					<p style="font-size :20px">
 						마이페이지<br />
 					</p>
-					<p>성별: ${usergender} 주소: ${useraddress} 관심사: ${userinterest}
-						자기소개: ${userintroduction} 닉네임: ${ usernickname}</p>
+					
 					<div class="search">
 						<img id="search_img" src="../../imagefile/Look.png" width="35px"
 							, height="35px"> <select>
@@ -45,6 +46,12 @@
 			</div>
 			<div class="main_content">
 				<div class="main_content_detail">
+				<div class="my_info">
+					<p style="font-size :15px">
+						성별: ${usergender} <br />주소: ${useraddress} <br /> 관심사:
+						${userinterest}<br /> 자기소개: ${userintroduction} <br />닉네임: ${ usernickname}
+					</p>
+					</div>
 					<div class="tag_btns">
 						<button id="btn-01">#전체</button>
 						<button id="btn-02">#생활꿀팁</button>
@@ -57,7 +64,6 @@
 								<div class="item_img">
 									<img src="../../imagefile/spam.png" alt="이미지를 찾을 수 없음" />
 								</div>
-
 								<div class="item-detail">
 									<div id="item-title">
 										<p>[장터]스팸 팔아요</p>
