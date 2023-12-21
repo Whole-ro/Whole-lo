@@ -30,7 +30,13 @@ public class UpdatePwRepository {
 	public int updatePw(String newpw, Long userId) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		try {
-			return sqlSession.getMapper(UpdatePwMapper.class).updatepwByUserId(newpw, userId);
+			 UpdatePwMapper updatePwMapper = sqlSession.getMapper(UpdatePwMapper.class);
+		        int result = updatePwMapper.updatepwByUserId(newpw, userId);
+		        sqlSession.commit();
+		        // Log the result
+		        System.out.println("result: "+result);
+
+		        return result;
 		} finally {
 			sqlSession.close();
 		}
