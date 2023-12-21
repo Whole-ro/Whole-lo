@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,15 +15,17 @@
 			alert("비밀번호를 입력하십시오.");
 			form.password.focus();
 			return false;
-		}		
+		}
 		form.submit();
 	}
-
-	</script>
+</script>
 </head>
 <body>
-	<form name="form" method="GET" action="<c:url value='/user/updatepassword' />">
-		<c:param name="password" value="${param.password}"></c:param>
+	<form name="form" method="GET"
+		action="<c:url value='/user/updatepassword'>
+		<c:param name="password" value='${param.password}'/>
+		</c:url>">
+		">
 		<div
 			style="width: 1532px; height: 997px; top: 200px; position: relative; background: white">
 			<div
@@ -36,7 +39,8 @@
 					placeholder="변경하고자 하는 비밀번호를 입력하세요.">
 			</div>
 
-			<input type="submit" class="custom-button" value="비밀번호 변경" onClick= "updatepw()" 
+			<input type="submit" class="custom-button" value="비밀번호 변경"
+				onClick="updatepw()"
 				style="width: 398px; height: 54px; left: 566px; top: 411px; position: absolute; background: #508975; border-color: #508975; font-size: 20px; font-weight: 600; color: white;" />
 		</div>
 	</form>
