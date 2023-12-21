@@ -89,8 +89,7 @@ function deleteFood(postId) {
 					<p>
 					<%food.setPostId(Long.parseLong(request.getParameter("postId"))); %>
 					<% String a = food.getPostId().toString(); %>
-					이것은 에이다
-					<%= a %>
+				
 						<%= food.getContent()%><br />
 					</p>
 				</div>
@@ -105,8 +104,11 @@ function deleteFood(postId) {
 				</div>
 				</form>
 				<div class="Group30" style="width: 116px; height: 55px; left: 864px; top: 490px; position: absolute">
-					<button type="button" style="width: 100px; height: 45px; position: absolute; background: #508975; text-align: center; color: white; font-size: 18px; font-family: Inter;">
-					수정</button>
+				<a style="width: 100px; height: 45px; position: absolute; background: #508975; text-align: center; color: white; font-size: 18px;" 
+					href="<c:url value='/myRefg/post/update'>
+						<c:param name='myPostId' value='${param.postId}'/>
+					</c:url>">
+					수정 </a>
 				</div>
 				<div class="Group32" style="width: 253px; height: 55px; left: 867px; top: 425px; position: absolute">
 					<button type="button" style="width: 220px; height: 45px; position: absolute; background: #508975; text-align: center; color: white; font-size: 18px; font-family: Inter; font-weight: 500;">
