@@ -1,4 +1,5 @@
 package model.service;
+
 //
 import java.sql.SQLException;
 import java.util.List;
@@ -8,6 +9,7 @@ import model.dao.MarketDAO;
 import model.dto.FoodDTO;
 
 import model.entity.ItemEntity;
+
 //
 ///**
 // * 사용자 관리 API를 사용하는 개발자들이 직접 접근하게 되는 클래스.
@@ -17,52 +19,53 @@ import model.entity.ItemEntity;
 // * 별도로 둘 수 있다.
 // */
 public class MarketManager {
-	private static MarketManager marketMan = new MarketManager();
-	private MarketDAO marketDAO;
-	//	private CommunityDAO commDAO;
-	//	private UserAnalysis userAanlysis;
-	//
-	private MarketManager() {
-		try {
-			marketDAO = new MarketDAO();
-			//			commDAO = new CommunityDAO();
-			//			userAanlysis = new UserAnalysis(userDAO);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}			
-	}
+    private static MarketManager marketMan = new MarketManager();
+    private MarketDAO marketDAO;
 
-	public static MarketManager getInstance() {
-		return marketMan;
-	}
+    // private CommunityDAO commDAO;
+    // private UserAnalysis userAanlysis;
+    //
+    private MarketManager() {
+        try {
+            marketDAO = new MarketDAO();
+            // commDAO = new CommunityDAO();
+            // userAanlysis = new UserAnalysis(userDAO);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-	// 타입 상관없이 모든 글을 보여주기
-    public List<ItemEntity> viewMarketList()
-            throws SQLException {
+    public static MarketManager getInstance() {
+        return marketMan;
+    }
+
+    // 타입 상관없이 모든 글을 보여주기
+    public List<ItemEntity> viewMarketList() throws SQLException {
         return marketDAO.findItemListAllType();
     }
-    
-    public List<ItemEntity> findItemListType(String itemType)
-            throws SQLException {
+
+    public List<ItemEntity> findItemListType(String itemType) throws SQLException {
         return marketDAO.findItemListType(itemType);
     }
 
-	
     public MarketDTO createItem(MarketDTO item) throws SQLException, ExistingUserException {
         return marketDAO.createMarket(item);
     }
 
-    //public int removeMarketByPostId(long postId) throws SQLException
+    // public int removeMarketByPostId(long postId) throws SQLException
     public int removeFood(long postId) throws SQLException {
         return marketDAO.removeMarketByPostId(postId);
     }
-	
+
     public int updateItem(MarketDTO marketDTO) throws SQLException {
         return marketDAO.updateMarket(marketDTO);
     }
-    
+
+    public List<ItemEntity> findItemListWriter(Long id) throws SQLException {
+        return marketDAO.findItemListWriter(id);
+    }
+
     public MarketDTO findItem(Long postId) throws SQLException, ExistingUserException {
         return marketDAO.findItem2(postId);
     }
-
 }

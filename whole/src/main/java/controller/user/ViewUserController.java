@@ -37,6 +37,7 @@ public class ViewUserController implements Controller {
 		request.setAttribute("userinterest", user.getInterest());	
 		request.setAttribute("userintroduction", user.getIntroduction());	
 		request.setAttribute("usernickname", user.getNickname());	
+		request.setAttribute("useremail", email);	
 		return "/user/mypage.jsp";				// 사용자 보기 화면으로 이동
     }
 }
