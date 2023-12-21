@@ -14,9 +14,11 @@ UserEntity user = (UserEntity) request.getAttribute("user");
 <head>
 <meta charset="UTF-8" />
 <title>마이페이지</title>
+
 </head>
 
 <body>
+
 	<!-- 마이페이지 -->
 	<div
 		style="width: 263px; height: 60px; left:715px; top: 70px; position: absolute; text-align: center; color: black; font-size: 40px; font-family: Inter;">
@@ -56,7 +58,7 @@ UserEntity user = (UserEntity) request.getAttribute("user");
 			style="width: 101px; height: 37px; left: 626px; top: 577px; position: absolute">
 			<input type="button" value="로그아웃"
 				style="width: 80px; height: 30px; left: 0px; top: 0px; position: absolute; background: #508975; border-color: #508975; color: white; font-size: 15px; font-family: Inter; font-weight: 700;"
-				onclick="document.location='main.html'" />
+				onclick="location.href='<c:url value='/user/logout'/>'" />
 		</div>
 		<div id="withdraw"
 			style="width: 80px; height: 30px; left: 755px; top: 577px; position: absolute">
