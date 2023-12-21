@@ -4,7 +4,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <c:set var="marketTypeArray" value="${MarketTypeUtil.MARKET_TYPE_ARRAY}" />
-
+<% request.setCharacterEncoding("UTF-8");
+ %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,6 +23,7 @@
 	   
 </head>
 <body>
+
         <%@ include file="../fragments/header.jsp"%>
     <div class="write_myrefri" style="text-align: center; margin-top: 100px;">
     
@@ -35,16 +37,16 @@
             	
             	</c:when>
            </c:choose>
-            <p class="epDate"> 가격  <input type="number" name="expDate" required>  원 
-                <select class="kind_01" name="foodType">
-                	<c:forEach var="foodType" items="${marketTypeArray}" >
-                    	<option value="${foodType}">${foodType}</option>
+            <p class="epDate"> 가격  <input type="number" name="price" required>  원 
+                <select class="kind_01" name="itemType">
+                	<c:forEach var="itemType" items="${marketTypeArray}" >
+                    	<option value="${itemtType}">${itemType}</option>
                 	</c:forEach>
                 </select>
             </p>
             <div style="display: inline-block;" class="content">
                <c:choose>
-            		<c:when test="${param.isnewPost == 1"}>
+            		<c:when test="${param.isnewPost == 1}" >
             			<textarea class="content" type="text" name="content" placeholder="메모를 입력해주세요."></textarea>
                 	</c:when>
                 	<c:when test="${param.isnewPost != 1}">
