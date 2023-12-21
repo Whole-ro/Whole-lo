@@ -48,10 +48,11 @@ p,body{
     flex-direction: column;
     justify-content: center;
     color: #fff;
-    font-size: 50px;
+    font-size: 20px;
     font-weight: bold;
     text-align: center;
 }
+
 .sub_logo img{
 	 display: none;
 }
