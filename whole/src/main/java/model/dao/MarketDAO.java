@@ -56,54 +56,15 @@ public class MarketDAO {
         return null;
     }
     
-    //음식 유형만 보여주기
-    public List<ItemEntity> findFoodItemList() throws SQLException {
 
-        String sql = "SELECT post_id, item_type, title, type, content, image,reg_date, writer_id,cnt_like,detail,price,scrap \r\n"
-        		+ "FROM ITEM JOIN POST USING (post_id)\r\n"
-        		+ "WHERE type='MARKET' AND item_type='음식'";
-
-        jdbcUtil.setSqlAndParameters(sql,null); // JDBCUtil에 query문 설정
-
-  
-        try {
-            ResultSet rs = jdbcUtil.executeQuery(); // query 실행
-           
-            List<ItemEntity> itemList = new ArrayList<ItemEntity>(); // 타입이 Market인 Post 리스트 생성
-            while (rs.next()) {
-                ItemEntity item = new ItemEntity();
-                item.setPostId(rs.getLong("post_id"));// post 객체를 생성하여 현재 행의 정보를 저장
-                item.setTitle(rs.getString("title"));
-                item.setType(rs.getString("type"));
-                item.setContent(rs.getString("content"));
-                item.setImage(rs.getString("image"));
-                item.setRegDate(rs.getDate("reg_date").toLocalDate());
-                item.setWriterId(rs.getLong("writer_id"));
-                item.setCntLike(rs.getInt("cnt_like"));
-                item.setDetail(rs.getString("detail"));
-                item.setPrice(rs.getLong("price"));
-                item.setScrap(rs.getInt("scrap"));
-                itemList.add(item);             // List에 post 객체 저장
-            }
-            return itemList;
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        } finally {
-            jdbcUtil.close(); // resource 반환
-        }
-        return null;
-    }
-    
-    
     // 글 중에서 타입에 따라서 아이템 글 리스트을 보여주기
-    public List<ItemEntity> findItemListType(String type) throws SQLException {
+    public List<ItemEntity> findItemListType(String itemType) throws SQLException {
 
         String sql = "SELECT post_id, title, type, content, image,reg_date, writer_id,cnt_like,detail,price,scrap "
                 + "FROM ITEM JOIN POST USING (post_id) "
-                + "WHERE type = ? ";
+                + "WHERE type='MARKET' AND item_type = ? ";
 
-        jdbcUtil.setSqlAndParameters(sql,  new Object[]{type}); // JDBCUtil에 query문 설정
+        jdbcUtil.setSqlAndParameters(sql,  new Object[]{itemType}); // JDBCUtil에 query문 설정
 
   
         try {
