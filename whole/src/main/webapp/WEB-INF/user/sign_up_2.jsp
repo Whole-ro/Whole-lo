@@ -44,29 +44,29 @@
 		<div>
 			<form name="form" method="POST"
 				action="<c:url value='/user/register' />">
-				이메일
+				<div class="content">이메일</div>
 				<p>
 					<input class="userInfo" type="email" name="email" placeholder="이메일"
 						required>
 				</p>
-				비밀번호
+				<div class="content">비밀번호</div>
 				<p>
 					<input class="userInfo" type="password" name="password"
 						placeholder="비밀번호" required>
 				</p>
-				비밀번호 재확인
+				<div class="content">비밀번호 재확인</div>
 				<p>
 					<input class="userInfo" type="password" name="pw_re"
 						placeholder="비밀번호 재확인 " required>
 				</p>
-				성별
+				<div class="content">성별</div>
 				<p>
 					<select name="gender" id="gender" class="userInfo">
 						<option value=MALE>남자</option>
 						<option value=FEMALE>여자</option>
 					</select>
 				</p>
-				관심
+				<div class="content">관심</div>
 				<p>
 					<select name="interest" id="interest" class="userInfo">
 						<option value="0">수영</option>
@@ -87,19 +87,19 @@
 					</select>
 				</p>
 
-				주소
+				<div class="content">주소</div>
 				<p>
 					<input class="userInfo" type="text" name="addresss"
 						placeholder="주소  " required>
 				</p>
 
-				닉네임
+				<div class="content">닉네임</div>
 				<p>
 					<input class="userInfo" type="text" name="nickname"
 						placeholder="사용자 닉네임 " required>
 				</p>
 
-				한줄 소개
+				<div class="content">한줄 소개</div>
 				<p>
 					<input class="userInfo" type="text" name="introduction"
 						placeholder="한줄소개" height="30" required>
