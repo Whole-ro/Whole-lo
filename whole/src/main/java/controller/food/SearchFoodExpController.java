@@ -9,14 +9,14 @@ import controller.Controller;
 import model.dto.FoodDTO;
 import model.service.FoodManager;
 
-public class SearchFoodTitleController implements Controller {
+public class SearchFoodExpController implements Controller {
     
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String title = request.getParameter("title");
         FoodManager foodMan = FoodManager.getInstance();
-        List<FoodDTO> foodList2 = foodMan.searchByTitle(title);
-        System.out.println("title" + title);
+        List<FoodDTO> foodList2 = foodMan.clickExpDate();
+        //System.out.println("title" + title);
         System.out.println(foodList2);
         
         // commList 객체를 request에 저장하여 커뮤니티 리스트 화면으로 이동(forwarding)
