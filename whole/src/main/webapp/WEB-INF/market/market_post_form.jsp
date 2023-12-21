@@ -15,6 +15,29 @@
 	form.submit();
 }
  */
+ 
+ function setForm(targetUri){
+	 
+	 var targetUri;
+	 
+	 if (){
+		 // 글쓰기버튼 클릭 
+		var title = document.getElementById("title");
+		var content = document.getElementById(id);
+		title.placeholder="제목"
+	  	targetUri = 
+		
+	 }else{
+		 // 냉장고에서 넘어옴 
+		 
+	 }else{
+		 // 수정버튼 
+	 }
+	 document.getElementById(id);
+		
+		form.action = targetUri;
+		form.submit();
+ }
 </script>
     <meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="/whole/css/myRefg/postForm.css">
@@ -26,15 +49,22 @@
     <div class="write_myrefri" style="text-align: center; margin-top: 100px;">
     
         <form name="form" method="POST" action="<c:url value='/myRefg/post'/>">
-            <p class="write_myrefri"><input class="write_myrefri" type="text" name="title" placeholder="제목" required></p>
-            <p class="epDate"> 유통기한 <input type="date" name="expDate" required>  까지  
-              
-                <select class="kind_01" name="foodType">
+            <p class="write_myrefri">
+            <input id="title" class="write_myrefri" type="text" name="title" required></p>  
+           <select id="foodType" class="kind_01" name="foodType">
                 	<c:forEach var="foodType" items="${foodTypeArray}" >
-                    	<option value="${foodType}">${foodType}</option>
+                		<c:choose> 
+							<c:when test="${foodType == foodList.foodType}"> 
+								<option value="${foodType}" selected>${foodType}</option>
+							</c:when> 
+							<c:otherwise>
+								<option value="${foodType}">${foodType}</option>
+							</c:otherwise>
+						</c:choose>  
                 	</c:forEach>
-                </select>
-            </p>
+          	</select>
+        
+            
             <div style="display: inline-block;" class="content">
                 <textarea class="content" type="text" name="content" placeholder="메모를 입력해주세요."></textarea>
                 <hr>
