@@ -41,7 +41,12 @@ public class FoodDeleteController implements Controller {
         
         System.out.println("postid: " + deleteFood);
     
-        fManager.removeFood(Long.parseLong(deleteFood));
+        int result = fManager.removeFood(Long.parseLong(deleteFood));
+        
+        System.out.println("와이라노...");
+        System.out.println("result는 무엇일까요? "+result);
+
+
         return "redirect:/myRefg/list";
  
     }
