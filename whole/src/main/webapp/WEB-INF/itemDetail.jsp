@@ -57,7 +57,7 @@ Long a = Long.parseLong(userSessionID);
 					</div>
 				</div>
 				<div class="carousel_tag">
-					<span>#나눔/장터 </span><span>#자취생</span>
+					<span>#나눔/장터 </span><span>#<%=item.getItemType() %></span>
 				</div>
 			</div>
 			<div class="wrap_content_item">
