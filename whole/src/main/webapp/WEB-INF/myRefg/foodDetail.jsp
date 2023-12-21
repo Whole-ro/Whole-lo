@@ -111,10 +111,15 @@ function deleteFood(postId) {
 					수정 </a>
 				</div>
 				<div class="Group32" style="width: 253px; height: 55px; left: 1217px; top: 425px; position: absolute">
-					<button type="button" style="width: 220px; height: 45px; position: absolute; background: #508975; text-align: center; color: white; font-size: 18px; font-family: Inter; font-weight: 500;">
-					이 음식 나눔/판매하기</button>
+					<button type="button" style="width: 220px; height: 45px; position: absolute; background: #508975; text-align: center; color: white; font-size: 18px; font-family: Inter; font-weight: 500;"
+					onclick="location.href='<c:url value='/market/post/food'>' 
+			   			<c:param name='postId' value='${param.postId}'/> 
+											</c:url>'
+			   		">이 음식 나눔/판매하기 </button >
+					
 				</div>
-				
+<!-- 				        mappings.put("/market/post/food", new SellFoodController());
+ -->				
 			</div>
 		</div>
 		<script src="../../js/Share.js"></script>
