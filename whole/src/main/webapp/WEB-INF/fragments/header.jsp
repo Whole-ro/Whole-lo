@@ -24,7 +24,7 @@
                     		</span>
                     </li>
                     <li>
-                    	<span class="text2" onClick="location.href='<c:url value='/withwith'/>'">
+                    	<span class="text2" onClick="location.href='<c:url value='/withWith'/>'">
                     		같이 가치
                     		</span>
                     	</li>
