@@ -43,6 +43,13 @@ public class MarketDTO {
     this.itemType = itemType;
 }
 
+    @Override
+    public String toString() {
+        return "MarketDTO [postId=" + postId + ", title=" + title + ", content=" + content + ", image=" + image
+                + ", regDate=" + regDate + ", writerId=" + writerId + ", cntLike=" + cntLike + ", scrap=" + scrap
+                + ", price=" + price + ", detail=" + detail + ", itemType=" + itemType + "]";
+    }
+
     public void setPostId(Long postId) {
         this.postId = postId;
     }
