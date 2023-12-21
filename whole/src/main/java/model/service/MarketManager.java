@@ -6,6 +6,7 @@ import java.util.List;
 
 
 import model.dao.MarketDAO;
+import model.dto.MarketDTO;
 import model.entity.ItemEntity;
 //
 ///**
@@ -44,12 +45,9 @@ public class MarketManager {
 		
 //		컨트롤러에서 매니저를 호출하고 매니저에서 dao를 호출함
 	
-//	public int create(UserEntity user) throws SQLException, ExistingUserException {
-//		if (userDAO.existingUser(user.getEmail()) == true) {
-//			throw new ExistingUserException(user.getEmail() + "는 존재하는 아이디입니다.");
-//		}
-//		return userDAO.create(user);
-//	}
+	public MarketDTO createItem(MarketDTO item) throws SQLException, ExistingUserException {
+		return marketDAO.createMarket(item);
+	}
 
 //	public int update(UserEntity user) throws SQLException, UserNotFoundException, ExistingUserException {
 //		int oldCommId = findUser(user.getUserId()).getCommId();
