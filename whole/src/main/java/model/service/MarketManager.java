@@ -41,10 +41,19 @@ public class MarketManager {
 		return marketDAO.findItemListAllType();
 	}
 	
-	public List<ItemEntity> viewFoodItemList() throws SQLException {
-		return marketDAO.findFoodItemList();
+	public List<ItemEntity> findItemListType(String itemType)
+			throws SQLException {
+		return marketDAO.findItemListType(itemType);
 	}
-
+	
+	
+//	public List<ItemEntity> viewFoodItemList() throws SQLException {
+//		return marketDAO.findFoodItemList();
+//	}
+//	
+//	public List<ItemEntity> viewHomeAppliancesItemList() throws SQLException {
+//		return marketDAO.findHomeAppliancesItemList();
+//	}
 
 	//		컨트롤러에서 매니저를 호출하고 매니저에서 dao를 호출함
 
