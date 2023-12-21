@@ -107,6 +107,14 @@ public class UserManager {
         return userDAO.findUserId(email);
         
     }
+    
+    public String findInterestById(long userId) throws SQLException {
+    	return userDAO.findInterestById(userId);
+    }
+    
+    public String findGenderById(long userId) throws SQLException {
+    	return userDAO.findGenderById(userId);
+    }
 //
 //	//public List<User> makeFriends(String userId) throws Exception {
 //	//	return userAanlysis.recommendFriends(userId);
