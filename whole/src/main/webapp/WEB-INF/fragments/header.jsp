@@ -9,7 +9,7 @@
 <body>
 <div class="header">
             <nav class="navbar">
-                <div class="navbar_logo1"><img class="logo1" onClick="location.href='findPw.html'" src="/whole/img/ic_logo.png"></div>
+                <div class="navbar_logo1"><img class="logo1" onClick="location.href='<c:url value='/market'/>'" src="/whole/img/ic_logo.png"></div>
                 <ul class="navbar_text">
 <!--                          mappings.put("/market", new ListMarketController());
  -->                
