@@ -22,7 +22,7 @@ public class MarketDAO {
 
         String sql = "SELECT post_id, title, type, content, image,reg_date, writer_id,cnt_like,detail,price,scrap "
                 + "FROM ITEM JOIN POST USING (post_id) "
-                + "WHERE type = 'MARKET' OR type='MY_REFRIGERATOR'";
+                + "WHERE type = 'MARKET'";
 
         jdbcUtil.setSqlAndParameters(sql,null); // JDBCUtil에 query문 설정
 
@@ -56,14 +56,15 @@ public class MarketDAO {
         return null;
     }
     
+
     // 글 중에서 타입에 따라서 아이템 글 리스트을 보여주기
-    public List<ItemEntity> findItemListType(String type) throws SQLException {
+    public List<ItemEntity> findItemListType(String itemType) throws SQLException {
 
         String sql = "SELECT post_id, title, type, content, image,reg_date, writer_id,cnt_like,detail,price,scrap "
                 + "FROM ITEM JOIN POST USING (post_id) "
-                + "WHERE type = ? ";
+                + "WHERE type='MARKET' AND item_type = ? ";
 
-        jdbcUtil.setSqlAndParameters(sql,  new Object[]{type}); // JDBCUtil에 query문 설정
+        jdbcUtil.setSqlAndParameters(sql,  new Object[]{itemType}); // JDBCUtil에 query문 설정
 
   
         try {
