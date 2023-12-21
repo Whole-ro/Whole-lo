@@ -392,5 +392,28 @@ public class UserDAO {
         }       
         return null;           
     }
+	
+	public String findGenderById(long userId) throws SQLException {
+        String sql = "SELECT gender FROM USER_TABLE WHERE user_id=?";     
+        Object[] param = new Object[] { userId };
+        
+        jdbcUtil.setSqlAndParameters(sql, param);   // JDBCUtil 에 insert문과 매개 변수 설정
+                        
+        try {               
+            ResultSet rs = jdbcUtil.executeQuery();  // insert 문 실행
+            
+            if (rs.next()) {
+                System.out.println("찾기성공");
+                return rs.getString("gender");
+            }
+        } catch (Exception ex) {
+            jdbcUtil.rollback();// resource 반환// resource 반환
+            ex.printStackTrace();// resource 반환
+        } finally {     
+            jdbcUtil.commit();// resource 반환
+            jdbcUtil.close();   // resource 반환
+        }       
+        return null;           
+    }
 
 }
