@@ -20,7 +20,7 @@
 	<div class="wrap_content">
 		<div class="sub_wrap">
 			<div class="sub_title">
-				<p>
+				<p id="statisitc-color">
 					${mostFood} 종류를 많이 드셨네요.<p>
 				"${nickname}" 님의 냉장고 신호등은 ${light} 입니다.<p>
 				빨간 음식 :

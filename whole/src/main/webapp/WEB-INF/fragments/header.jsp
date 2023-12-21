@@ -32,7 +32,7 @@
                 <ul class="navbar_img">
                     <li><img class="logo_left" src="/whole/img/market/ic_message.png" onClick="location.href='findPw.html'"></li>
                     <li><img class="logo_left" src="/whole/img/market/ic_bell.png" onClick="location.href='findPw.html'"></li>
-                    <li><p class="logo_left">MY</p></li>
+                    <li><p class="logo_left" onClick="location.href='<c:url value='/user/view'/>'" >MY</p></li>
                 </ul>
             </nav>
     </div>
