@@ -295,7 +295,7 @@ public class FoodDAO {
 		//나의 냉장고 확인 화면
 		String sql = "SELECT post_id, title, image, exp_date, reg_date, food_type "
 				+ "FROM FOOD JOIN POST USING (post_id) "
-				+ "WHERE (exp_date - SYSDATE) < 3 "
+				+ "WHERE (exp_date - SYSDATE) BETWEEN 0 AND 3 "
 				+ "ORDER BY reg_date";        
 		jdbcUtil.setSqlAndParameters(sql, null);		// JDBCUtil에 query문 설정
 
