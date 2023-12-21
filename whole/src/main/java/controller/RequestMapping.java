@@ -37,7 +37,7 @@ public class RequestMapping {
 		mappings.put("/market/post/detail", new ViewPostController());
 		//        mappings.put("/user/list", new ListUserController());
 		mappings.put("/user/view", new ViewUserController());
-		mappings.put("/market/food", new ViewFoodItemController());		//        
+		mappings.put("/market/type", new ViewItemTypeController());	
 
 		// 회원 가입 폼 요청과 가입 요청 처리 병합 (폼에 커뮤니티 선택 메뉴 추가를 위함)
 		mappings.put("/user/register/agreeTerms", new ForwardController("/user/sign_up_1.jsp"));
