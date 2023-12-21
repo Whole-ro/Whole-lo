@@ -65,6 +65,9 @@ public class MarketManager {
 //	public List<ItemEntity> viewHomeAppliancesItemList() throws SQLException {
 //		return marketDAO.findHomeAppliancesItemList();
 //	}
-
+    //public List<ItemEntity> findItemListWriter(Long id) throws SQLException
+    public List<ItemEntity> findItemListWriter(Long id) throws SQLException{
+        return marketDAO.findItemListWriter(id);
+    }
 
 }
