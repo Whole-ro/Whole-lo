@@ -13,6 +13,7 @@
 //import model.service.UserManager;
 //import model.Community;
 //import model.User;
+//import model.entity.UserEntity;
 //
 //public class UpdateUserController implements Controller {
 //    private static final Logger log = LoggerFactory.getLogger(UpdateUserController.class);
@@ -28,7 +29,7 @@
 //    		log.debug("UpdateForm Request : {}", updateId);
 //    		
 //    		UserManager manager = UserManager.getInstance();
-//			User user = manager.findUser(updateId);	// 수정하려는 사용자 정보 검색
+//    		UserEntity user = manager.findUser(updateId);	// 수정하려는 사용자 정보 검색
 //			request.setAttribute("user", user);			
 //
 //			HttpSession session = request.getSession();
@@ -43,10 +44,10 @@
 //			}    
 //			
 //			// else (수정 불가능한 경우) 사용자 보기 화면으로 오류 메세지를 전달
-//			request.setAttribute("updateFailed", true);
-//			request.setAttribute("exception", 
-//					new IllegalStateException("타인의 정보는 수정할 수 없습니다."));            
-//			return "/user/view.jsp";	// 사용자 보기 화면으로 이동 (forwarding)
+////			request.setAttribute("updateFailed", true);
+////			request.setAttribute("exception", 
+////					new IllegalStateException("타인의 정보는 수정할 수 없습니다."));            
+////			return "/user/view.jsp";	// 사용자 보기 화면으로 이동 (forwarding)
 //	    }	
 //    	
 //    	// POST request (회원정보가 parameter로 전송됨)
