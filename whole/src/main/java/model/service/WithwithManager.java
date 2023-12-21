@@ -27,4 +27,8 @@ public class WithwithManager {
 	public List<UserEntity> findUserByInterest(String interest, long userId) {
 		return withWithRepository.selectUserByInterest(interest, userId);
 	}
+	
+	public List<UserEntity> findSameGender(String interest, long userId, String gender) {
+		return withWithRepository.selectUserByGender(interest, userId, gender);
+	}
 }
