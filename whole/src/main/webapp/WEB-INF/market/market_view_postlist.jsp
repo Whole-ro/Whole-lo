@@ -23,7 +23,7 @@
 	<div class="wrap">
 		<div class="wrap_content">
 			<div class="sub_wrap">
-				<div class="sub_title">
+				<div class="together_title">
 					<p>
 						나누는 즐거움<br /> 소소한 용돈 벌이
 					</p>
