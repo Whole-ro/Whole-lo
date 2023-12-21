@@ -29,7 +29,10 @@
         <%@ include file="../fragments/header.jsp"%>
     <div class="write_myrefri" style="text-align: center; margin-top: 100px;">
     
-        <form name="form" method="POST" action="<c:url value='/market/post/create'/>">
+        <form name="form" method="POST" action="<c:url value='/market/post/update'> 
+        		<c:param name="postId" value="${param.postId}"/>
+                <c:param name="writerId" value="${param.writerId}"/>
+        </c:url>">
             <p class="write_myrefri"><input class="write_myrefri" type="text" name="title" value="${food.title}" required></p>
             
             <p class="epDate"> 가격  <input type="number" value="${food.price}" name="price" required>  원 
@@ -40,7 +43,7 @@
                 </select>
             </p>
             <div style="display: inline-block;" class="content">
-               <textarea class="content" type="text" name="content">${food.content} 까지 입니다.</textarea>            	
+               <textarea class="content" type="text" name="content">${food.content}</textarea>            	
          
                 <hr>
                 <p><input type="file" name="image" class="fileUpload"/></p>
