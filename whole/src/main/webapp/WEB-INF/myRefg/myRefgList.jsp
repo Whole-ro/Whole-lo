@@ -59,17 +59,6 @@
 					${notrecommendredFood}
 				</c:forEach></p>
 				</c:if>
-				<div class="search">
-					<img id="search_img" src="/whole/img/market/Look.png" alt=" " width="35px"
-						height="35px"> <select>
-						<option value="제목">제목</option>
-					</select> <input id="search_keyword" value="원하는 제목으로 검색하세요"></input>
-					<a style="width: 100px; height: 45px; position: absolute; background: #508975; text-align: center; color: white; font-size: 18px;" 
-					href="<c:url value='/myRefg/search/title'>
-						<c:param name='title' value='${"두부"}'/>
-					</c:url>">
-					검색</a>
-				</div>
 			</div>
 
 			<div class="sub_logo">
