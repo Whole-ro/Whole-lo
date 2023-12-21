@@ -211,6 +211,38 @@ public class MarketDAO {
       return item;
    }
 
+   public MarketDTO findItem2(Long postId) throws SQLException {
+       String sql = "SELECT title, price, content, image, item_type "
+             + "FROM ITEM JOIN POST USING (post_id) "
+             + "WHERE post_id=? ";
+             
+       jdbcUtil.setSqlAndParameters(sql, new Object[] {postId});   // JDBCUtil에 query문과 매개 변수 설정
+       MarketDTO marketDTO = null;
+       System.out.println(postId);
+       try {
+          ResultSet rs = jdbcUtil.executeQuery();      // query 실행
+          if (rs.next()) {   
+              // 학생 정보 발견
+             marketDTO = new MarketDTO();
+             
+             marketDTO.setTitle(rs.getString("title"));
+             marketDTO.setPrice(rs.getLong("price"));
+             marketDTO.setContent(rs.getString("content"));
+             marketDTO.setImage(rs.getString("image"));
+             marketDTO.setItemType(rs.getString("item_type"));
+
+          }
+         return marketDTO;
+         
+       } catch (Exception ex) {
+          ex.printStackTrace();
+       } finally {
+           
+          jdbcUtil.close();      // resource 반환
+       }
+       return marketDTO;
+    }
+   
    
     public MarketDTO createMarket(MarketDTO marketDto) throws SQLException {
 	    /* post에 insert */
@@ -246,6 +278,53 @@ public class MarketDAO {
 	    
         return null;            
 	}
+    
+    
+    public int updateMarket(MarketDTO marketDTO) throws SQLException {
+        /* post에 insert */
+        String sql1 = "UPDATE POST SET title=?, content=?, image=? WHERE post_id=?";
+       
+        Object[] param1 = new Object[]{marketDTO.getTitle(), marketDTO.getContent(),
+                marketDTO.getImage(), marketDTO.getPostId()};
+        jdbcUtil.setSqlAndParameters(sql1, param1);    // JDBCUtil 에 insert문과 매개 변수 설정
+
+        
+        try {
+                  
+            int result = jdbcUtil.executeUpdate();  // update 문 실행
+            return result;
+        } catch (Exception ex) {
+            jdbcUtil.rollback();
+            ex.printStackTrace();
+        }
+        finally {
+            jdbcUtil.commit();
+            jdbcUtil.close();   // resource 반환
+        }        
+        
+        String sql2 = "UPDATE ITEM "
+                + "SET price=?, item_type=? "
+                + "WHERE post_id = ?";
+
+       
+        Object[] param2 = new Object[] {marketDTO.getPrice(), marketDTO.getItemType(), marketDTO.getPostId()};
+        jdbcUtil.setSqlAndParameters(sql2, param2); // JDBCUtil에 update문과 매개 변수 설정
+        
+        try {               
+            int result = jdbcUtil.executeUpdate();  // update 문 실행
+            return result;
+        } catch (Exception ex) {
+            jdbcUtil.rollback();
+            ex.printStackTrace();
+        }
+        finally {
+            jdbcUtil.commit();
+            jdbcUtil.close();   // resource 반환
+        }
+        return 0;
+        
+    }
+    
     
     public int removeMarketByPostId(long postId) throws SQLException {
         String sql = "DELETE FROM POST WHERE post_id=?";        
