@@ -104,14 +104,7 @@ UserEntity user = (UserEntity) request.getAttribute("user");
 			<tr>
 				<td id="checkWrite" colspan="2" style="cursor:pointer;">
 					<div class="custom-text"
-						onclick="document.location='checkWrite_Mypage.html'">내가 쓴 글
-						확인</div>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2" style="cursor:pointer;">
-					<div class="custom-text"
-						onclick="document.location='checkFood_Mypage.html'">나의 냉장고
+						onclick="location.href='<c:url value='/user/market'/>'">내가 쓴 글
 						확인</div>
 				</td>
 			</tr>

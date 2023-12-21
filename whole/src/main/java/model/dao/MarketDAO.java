@@ -5,6 +5,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
+import controller.user.UserSessionUtils;
 import model.dto.FoodDTO;
 import model.dto.MarketDTO;
 import model.entity.ItemEntity;
@@ -261,5 +264,42 @@ public class MarketDAO {
         return 0;
     }
     
+    public List<ItemEntity> findItemListWriter(Long id) throws SQLException {
+
+        String sql = "SELECT post_id, title, type, content, image,reg_date, writer_id,cnt_like,detail,price,scrap "
+                + "FROM ITEM JOIN POST USING (post_id) "
+                + "WHERE writer_id =? ";
+        
+        jdbcUtil.setSqlAndParameters(sql, new Object[] {id}); // JDBCUtil에 query문 설정
+
+  
+        try {
+            ResultSet rs = jdbcUtil.executeQuery(); // query 실행
+           
+            List<ItemEntity> allitemList = new ArrayList<ItemEntity>(); // 타입이 Market인 Post 리스트 생성
+            while (rs.next()) {
+                ItemEntity item = new ItemEntity();
+                item.setPostId(rs.getLong("post_id"));// post 객체를 생성하여 현재 행의 정보를 저장
+                item.setTitle(rs.getString("title"));
+                item.setType(rs.getString("type"));
+                item.setContent(rs.getString("content"));
+                item.setImage(rs.getString("image"));
+                item.setRegDate(rs.getDate("reg_date").toLocalDate());
+                item.setWriterId(rs.getLong("writer_id"));
+                item.setCntLike(rs.getInt("cnt_like"));
+                item.setDetail(rs.getString("detail"));
+                item.setPrice(rs.getLong("price"));
+                item.setScrap(rs.getInt("scrap"));
+                allitemList.add(item);             // List에 post 객체 저장
+            }
+            return allitemList;
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            jdbcUtil.close(); // resource 반환
+        }
+        return null;
+    }
 
 }
