@@ -28,10 +28,9 @@ public class UpdateUserController implements Controller {
 
     	String password = request.getParameter("password");
 		System.out.println("Password: " + password);
-		
+		System.out.println("userId: " + userId);
 		UpdateUserManager uMan = UpdateUserManager.getInstance();
-		int newPassword = uMan.updatePw(password, userId);
-		
+		 uMan.updatePw(password, userId);
 //    	if (request.getMethod().equals("GET")) {	
 //    		// GET request: 회원정보 수정 form 요청	
 //    		// 원래는 UpdateUserFormController가 처리하던 작업을 여기서 수행
