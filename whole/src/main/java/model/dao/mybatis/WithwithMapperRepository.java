@@ -37,4 +37,13 @@ public class WithwithMapperRepository {
 			sqlSession.close();
 		}
 	}
+	
+	public List<UserEntity> selectUserByGender(String interest, long userId, String gender) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		try {
+			return sqlSession.getMapper(WithwithMapper.class).selectUserByGender(gender, interest, userId);
+		} finally {
+			sqlSession.close();
+		}
+	}
 }
