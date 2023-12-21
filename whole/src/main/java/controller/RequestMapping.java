@@ -13,6 +13,7 @@ import controller.food.FoodCreateController;
 import controller.food.FoodDeleteController;
 import controller.food.FoodUpdateController;
 import controller.food.ListFoodController;
+import controller.food.SearchFoodExpController;
 import controller.food.SearchFoodTitleController;
 import controller.food.ViewFoodController;
 import controller.market.*;
@@ -67,6 +68,8 @@ public class RequestMapping {
 
 mappings.put("/myRefg/search/title", new SearchFoodTitleController());
 mappings.put("/myRefg/post/update", new FoodUpdateController());
+mappings.put("/myRefg/search/exp", new SearchFoodExpController());
+
 
         //같이가치
         mappings.put("/withWith", new ListSameInterestUserController());

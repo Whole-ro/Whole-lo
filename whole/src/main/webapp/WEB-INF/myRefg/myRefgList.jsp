@@ -10,11 +10,18 @@
 <head>
 <meta charset="UTF-8" />
 <title>나눔 장터</title>
-
+    <script>
+        function changeFontColor(clicked_button, unclicked_button) {
+            // 버튼 클릭 시 폰트 색 변경
+            clicked_button.style.color = '#000000'; //클릭 시 검은색
+            unclicked_button.style.color = '#9D9D9D'; //아닐 시 회색
+        }
+        
+    </script>
 </head>
 
 <body>
-
+  <link rel="stylesheet" type="text/css" href="/whole/css/withWith/withwith.css">
   <%@ include file="../fragments/header.jsp"%>
   	
 <div class="wrap">
@@ -76,10 +83,11 @@
 			  	<button style=" width: 100px; height: 45px; background:#508975; color: white; font-size: 18px;"
 			   	onclick="location.href='<c:url value='/myRefg/postForm'/>'">글작성 </button >
 		
-				<div class="tag_btns">
-					<button id="btn-01">#전체</button>
-					<button id="btn-02">#유통기한 3일전</button>
-				</div>
+        	<div class="hashBtn">
+            	<button class="hashTagbtn_style <%= (request.getRequestURI().equals("/myRefg/list")) ? "active-button" : "" %>" 
+            	id="btn_all" onclick="changeFontColor(this, btn_exp); location.href='<c:url value='/myRefg/list'/>'">#전체</button>
+            	<button class="hashTagbtn_style" id="btn_exp" onclick="changeFontColor(this, btn_all); location.href='<c:url value='/myRefg/search/exp'/>'">#유통기한 3일</button>
+        	</div>
 				<div class="item_list">
 						<c:forEach var="item" items="${foodList}">
 							<div class="item-detail">
