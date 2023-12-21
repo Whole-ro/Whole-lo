@@ -29,6 +29,9 @@ public class MarketDTO {
 //            );
 
  
+    public MarketDTO() {
+        
+    }
     public Long getPostId() {
         return postId;
     }
