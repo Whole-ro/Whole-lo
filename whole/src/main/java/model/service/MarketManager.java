@@ -6,6 +6,7 @@ import java.util.List;
 
 
 import model.dao.MarketDAO;
+import model.dto.FoodDTO;
 import model.entity.ItemEntity;
 //
 ///**
@@ -40,7 +41,10 @@ public class MarketManager {
 			throws SQLException {
 			return marketDAO.findItemListAllType();
 		}
-		
+	    //public int removeMarketByPostId(long postId) throws SQLException
+		public int removeFood(long postId) throws SQLException {
+	        return marketDAO.removeMarketByPostId(postId);
+	    }
 		
 //		컨트롤러에서 매니저를 호출하고 매니저에서 dao를 호출함
 	
