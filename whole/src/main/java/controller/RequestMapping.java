@@ -6,6 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import controller.user.*;
+import controller.withWith.ListSameGenderController;
+import controller.withWith.ListSameInterestUserController;
 import controller.comm.*;
 import controller.food.FoodCreateController;
 import controller.food.FoodDeleteController;
@@ -66,6 +68,9 @@ public class RequestMapping {
 mappings.put("/myRefg/search/title", new SearchFoodTitleController());
 mappings.put("/myRefg/post/update", new FoodUpdateController());
 
+        //같이가치
+        mappings.put("/withWith", new ListSameInterestUserController());
+        mappings.put("/withWith/gender", new ListSameGenderController());
         logger.info("Initialized Request Mapping!");
     }
 
