@@ -42,6 +42,13 @@
 			</div>
 			<div class="main_content">
 				<div class="main_content_detail">
+					<button style=" width: 100px; height: 45px; background:#508975; color: white; font-size: 18px;"
+			   		onclick="location.href='<c:url value='/market/post/form'>' 
+			   			<c:param name='isnewPost' value='1'/> 
+											</c:url>'
+			   		
+			   		">글작성 </button >
+				
 					<div class="tag_btns">
 						<button id="btn-01">#전체</button>
 						<button id="btn-02">#생활꿀팁</button>
