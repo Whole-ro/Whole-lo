@@ -38,6 +38,7 @@ public class FoodManager {
     
 //    public int removeFoodByPostId(int postId) throws SQLException {
     public int removeFood(long postId) throws SQLException {
+      System.out.println("여기는 매니 : " +postId);
         return foodDAO.removeFoodByPostId(postId);
     }
     

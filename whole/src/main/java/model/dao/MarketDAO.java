@@ -210,7 +210,7 @@ public class MarketDAO {
    
     public MarketDTO createMarket(MarketDTO marketDto) throws SQLException {
 	    /* post에 insert */
-	    String sql1 = "INSERT INTO POST VALUES (SEQUENCE_POSTID.nextval, ?, ?,"
+	    String sql1 = "INSERT INTO POST VALUES (SEQUENCE_POSTID.nextval, ?, 'MARKET',"
 	    		+ " ?, ?, SYSDATE, ?)";
 	    Object[] param1 = new Object[]{marketDto.getTitle(), marketDto.getContent(),
 	    		marketDto.getImage(), marketDto.getWriterId()};
@@ -226,7 +226,7 @@ public class MarketDAO {
 	            Long generatedKey = rs.getLong(1);   // 생성된 PK 값
 	            marketDto.setPostId(generatedKey);  // id필드에 저장 
 	            String sql2 = "INSERT INTO ITEM VALUES (0,0,SEQUENCE_POSTID.currval, ?, ?, ?)";
-	            Object[] param2 = new Object[]{marketDto.getPrice(),marketDto.getDetail(), marketDto.getItemType()};
+	            Object[] param2 = new Object[]{marketDto.getPrice(),"DETAIL", marketDto.getItemType()};
 	            jdbcUtil.setSqlAndParameters(sql2, param2);    // JDBCUtil 에 insert문과 매개 변수 설정
 	            jdbcUtil.executeUpdate();
 	        }
