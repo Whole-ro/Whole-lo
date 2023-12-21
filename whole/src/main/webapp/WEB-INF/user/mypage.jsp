@@ -6,169 +6,133 @@
 
 <!DOCTYPE html>
 
-<%UserEntity user = (UserEntity) request.getAttribute("user");%>
+<%
+UserEntity user = (UserEntity) request.getAttribute("user");
+%>
 <html>
-<link rel="stylesheet" href="/whole/css/Sharing.css">
-<link rel="stylesheet" href="/whole/css/item_detail.css">
-<link rel="stylesheet" href="/whole/css/header.css">
+<link rel="stylesheet" href="/whole/css/mypage.css">
 <head>
 <meta charset="UTF-8" />
 <title>마이페이지</title>
 </head>
 
 <body>
-	<%@ include file="../fragments/header.jsp"%>
-	<div class="wrap">
-		<div class="wrap_content">
-			<div class="sub_wrap">
-				<div class="sub_title">
-					<p>
-						마이페이지<br />
-					</p>
-					<p>성별: ${usergender} 주소: ${useraddress} 관심사: ${userinterest}
-						자기소개: ${userintroduction} 닉네임: ${ usernickname}</p>
-					<div class="search">
-						<img id="search_img" src="../../imagefile/Look.png" width="35px"
-							, height="35px"> <select>
-							<option value="제목">제목</option>
-							<option value="내용">내용</option>
-							<option value="작성자">작성자</option>
-						</select> <input id="search_keyword" value="원하는 키워드를 검색하세요"></input>
-						<button id="search_btn" type="button" value="검색">검색</button>
-					</div>
-				</div>
+	<!-- 마이페이지 -->
+	<div
+		style="width: 263px; height: 60px; left:715px; top: 70px; position: absolute; text-align: center; color: black; font-size: 40px; font-family: Inter;">
+		<b>마이페이지</b>
+	</div>
 
-				<div class="sub_logo">
-					<img src="../../imagefile/Logo.png" width="350px" , height="300px" />
-				</div>
+	<!-- 둘러싼 네모 -->
+	<div
+		style="width: 898px; height: 600px; left: 400px; top: 150px; position: absolute">
+		<div class="Rectangle12"
+			style="width: 898px; height: 610px; background: rgba(217, 217, 217, 0); border-radius: 10px; border: 1px black solid"></div>
 
-			</div>
-			<div class="main_content">
-				<div class="main_content_detail">
-					<div class="tag_btns">
-						<button id="btn-01">#전체</button>
-						<button id="btn-02">#생활꿀팁</button>
-						<button id="btn-03">#잡담</button>
-						<button id="btn-04">#음식속보</button>
-					</div>
-					<div class="item_list">
-						<div class="item">
-							<a href="./Item_detail.html">
-								<div class="item_img">
-									<img src="../../imagefile/spam.png" alt="이미지를 찾을 수 없음" />
-								</div>
+		<!-- 회원 정보 title-->
+		<div
+			style="width: 116px; height: 28px; left: 117px; top: 28px; position: absolute; text-align: center; color: black; font-size: 20px; font-family: Inter;">
+			<b>회원 정보</b>
+		</div>
+		<div class="Line20"
+			style="width: 674px; height: 1px; left: 124px; top: 70px; position: absolute; justify-content: center; align-items: center; display: inline-flex">
+			<div class="Line3"
+				style="width: 674px; height: 0px; border: 1px black solid"></div>
+		</div>
 
-								<div class="item-detail">
-									<div id="item-title">
-										<p>[장터]스팸 팔아요</p>
-									</div>
-									<div id="item-price">
-										<p>30,000원</p>
-									</div>
-									<div id="item-estate">
-										<p>성북구</p>
-									</div>
-									<div id="item-uploadtime">
-										<p>2000-11-01 17:09</p>
-									</div>
-								</div>
-							</a>
-						</div>
+		<!-- 정보변경 title -->
+		<div
+			style="width: 105px; height: 28px; left: 125px; top: 420px; position: absolute; text-align: center; color: black; font-size: 20px; font-family: Inter;">
+			<b>정보 변경</b>
+		</div>
+		<div class="Line25"
+			style="width: 674px; height: 1px; left: 124px; top: 462px; position: absolute; justify-content: center; align-items: center; display: inline-flex">
+			<div class="Line3"
+				style="width: 674px; height: 0px; border: 1px black solid"></div>
+		</div>
 
-						<div class="item">
-							<div class="item_img"></div>
-							<div class="item-detail">
-								<div id="item-title">
-									<p>[장터]스팸 팔아요</p>
-								</div>
-								<div id="item-price">
-									<p>30,000원</p>
-								</div>
-								<div id="item-estate">
-									<p>성북구</p>
-								</div>
-								<div id="item-uploadtime">
-									<p>2000-11-01 17:09</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="item">
-							<div class="item_img"></div>
-							<div class="item-detail">
-								<div id="item-title">
-									<p>[장터]스팸 팔아요</p>
-								</div>
-								<div id="item-price">
-									<p>30,000원</p>
-								</div>
-								<div id="item-estate">
-									<p>성북구</p>
-								</div>
-								<div id="item-uploadtime">
-									<p>2000-11-01 17:09</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="item">
-							<div class="item_img"></div>
-							<div class="item-detail">
-								<div id="item-title">
-									<p>[장터]스팸 팔아요</p>
-								</div>
-								<div id="item-price">
-									<p>30,000원</p>
-								</div>
-								<div id="item-estate">
-									<p>성북구</p>
-								</div>
-								<div id="item-uploadtime">
-									<p>2000-11-01 17:09</p>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="item_img"></div>
-							<div class="item-detail">
-								<div id="item-title">
-									<p>[장터]스팸 팔아요</p>
-								</div>
-								<div id="item-price">
-									<p>30,000원</p>
-								</div>
-								<div id="item-estate">
-									<p>성북구</p>
-								</div>
-								<div id="item-uploadtime">
-									<p>2000-11-01 17:09</p>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="item_img"></div>
-							<div class="item-detail">
-								<div id="item-title">
-									<p>[장터]스팸 팔아요</p>
-								</div>
-								<div id="item-price">
-									<p>30,000원</p>
-								</div>
-								<div id="item-estate">
-									<p>성북구</p>
-								</div>
-								<div id="item-uploadtime">
-									<p>2000-11-01 17:09</p>
-								</div>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
+		<!-- 버튼 -->
+		<div id="logout"
+			style="width: 101px; height: 37px; left: 626px; top: 577px; position: absolute">
+			<input type="button" value="로그아웃"
+				style="width: 80px; height: 30px; left: 0px; top: 0px; position: absolute; background: #508975; border-color: #508975; color: white; font-size: 15px; font-family: Inter; font-weight: 700;"
+				onclick="document.location='main.html'" />
+		</div>
+		<div id="withdraw"
+			style="width: 80px; height: 30px; left: 755px; top: 577px; position: absolute">
+			<input type="button" value="회원탈퇴"
+				style="width: 80px; height: 30px; left: 0px; top: 0px; position: absolute; background: #508975; border-color: #508975; color: white; font-size: 15px; font-family: Inter; font-weight: 700;" />
 		</div>
 	</div>
 
+	<!-- 내용-회원정보 -->
+	<form name="myPage_memeber">
+		<table class="table-member" width="30%" height="330">
+			<tr>
+				<td id="name" colspan="2">
+					<div class="custom-text">${usernickname}</div>
+				</td>
+			</tr>
+			<tr>
+				<td id="gender" colspan="2">
+					<div class="custom-text">${usergender}</div>
+				</td>
+			</tr>
+			<tr>
+				<td id="school" colspan="2">
+					<div class="custom-text">${userinterest}</div>
+				</td>
+			</tr>
+			<tr>
+				<td id="email" colspan="2">
+					<div class="custom-text">${useremail}</div>
+				</td>
+			</tr>
+
+			<tr>
+				<td id="introduce" colspan="2">
+					<div class="custom-text">${userintroduction}</div>
+				</td>
+			</tr>
+			<tr>
+				<td id="address" colspan="2">
+					<div class="custom-text">${useraddress}</div>
+				</td>
+			</tr>
+			<tr>
+				<td id="checkWrite" colspan="2" style="cursor:pointer;">
+					<div class="custom-text"
+						onclick="document.location='checkWrite_Mypage.html'">내가 쓴 글
+						확인</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" style="cursor:pointer;">
+					<div class="custom-text"
+						onclick="document.location='checkFood_Mypage.html'">나의 냉장고
+						확인</div>
+				</td>
+			</tr>
+		</table>
+	</form>
+
+	<!-- 내용-정보 변경 -->
+	<form name="myPage_change">
+		<table class="table-change" width="30%" height="125">
+			<tr>
+				<td id="changePassword" colspan="2" style="cursor:pointer;">
+					<div class="custom-text"
+						 onClick="location.href='<c:url value='/user/updatepassword/form'/>'">비밀번호 변경</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" style="cursor:pointer;">
+					<div class="custom-text">나의 정보 변경</div>
+				</td>
+			</tr>
+		</table>
+
+	</form>
 </body>
 
 </html>
