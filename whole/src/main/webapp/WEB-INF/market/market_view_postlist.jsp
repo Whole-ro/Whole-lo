@@ -23,15 +23,6 @@
 					<p>
 						나누는 즐거움<br /> 소소한 용돈 벌이
 					</p>
-					<div class="search">
-						<img id="search_img" src="/whole/img/market/Look.png" alt=" "
-							width="35px" height="35px"> <select>
-							<option value="제목">제목</option>
-							<option value="내용">내용</option>
-							<option value="작성자">작성자</option>
-						</select> <input id="search_keyword" value="원하는 키워드를 검색하세요"></input>
-						<button id="search_btn" type="button" value="검색">검색</button>
-					</div>
 				</div>
 
 				<div class="sub_logo">
@@ -44,8 +35,8 @@
 				<div class="main_content_detail">
 					<div class="tag_btns">
 						<button id="btn-01" onclick="location.href='<c:url value='/market'/>'">#전체</button>
-						<button id="btn-02" onclick="location.href='<c:url value='/market/food'/>'">#음식</button>
-						<button id="btn-03">#가전제품</button>
+						<button id="btn-02" onclick="location.href='<c:url value='/market/type'><c:param name='itemType' value='food' /></c:url>'">#음식</button>
+						<button id="btn-03" onclick="location.href='<c:url value='/market/type'><c:param name='itemType' value='appliances' /></c:url>'">#가전제품</button>
 					</div>
 					<div class="item_list">
 						<c:forEach var="item" items="${marketList}">
