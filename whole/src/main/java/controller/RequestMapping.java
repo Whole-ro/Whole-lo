@@ -37,6 +37,7 @@ public class RequestMapping {
 		//        mappings.put("/user/list", new ListUserController());
 		mappings.put("/user/view", new ViewUserController());
 		mappings.put("/market/type", new ViewItemTypeController());	
+		mappings.put("/market/delete", new MarketDeleteController());
 
 		mappings.put("/market/post/create", new CreateMarketController());
 

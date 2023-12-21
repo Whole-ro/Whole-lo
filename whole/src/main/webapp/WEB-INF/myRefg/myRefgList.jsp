@@ -21,7 +21,8 @@
 </head>
 
 <body>
-  <link rel="stylesheet" type="text/css" href="/whole/css/withWith/withwith.css">
+  <link rel=stylesheet href="<c:url value='/css/withwith/withwith.css' />"
+	type="text/css">
   <%@ include file="../fragments/header.jsp"%>
   	
 <div class="wrap">
@@ -75,7 +76,7 @@
         	<div class="hashBtn">
             	<button class="hashTagbtn_style <%= (request.getRequestURI().equals("/myRefg/list")) ? "active-button" : "" %>" 
             	id="btn_all" onclick="changeFontColor(this, btn_exp); location.href='<c:url value='/myRefg/list'/>'">#전체</button>
-            	<button class="hashTagbtn_style" id="btn_exp" onclick="changeFontColor(this, btn_all); location.href='<c:url value='/myRefg/search/exp'/>'">#유통기한 3일</button>
+            	<button class="hashTagbtn_style" id="btn_exp" onclick="changeFontColor(this, btn_all); location.href='<c:url value='/myRefg/search/exp'/>'">#유통기한3일</button>
         	</div>
 				<div class="item_list">
 						<c:forEach var="item" items="${foodList}">
