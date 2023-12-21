@@ -25,8 +25,7 @@ public class ItemEntity extends PostEntity {
         this.detail = detail;
         this.itemType = itemType;
     }
-
-
+    
     public int getCntLike() {
         return cntLike;
     }

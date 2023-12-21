@@ -6,6 +6,7 @@ import java.util.List;
 
 
 import model.dao.MarketDAO;
+import model.dto.FoodDTO;
 import model.entity.ItemEntity;
 //
 ///**
@@ -36,16 +37,21 @@ public class MarketManager {
 	}
 
 	// 타입 상관없이 모든 글을 보여주기
-	public List<ItemEntity> viewMarketList()
-			throws SQLException {
-		return marketDAO.findItemListAllType();
-	}
+    public List<ItemEntity> viewMarketList()
+            throws SQLException {
+        return marketDAO.findItemListAllType();
+    }
+    
+    public List<ItemEntity> findItemListType(String itemType)
+            throws SQLException {
+        return marketDAO.findItemListType(itemType);
+    }
+
 	
-	public List<ItemEntity> findItemListType(String itemType)
-			throws SQLException {
-		return marketDAO.findItemListType(itemType);
-	}
-	
+    //public int removeMarketByPostId(long postId) throws SQLException
+    public int removeFood(long postId) throws SQLException {
+        return marketDAO.removeMarketByPostId(postId);
+    }
 	
 //	public List<ItemEntity> viewFoodItemList() throws SQLException {
 //		return marketDAO.findFoodItemList();

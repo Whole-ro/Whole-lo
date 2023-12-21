@@ -48,6 +48,7 @@
 								<a
 									href="<c:url value='/market/post/detail'>
 												<c:param name='postId' value='${item.postId}'/> 
+												<c:param name='writerId' value='${item.writerId}'/>
 											</c:url>">
 									<div class="item_img">
 										<img src="${item.image}" alt="이미지를 찾을 수 없음" />
