@@ -120,15 +120,9 @@ UserEntity user = (UserEntity) request.getAttribute("user");
 	<form name="myPage_change">
 		<table class="table-change" width="30%" height="125">
 			<tr>
-				<td id="changeEmail" colspan="2" style="cursor:pointer;"> 
-					<div class="custom-text" style="cursor:pointer;"
-						onclick="document.location='changeEmail_Mypage.html'">이메일 변경</div>
-				</td>
-			</tr>
-			<tr>
 				<td id="changePassword" colspan="2" style="cursor:pointer;">
 					<div class="custom-text"
-						onclick="document.location='changePass_Mypage.html'">비밀번호 변경</div>
+						 onClick="location.href='<c:url value='/user/updatepassword/form'/>'">비밀번호 변경</div>
 				</td>
 			</tr>
 			<tr>
