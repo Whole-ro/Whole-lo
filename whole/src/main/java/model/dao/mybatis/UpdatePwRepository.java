@@ -35,6 +35,7 @@ public class UpdatePwRepository {
 		        sqlSession.commit();
 		        // Log the result
 		        System.out.println("result: "+result);
+		     
 
 		        return result;
 		} finally {
