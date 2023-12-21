@@ -43,10 +43,9 @@
 			<div class="main_content">
 				<div class="main_content_detail">
 					<div class="tag_btns">
-						<button id="btn-01">#전체</button>
-						<button id="btn-02">#생활꿀팁</button>
-						<button id="btn-03">#잡담</button>
-						<button id="btn-04">#음식속보</button>
+						<button id="btn-01" onclick="location.href='<c:url value='/market'/>'">#전체</button>
+						<button id="btn-02" onclick="location.href='<c:url value='/market/food'/>'">#음식</button>
+						<button id="btn-03">#가전제품</button>
 					</div>
 					<div class="item_list">
 						<c:forEach var="item" items="${marketList}">
