@@ -114,6 +114,8 @@ public class UserDAO {
      * 주어진 사용자 ID에 해당하는 사용자 정보를 데이터베이스에서 찾아 User 도메인 클래스에 
      * 저장하여 반환.
      */
+    
+    //로그인 할 떄 findUser 메소드 사용
     public UserEntity findUser(String email) throws SQLException {
         String sql = "SELECT * "
                     + "FROM USER_TABLE "
