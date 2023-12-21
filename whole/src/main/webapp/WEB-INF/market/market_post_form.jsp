@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="util.*"%>
+<%@page import="model.*"%>
+
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <c:set var="marketTypeArray" value="${MarketTypeUtil.MARKET_TYPE_ARRAY}" />
@@ -50,7 +52,7 @@
             			<textarea class="content" type="text" name="content" placeholder="메모를 입력해주세요."></textarea>
                 	</c:when>
                 	<c:when test="${param.isnewPost != 1}">
-                	    <textarea class="content" type="text" name="content">${food.expDate}</textarea>            	
+                	    <textarea class="content" type="text" name="content">유통기한은 ${food.expDate} 까지 입니다.</textarea>            	
             	</c:when>
            </c:choose>
                 <hr>
