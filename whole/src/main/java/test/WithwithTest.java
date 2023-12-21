@@ -13,7 +13,7 @@ public class WithwithTest {
 		// TODO Auto-generated method stub
 		
 
-		List<UserEntity> list = dao.selectUserByInterest("운동");
+		List<UserEntity> list = dao.selectUserByInterest("운동", 6);
 		
 		for(UserEntity user : list) {
 			System.out.println(user.getNickname());
