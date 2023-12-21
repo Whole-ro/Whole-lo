@@ -56,20 +56,32 @@ public class FoodDAO {
 
 	/*음식 삭제*/
 	public int removeFoodByPostId(long postId) throws SQLException {
+        System.out.println("여기는 DAO");
+
 		String sql = "DELETE FROM POST WHERE post_id=?";		
+        System.out.println("여기는 DAO2");
+
 		jdbcUtil.setSqlAndParameters(sql, new Object[] {postId});	// JDBCUtil에 delete문과 매개 변수 설정
+        System.out.println("여기는 DAO3");
 
 		try {				
 			int result = jdbcUtil.executeUpdate();	// delete 문 실행
+	         System.out.println(result);
 			return result;
 		} catch (Exception ex) {
+	          System.out.println("exception");
+
 			jdbcUtil.rollback();
 			ex.printStackTrace();
 		}
 		finally {
+            System.out.println("finally");
+
 			jdbcUtil.commit();
 			jdbcUtil.close();	// resource 반환
 		}		
+        System.out.println("여기는 DAO 4");
+
 		return 0;
 	}
 	

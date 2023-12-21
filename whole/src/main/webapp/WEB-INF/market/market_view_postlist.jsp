@@ -37,6 +37,13 @@
 			</div>
 			<div class="main_content">
 				<div class="main_content_detail">
+
+					<button style=" width: 100px; height: 45px; background:#508975; color: white; font-size: 18px;"
+			   		onclick="location.href='<c:url value='/market/post/form'>' 
+			   			<c:param name='isnewPost' value='1'/> 
+											</c:url>'
+			   		
+			   		">글작성 </button >
 					<div class="hashBtn" align=center>
 						<button class="hashTagbtn_style id="btn-01" onclick="location.href='<c:url value='/market'/>'">#전체</button>
 						<button class="hashTagbtn_style id="btn-02" onclick="location.href='<c:url value='/market/type'><c:param name='itemType' value='food' /></c:url>'">#음식</button>
@@ -48,6 +55,7 @@
 								<a
 									href="<c:url value='/market/post/detail'>
 												<c:param name='postId' value='${item.postId}'/> 
+												<c:param name='writerId' value='${item.writerId}'/>
 											</c:url>">
 									<div class="item_img">
 										<img src="${item.image}" alt="이미지를 찾을 수 없음" />

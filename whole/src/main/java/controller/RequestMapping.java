@@ -21,8 +21,7 @@ import controller.market.*;
 public class RequestMapping {
 	private static final Logger logger = LoggerFactory.getLogger(DispatcherServlet.class);
 
-	// 각 요청 uri에 대한 controller 객체를 저장할 HashMap 생성
-	private Map<String, Controller> mappings = new HashMap<String, Controller>();
+    private Map<String, Controller> mappings = new HashMap<String, Controller>();
 
 	public void initMapping() {
 		// 각 uri에 대응되는 controller 객체를 생성 및 저장
@@ -38,8 +37,13 @@ public class RequestMapping {
 		//        mappings.put("/user/list", new ListUserController());
 		mappings.put("/user/view", new ViewUserController());
 		mappings.put("/market/type", new ViewItemTypeController());	
+		mappings.put("/market/delete", new MarketDeleteController());
 
-		// 회원 가입 폼 요청과 가입 요청 처리 병합 (폼에 커뮤니티 선택 메뉴 추가를 위함)
+		mappings.put("/market/post/create", new CreateMarketController());
+
+        mappings.put("/market/post/form", new ForwardController("/market/market_post_form.jsp"));
+		
+        // 회원 가입 폼 요청과 가입 요청 처리 병합 (폼에 커뮤니티 선택 메뉴 추가를 위함)
 		mappings.put("/user/register/agreeTerms", new ForwardController("/user/sign_up_1.jsp"));
 		mappings.put("/user/register/registerForm", new ForwardController("/user/sign_up_2.jsp"));
 		mappings.put("/user/register", new RegisterUserController());
@@ -57,7 +61,6 @@ public class RequestMapping {
 		//        mappings.put("/community/create/form", new ForwardController("/community/creationForm.jsp"));
 		//        mappings.put("/community/create", new CreateCommunityController());
 		//        mappings.put("/community/update", new UpdateCommunityController());
-
 
 		// 나만의 냉장rh
 		mappings.put("/myRefg/list", new ListFoodController());
