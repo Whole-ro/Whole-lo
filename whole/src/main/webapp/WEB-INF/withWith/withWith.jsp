@@ -8,8 +8,8 @@
 <head>
     <meta charset="utf-8">
    	<link rel="stylesheet" href="/whole/css/header.css">
-    <link rel="stylesheet" type="text/css" href="/whole/css/withWith/withwith.css">
-    <title>같이 가치</title>
+	<link rel=stylesheet href="<c:url value='/css/withwith/withwith.css' />" type="text/css">	
+	<title>같이 가치</title>
     <script>
         function changeFontColor(clicked_button, unclicked_button) {
             // 버튼 클릭 시 폰트 색 변경
