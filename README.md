@@ -2,6 +2,11 @@
 
 더 자세한 깃허브 룰 설명은 팀 노션 참고. 
 
+# TEST ID/PW
+
+email : dpwls5000@gmail.com
+pw : dpwlsdpwls
+
 ## 작업 순서 
 
 1. 이슈 생성
