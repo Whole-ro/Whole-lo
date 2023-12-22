@@ -60,11 +60,6 @@ UserEntity user = (UserEntity) request.getAttribute("user");
 				style="width: 80px; height: 30px; left: 0px; top: 0px; position: absolute; background: #508975; border-color: #508975; color: white; font-size: 15px; font-family: Inter; font-weight: 700;"
 				onclick="location.href='<c:url value='/user/logout'/>'" />
 		</div>
-		<div id="withdraw"
-			style="width: 80px; height: 30px; left: 755px; top: 577px; position: absolute">
-			<input type="button" value="회원탈퇴"
-				style="width: 80px; height: 30px; left: 0px; top: 0px; position: absolute; background: #508975; border-color: #508975; color: white; font-size: 15px; font-family: Inter; font-weight: 700;" />
-		</div>
 	</div>
 
 	<!-- 내용-회원정보 -->
@@ -118,11 +113,6 @@ UserEntity user = (UserEntity) request.getAttribute("user");
 				<td id="changePassword" colspan="2" style="cursor:pointer;">
 					<div class="custom-text"
 						 onClick="location.href='<c:url value='/user/updatepassword/form'/>'">비밀번호 변경</div>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2" style="cursor:pointer;">
-					<div class="custom-text">나의 정보 변경</div>
 				</td>
 			</tr>
 		</table>
