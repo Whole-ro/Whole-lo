@@ -51,7 +51,7 @@ public class RequestMapping {
 		mappings.put("/user/register", new RegisterUserController());
 
 
-		// 나만의 냉장rh
+		// 나만의 냉장고
 		mappings.put("/myRefg/list", new ListFoodController());
 		mappings.put("/myRefg/postForm", new ForwardController("/myRefg/postForm.jsp"));
 		mappings.put("/myRefg/list/detail", new ViewFoodController());
