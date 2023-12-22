@@ -34,7 +34,7 @@ public class UpdatePwRepository {
 		        int result = updatePwMapper.updatepwByUserId(newpw, userId);
 		        sqlSession.commit();
 		        // Log the result
-		        System.out.println("result: "+result);
+		        System.out.println("result: "+ result);
 		     
 
 		        return result;

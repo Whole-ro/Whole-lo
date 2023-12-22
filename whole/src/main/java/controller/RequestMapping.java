@@ -67,7 +67,7 @@ public class RequestMapping {
 		//        mappings.put("/community/create", new CreateCommunityController());
 		//        mappings.put("/community/update", new UpdateCommunityController());
 
-		// 나만의 냉장rh
+		// 나만의 냉장고
 		mappings.put("/myRefg/list", new ListFoodController());
 		mappings.put("/myRefg/postForm", new ForwardController("/myRefg/postForm.jsp"));
 		mappings.put("/myRefg/list/detail", new ViewFoodController());
