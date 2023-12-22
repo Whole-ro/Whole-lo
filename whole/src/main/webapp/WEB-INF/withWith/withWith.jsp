@@ -65,13 +65,8 @@
                 </tr>
                 <tr>
                   <td class="userContent">${user.introduction}</td>
-                  <td class="icons">
-                      <button class="msgBTN" onclick="alert('쪽지 클릭')">쪽지</button>
-                  </td>
-                  <td class="icons">
-                      <button class="accuse" onclick="alert('신고하기 클릭')">
-                    <img src="/whole/img/withWith/ic_accuse.png" width="25px">신고하기</button>
-                  </td>
+
+
                 </tr>
                 <tr>
                   <td colspan="4" class="line"></td>

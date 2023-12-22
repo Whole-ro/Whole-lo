@@ -8,7 +8,6 @@ import javax.servlet.http.HttpSession;
 
 import controller.Controller;
 import controller.user.UserSessionUtils;
-import model.User;
 import model.entity.UserEntity;
 import model.service.FoodManager;
 import model.service.UserManager;

@@ -7,8 +7,6 @@ import java.util.Scanner;
 import model.dao.*;
 import model.entity.UserEntity;
 import model.enums.GenderEnum;
-import model.User;
-
 
 public class UserTest {
     

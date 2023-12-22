@@ -9,7 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import controller.Controller;
-import model.Community;
+
 import model.User;
 import model.entity.UserEntity;
 import model.enums.GenderEnum;
@@ -22,7 +22,9 @@ public class RegisterUserController implements Controller {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-       	if (request.getMethod().equals("GET")) {	
+        request.setCharacterEncoding("UTF-8");
+
+        if (request.getMethod().equals("GET")) {	
     		// GET request: 회원정보 등록 form 요청	
     		log.debug("RegisterForm Request");
 
