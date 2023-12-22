@@ -49,7 +49,7 @@ public class FoodTest {
        // System.out.println(cnt);
         
         System.out.println("삭제 후");
-        foodList = foodDao.findFoodListByExpDate();
+        //foodList = foodDao.findFoodListByExpDate();
 		
 		iter = foodList.iterator();
 
