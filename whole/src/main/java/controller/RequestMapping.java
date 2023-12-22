@@ -8,7 +8,6 @@ import org.slf4j.LoggerFactory;
 import controller.user.*;
 import controller.withWith.ListSameGenderController;
 import controller.withWith.ListSameInterestUserController;
-import controller.comm.*;
 import controller.food.FoodCreateController;
 import controller.food.FoodDeleteController;
 import controller.food.FoodUpdateController;
@@ -25,19 +24,17 @@ public class RequestMapping {
 
 	public void initMapping() {
 		// 각 uri에 대응되는 controller 객체를 생성 및 저장
-		//        mappings.put("/", new ForwardController("index.jsp"));
+	
 	    mappings.put("/user/market", new UserMarketController());
 	    mappings.put("/user/logout", new LogoutController());
 		mappings.put("/user/login/form", new ForwardController("/user/loginForm.jsp")); //loginForm.jsp forwarding
 		mappings.put("/user/login", new LoginController()); //로그인 컨트롤러 매핑
 		mappings.put("/user/updatepassword/form", new ForwardController("/user/updatepw.jsp")); //updatepw.jsp forwarding
 		mappings.put("/user/updatepassword", new UpdateUserController());
-		//        mappings.put("/user/login/form", new ForwardController("/user/loginForm.jsp"));
-		//        mappings.put("/user/login", new LoginController());
-		//        mappings.put("/user/logout", new LogoutController());
+
 		mappings.put("/market", new ListMarketController());
 		mappings.put("/market/post/detail", new ViewPostController());
-		//        mappings.put("/user/list", new ListUserController());
+	
 		mappings.put("/user/view", new ViewUserController());
 		mappings.put("/market/type", new ViewItemTypeController());	
 		mappings.put("/market/delete", new MarketDeleteController());
@@ -53,19 +50,6 @@ public class RequestMapping {
 		mappings.put("/user/register/registerForm", new ForwardController("/user/sign_up_2.jsp"));
 		mappings.put("/user/register", new RegisterUserController());
 
-		//        // 사용자 정보 수정 폼 요청과 수정 요청 처리 병합
-		////      mappings.put("/user/update/form", new UpdateUserFormController());
-		////      mappings.put("/user/update", new UpdateUserController());        
-		//        mappings.put("/user/update", new UpdateUserController());
-		//        
-		//        mappings.put("/user/delete", new DeleteUserController());
-		//        
-		//        // 커뮤니티 관련 request URI 추가
-		//        mappings.put("/community/list", new ListCommunityController());
-		//        mappings.put("/community/view", new ViewCommunityController());
-		//        mappings.put("/community/create/form", new ForwardController("/community/creationForm.jsp"));
-		//        mappings.put("/community/create", new CreateCommunityController());
-		//        mappings.put("/community/update", new UpdateCommunityController());
 
 		// 나만의 냉장고
 		mappings.put("/myRefg/list", new ListFoodController());

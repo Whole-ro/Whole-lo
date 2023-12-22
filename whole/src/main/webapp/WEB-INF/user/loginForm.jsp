@@ -50,11 +50,7 @@ function userCreate(targetUri) {
     </form>  
     </div>
     <hr style="margin-top: 72px; margin-bottom: 32px; width: 400px;"> 
-    <div style="margin-bottom: 35px;">
-        <span class="find" onClick="location.href='findId.html'">아이디 찾기</span>
-        <span style="margin-left: 22px; margin-right: 22px;">|</span>
-        <span class="find" onClick="location.href='findPw.html'">비밀번호 찾기</span>
-    </div> 
+
     <p>
         <span class="text1">홀로가 처음이신가요?</span>
         <span class="text2" onClick="userCreate('<c:url value='/user/register/agreeTerms'/>')">  회원가입하러가기</span>

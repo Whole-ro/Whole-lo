@@ -5,7 +5,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Community;
 import model.enums.IsHealthy;
 import model.dto.FoodDTO;
 import model.entity.FoodEntity;
@@ -291,13 +290,13 @@ public class FoodDAO {
 	}
 	
 	/* 유통기한 3일 남은 음식 List 반환*/
-	public List<FoodDTO> findFoodListByExpDate() throws SQLException {
+	public List<FoodDTO> findFoodListByExpDate(Long writerId) throws SQLException {
 		//나의 냉장고 확인 화면
-		String sql = "SELECT post_id, title, image, exp_date, reg_date, food_type "
+		String sql = "SELECT post_id, title, image, exp_date, reg_date, food_type, writer_id "
 				+ "FROM FOOD JOIN POST USING (post_id) "
-				+ "WHERE (exp_date - SYSDATE) BETWEEN 0 AND 3 "
+				+ "WHERE (exp_date - SYSDATE) BETWEEN 0 AND 3 AND writer_id=? "
 				+ "ORDER BY reg_date";        
-		jdbcUtil.setSqlAndParameters(sql, null);		// JDBCUtil에 query문 설정
+		jdbcUtil.setSqlAndParameters(sql, new Object[] {writerId});		// JDBCUtil에 query문 설정
 
 		try {
 			ResultSet rs = jdbcUtil.executeQuery();			// query 실행			

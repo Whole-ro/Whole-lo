@@ -21,17 +21,18 @@ public class SearchFoodExpController implements Controller {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String title = request.getParameter("title");
+        HttpSession session = request.getSession();
+        request.setCharacterEncoding("UTF-8");
+
+        long userId = Long.parseLong(UserSessionUtils.getLoginUserId(session));
+
         FoodManager foodMan = FoodManager.getInstance();
-        List<FoodDTO> foodList2 = foodMan.clickExpDate();
+        List<FoodDTO> foodList2 = foodMan.clickExpDate(userId);
         //System.out.println("title" + title);
         System.out.println(foodList2);
         
         
         /*header에 통계 출력*/
-        HttpSession session = request.getSession();
-        request.setCharacterEncoding("UTF-8");
-
-		long userId = Long.parseLong(UserSessionUtils.getLoginUserId(session));
 
 		UserManager userMan = UserManager.getInstance();
 		StatisticsManager statisticsMan = StatisticsManager.getInstance();

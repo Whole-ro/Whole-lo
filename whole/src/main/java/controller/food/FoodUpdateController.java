@@ -20,7 +20,7 @@ public class FoodUpdateController implements Controller {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
                
-      
+      request.setCharacterEncoding("UTF-8");
       Long postId = Long.parseLong(request.getParameter("myPostId"));
       FoodManager foodMan = FoodManager.getInstance();
 

@@ -69,8 +69,8 @@ public class FoodManager {
     }
     
 //    public List<FoodEntity> findFoodListByExpDate() throws SQLException {
-    public List<FoodDTO> clickExpDate() throws SQLException{
-        return foodDAO.findFoodListByExpDate();
+    public List<FoodDTO> clickExpDate(long writerId) throws SQLException{
+        return foodDAO.findFoodListByExpDate(writerId);
     }
 
     public FoodDTO findFood(long postId) throws SQLException{

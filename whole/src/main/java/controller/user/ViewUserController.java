@@ -7,7 +7,6 @@ import javax.servlet.http.HttpSession;
 import controller.Controller;
 import model.service.UserManager;
 import model.service.UserNotFoundException;
-import model.User;
 import model.entity.UserEntity;
 
 public class ViewUserController implements Controller {

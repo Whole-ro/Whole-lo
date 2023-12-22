@@ -42,7 +42,7 @@
             <p class="epDate"> 가격  <input type="number" name="price" required>  원 
                 <select class="kind_01" name="itemType">
                 	<c:forEach var="itemType" items="${marketTypeArray}" >
-                    	<option value="${itemtType}">${itemType}</option>
+                    	<option value="${itemType}">${itemType}</option>
                 	</c:forEach>
                 </select>
             </p>
