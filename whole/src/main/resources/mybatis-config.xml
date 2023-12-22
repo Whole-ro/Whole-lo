@@ -25,5 +25,6 @@
 	<mappers>
 		<mapper class="model.dao.mybatis.mapper.StatisticsMapper" />
 		<mapper class="model.dao.mybatis.mapper.WithwithMapper" />
+		<mapper class="model.dao.mybatis.mapper.UpdatePwMapper" />
 	</mappers>
 </configuration>
