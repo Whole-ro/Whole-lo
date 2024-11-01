@@ -1,55 +1,60 @@
 # Whole-ro
-
-더 자세한 깃허브 룰 설명은 팀 노션 참고. 
+"홀로"는 1인 가구의 일상에서 자주 겪는 어려움을 해결하고, 더 나은 삶의 질을 제공하기 위해 기획된 서비스입니다.<br/>
+본가에서 보내준 반찬이 너무 많거나 음식을 많이 구매해 혼자 소비하기 어려울 때, 혹은 같은 성별의 친구가 필요할 때 "홀로"가 도움을 드립니다.<br/>
+<br/>
+이 서비스는 사용자 간 관계 형성과 물품 나눔 장터 기능을 통해 1인 가구가 겪는 실질적인 문제를 해결하고자 합니다.
 
 # TEST ID/PW
 
 email : dpwls5000@gmail.com <br>
 pw : dpwlsdpwls
 
-## 작업 순서 
+## 프로젝트 영상
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4240b9ab-3f15-4ae9-a949-2a4298873ead" width="400px" height="300px">
+  <br><b>회원가입</b>
+</p>
 
-1. 이슈 생성
-2. 브랜치 생성 후 작업. add, commit, push (절대 메인에 push xx)
-3. PR 날리기, pr 담당자에게 알리기
-4. 메인에 merge는 본인이 하면 xx 반드시 다른 사람이 코드 확인 후 merge
-5. 이슈 close
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d985a911-db7a-4369-9a82-072f242b0d54" width="400px" height="300px">
+  <br><b>로그인</b>
+</p>
 
-## type
-- add : 새로운 파일 추가
-- feat : 만들어진 파일에 새로운 기능 추가, 수정기존의 기능을 요구 사항에 맞추어 수정
-- fix : 기능에 대한 버그 수정
-- build : 빌드 관련 수정
-- chore : 패키지 매니저 수정, 그 외 기타 수정 ex) .gitignore
-- ci : CI 관련 설정 수정
-- docs : 문서 수정
-- comment : 주석 추가
-- style : 코드 스타일, 포맷팅에 대한 수정
-- refactor : 기능의 변화가 아닌 코드 리팩터링 ex) 변수 이름 변경
-- test : 테스트 코드 추가/수정
-- release : 버전 릴리즈
-- remove : 코드 또는 파일, 리소스 제거
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8074749d-b174-4a12-abaa-db544b3ffc69" width="400px" height="300px">
+  <br><b>장터 글쓰기</b>
+</p>
 
-## Commit message 
-commit은 틈틈히 쪼개서 하는게 좋음. 예를 들어서 새 파일 추가 → commit → 새 파일에 대한 작업 진행
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/924476bf-5d6d-4c47-8fd0-41b3588b0a97" width="400px" height="300px">
+  <br><b>글 수정</b>
+</p>
 
-`[type] : 내용 #이슈번호`
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4f74275d-37ca-4f0f-8675-4fe5f60b3637" width="400px" height="300px">
+  <br><b>친구 찾기</b>
+</p>
 
-ex) `[add] : 이미지 파일 추가 #223`
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/bf7303b1-8c4c-40d7-b858-f6d15a9afafc" width="400px" height="300px">
+  <br><b>나만의 냉장고 글 작성</b>
+</p>
 
-## branch 이름
-branch명은 한글로 작성 시 깨질 수 있음. 영문으로 작성할 것.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4caf1641-d5f3-4924-a376-ad2fb5c0dadb" width="400px" height="300px">
+  <br><b>나만의 냉장고 글 수정/삭제</b>
+</p>
 
-`type/작업내용`
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e1db5d04-09ff-4e78-9969-029c2a7e143b" width="400px" height="300px">
+  <br><b>통계</b>
+</p>
 
-ex)  `fix/login error`
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ceaf3f30-fe87-4ac0-ab4a-f251c5025552" width="400px" height="300px">
+  <br><b>마이페이지</b>
+</p>
 
-## PR 규칙 
-pr시 자신이 작업한 내용 자세하게 써주어야 함!!
-
-예진 ← 민영 ← 다윤 ← 서진 ex( 민영이가 예진이 PR merge, 예진이가 서진 PR merge
-
-merge 할 때 delete branch 해주세용
 
 
 
